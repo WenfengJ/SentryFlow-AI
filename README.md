@@ -94,7 +94,10 @@ SentryFlow-AI/
     on-site-recruiting-script.md
     team-recruitment.md
   product/
+    mvp-goal-and-prototype.md
     user-stories.md
+  prototype/
+    index.html
   prompts/
     inspection-agent-prompts.md
   refer/

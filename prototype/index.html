@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SentryFlow AI - MVP 原型</title>
+  <style>
+    :root {
+      --nav: #0b1736;
+      --nav-2: #102552;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --line: #dbe3ef;
+      --text: #1e293b;
+      --muted: #64748b;
+      --blue: #1f73f1;
+      --blue-2: #e8f1ff;
+      --green: #16a34a;
+      --amber: #d97706;
+      --red: #dc2626;
+      --shadow: 0 12px 28px rgba(15, 23, 42, .08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: 236px 1fr;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      background: linear-gradient(180deg, var(--nav), var(--nav-2));
+      color: #dbeafe;
+      padding: 22px 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 8px 22px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: #1f73f1;
+      font-weight: 800;
+      color: white;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 720;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    .brand-sub {
+      margin-top: 3px;
+      font-size: 12px;
+      color: #9fb8e8;
+    }
+
+    .nav-group {
+      margin-top: 22px;
+    }
+
+    .nav-title {
+      padding: 0 8px 8px;
+      font-size: 12px;
+      color: #8fb0e6;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 10px;
+      border-radius: 8px;
+      color: #dbeafe;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background .18s, transform .18s;
+    }
+
+    .nav-item.active,
+    .nav-item:hover {
+      background: rgba(59, 130, 246, .22);
+    }
+
+    .nav-item:hover { transform: translateX(2px); }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #60a5fa;
+      flex: 0 0 auto;
+    }
+
+    main {
+      padding: 20px 24px 28px;
+      min-width: 0;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    .subhead {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    button {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      border-radius: 6px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: transform .16s, border-color .16s, box-shadow .16s;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      border-color: #93c5fd;
+      box-shadow: 0 8px 18px rgba(30, 64, 175, .10);
+    }
+
+    .primary {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: white;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .cards {
+      grid-template-columns: repeat(5, minmax(132px, 1fr));
+      margin-bottom: 14px;
+    }
+
+    .card,
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .card {
+      padding: 14px;
+      min-height: 88px;
+    }
+
+    .card-label {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .card-value {
+      margin-top: 8px;
+      font-size: 26px;
+      font-weight: 760;
+    }
+
+    .card-note {
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(560px, 1.3fr) minmax(360px, .9fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel-title {
+      font-weight: 700;
+    }
+
+    .panel-body {
+      padding: 16px;
+    }
+
+    .scenario-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .scenario {
+      text-align: left;
+      border-radius: 8px;
+      background: #fff;
+      padding: 13px;
+      min-height: 86px;
+    }
+
+    .scenario.active {
+      background: var(--blue-2);
+      border-color: #93c5fd;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, .14);
+    }
+
+    .scenario strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .scenario span {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 12px;
+    }
+
+    .site-map {
+      position: relative;
+      min-height: 312px;
+      overflow: hidden;
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, rgba(148, 163, 184, .18) 1px, transparent 1px),
+        linear-gradient(rgba(148, 163, 184, .18) 1px, transparent 1px),
+        linear-gradient(135deg, #e8f1ff, #f8fafc 46%, #ecfdf5);
+      background-size: 34px 34px, 34px 34px, auto;
+      border: 1px solid var(--line);
+    }
+
+    .fence {
+      position: absolute;
+      left: 42px;
+      right: 42px;
+      top: 34px;
+      bottom: 40px;
+      border: 2px dashed #64748b;
+      border-radius: 8px;
+    }
+
+    .solar-row {
+      position: absolute;
+      height: 28px;
+      width: 170px;
+      border-radius: 5px;
+      background: repeating-linear-gradient(90deg, #1e40af 0 18px, #2563eb 18px 21px);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
+      transform: skewX(-12deg);
+    }
+
+    .row-1 { left: 105px; top: 96px; }
+    .row-2 { left: 290px; top: 132px; }
+    .row-3 { left: 150px; top: 194px; }
+
+    .battery {
+      position: absolute;
+      right: 92px;
+      bottom: 74px;
+      width: 96px;
+      height: 64px;
+      border-radius: 6px;
+      background: #f8fafc;
+      border: 2px solid #334155;
+    }
+
+    .battery:after {
+      content: "BESS";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #334155;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .camera {
+      position: absolute;
+      width: 94px;
+      padding: 7px 8px;
+      border-radius: 7px;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 18px rgba(15,23,42,.12);
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .camera strong { display: block; margin-bottom: 4px; }
+    .camera.high { border-color: #fecaca; color: var(--red); }
+    .camera.medium { border-color: #fed7aa; color: var(--amber); }
+    .camera.normal { border-color: #bbf7d0; color: var(--green); }
+    .cam-1 { left: 18px; top: 74px; }
+    .cam-2 { right: 30px; top: 52px; }
+    .cam-3 { left: 250px; bottom: 22px; }
+    .cam-4 { right: 30px; bottom: 150px; }
+
+    .intruder {
+      position: absolute;
+      left: 166px;
+      top: 132px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 8px rgba(220,38,38,.14), 0 0 0 18px rgba(220,38,38,.06);
+      animation: pulse 1.4s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    .event-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .event-table th,
+    .event-table td {
+      padding: 11px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .event-table th {
+      color: var(--muted);
+      font-weight: 650;
+      background: #f8fafc;
+    }
+
+    .event-table tr {
+      cursor: pointer;
+    }
+
+    .event-table tr:hover,
+    .event-table tr.active {
+      background: #eff6ff;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 46px;
+      height: 23px;
+      padding: 0 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 680;
+    }
+
+    .badge.high { color: #991b1b; background: #fee2e2; }
+    .badge.medium { color: #92400e; background: #ffedd5; }
+    .badge.low { color: #166534; background: #dcfce7; }
+    .badge.pending { color: #1d4ed8; background: #dbeafe; }
+    .badge.done { color: #166534; background: #dcfce7; }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .kv {
+      padding: 10px;
+      border-radius: 7px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+    }
+
+    .kv span {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .kv strong {
+      font-size: 14px;
+    }
+
+    .snapshot {
+      position: relative;
+      min-height: 168px;
+      margin-bottom: 14px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #111827, #1e293b 55%, #0f172a);
+      border: 1px solid #334155;
+    }
+
+    .snapshot:before {
+      content: "";
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      bottom: 44px;
+      height: 48px;
+      background: repeating-linear-gradient(90deg, #1d4ed8 0 24px, #2563eb 24px 28px);
+      transform: skewX(-10deg);
+      opacity: .82;
+    }
+
+    .detect-box {
+      position: absolute;
+      left: 122px;
+      top: 46px;
+      width: 58px;
+      height: 92px;
+      border: 2px solid #ef4444;
+      border-radius: 4px;
+      box-shadow: 0 0 0 999px rgba(15, 23, 42, .12);
+    }
+
+    .detect-box:after {
+      content: "人员";
+      position: absolute;
+      top: -26px;
+      left: -2px;
+      background: #ef4444;
+      color: #fff;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .analysis {
+      padding: 12px;
+      border-radius: 8px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .analysis h3 {
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+
+    .steps {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .detail-actions {
+      display: flex;
+      gap: 9px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .report {
+      display: grid;
+      gap: 12px;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .report-section {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8fafc;
+    }
+
+    .report-section strong {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      min-width: 230px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: #0f172a;
+      color: #fff;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, .22);
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .2s, transform .2s;
+      pointer-events: none;
+      font-size: 14px;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .app { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .layout { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .scenario-tabs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">SF</div>
+        <div>
+          <div class="brand-title">SentryFlow AI</div>
+          <div class="brand-sub">远程场站智能巡检</div>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-title">工作台</div>
+        <div class="nav-item active"><span class="dot"></span>场站总览</div>
+        <div class="nav-item"><span class="dot"></span>事件中心</div>
+        <div class="nav-item"><span class="dot"></span>AI 分析</div>
+        <div class="nav-item"><span class="dot"></span>巡检报告</div>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-title">MVP 场景</div>
+        <div class="nav-item"><span class="dot"></span>夜间入侵</div>
+        <div class="nav-item"><span class="dot"></span>设备区异常</div>
+        <div class="nav-item"><span class="dot"></span>自动报告</div>
+      </div>
+    </aside>
+
+    <main>
+      <div class="topbar">
+        <div>
+          <h1>Solar Site A 智能巡检</h1>
+          <div class="subhead">eufy 摄像头事件流 · AI 风险解释 · 每日巡检报告</div>
+        </div>
+        <div class="actions">
+          <button id="simulateBtn">模拟新事件</button>
+          <button class="primary" id="reportBtn">生成巡检日报</button>
+        </div>
+      </div>
+
+      <section class="grid cards">
+        <div class="card">
+          <div class="card-label">今日事件</div>
+          <div class="card-value" id="totalEvents">12</div>
+          <div class="card-note">较昨日 +4</div>
+        </div>
+        <div class="card">
+          <div class="card-label">高风险</div>
+          <div class="card-value" id="highEvents">3</div>
+          <div class="card-note">需要优先复核</div>
+        </div>
+        <div class="card">
+          <div class="card-label">待复核</div>
+          <div class="card-value" id="pendingEvents">2</div>
+          <div class="card-note">人工确认后归档</div>
+        </div>
+        <div class="card">
+          <div class="card-label">摄像头异常</div>
+          <div class="card-value">1</div>
+          <div class="card-note">Battery-04 遮挡</div>
+        </div>
+        <div class="card">
+          <div class="card-label">今日风险</div>
+          <div class="card-value" style="color: var(--amber);">偏高</div>
+          <div class="card-note">夜间入侵增多</div>
+        </div>
+      </section>
+
+      <section class="scenario-tabs">
+        <button class="scenario active" data-scenario="all">
+          <strong>全部场景</strong>
+          <span>查看今日入侵、异常和日报相关事件。</span>
+        </button>
+        <button class="scenario" data-scenario="intrusion">
+          <strong>夜间入侵</strong>
+          <span>围栏、入口、设备区的人员进入风险。</span>
+        </button>
+        <button class="scenario" data-scenario="anomaly">
+          <strong>设备区异常</strong>
+          <span>遮挡、低光、烟雾火光、异常停留。</span>
+        </button>
+      </section>
+
+      <section class="layout">
+        <div class="grid">
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">场站态势</div>
+              <span class="badge pending">实时模拟</span>
+            </div>
+            <div class="panel-body">
+              <div class="site-map">
+                <div class="fence"></div>
+                <div class="solar-row row-1"></div>
+                <div class="solar-row row-2"></div>
+                <div class="solar-row row-3"></div>
+                <div class="battery"></div>
+                <div class="camera high" data-camera="Gate-01"><strong>Gate-01</strong>高风险</div>
+                <div class="camera normal" data-camera="Fence-02"><strong>Fence-02</strong>正常</div>
+                <div class="camera medium" data-camera="Equip-03"><strong>Equip-03</strong>中风险</div>
+                <div class="camera medium" data-camera="Battery-04"><strong>Battery-04</strong>遮挡</div>
+                <div class="intruder" title="检测到人员"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">事件中心</div>
+              <span id="filterName" class="card-label">全部事件</span>
+            </div>
+            <div class="panel-body" style="padding:0;">
+              <table class="event-table">
+                <thead>
+                  <tr>
+                    <th>时间</th>
+                    <th>摄像头</th>
+                    <th>场景</th>
+                    <th>风险</th>
+                    <th>状态</th>
+                  </tr>
+                </thead>
+                <tbody id="eventRows"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">事件详情与 AI 处置建议</div>
+              <span id="detailStatus" class="badge pending">待复核</span>
+            </div>
+            <div class="panel-body">
+              <div class="snapshot">
+                <div class="detect-box"></div>
+              </div>
+              <div class="detail-grid">
+                <div class="kv"><span>事件类型</span><strong id="detailScenario">夜间入侵</strong></div>
+                <div class="kv"><span>风险等级</span><strong id="detailRisk">高风险</strong></div>
+                <div class="kv"><span>摄像头</span><strong id="detailCamera">Gate-01</strong></div>
+                <div class="kv"><span>发生时间</span><strong id="detailTime">22:14</strong></div>
+              </div>
+              <div class="analysis">
+                <h3>AI 解释</h3>
+                <div id="detailReason">画面中有人进入围栏内设备区，发生时间为夜间非工作时段，且靠近关键能源设备。</div>
+                <h3 style="margin-top:12px;">建议动作</h3>
+                <ol class="steps" id="detailActions"></ol>
+              </div>
+              <div class="detail-actions">
+                <button class="primary" id="reviewBtn">标记已复核</button>
+                <button id="escalateBtn">升级告警</button>
+                <button id="addReportBtn">加入日报</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">每日巡检报告</div>
+              <span class="card-label">2026-09-11</span>
+            </div>
+            <div class="panel-body">
+              <div class="report" id="reportContent">
+                <div class="report-section">
+                  <strong>今日摘要</strong>
+                  今日共发现 12 起事件，其中 3 起高风险、7 起中风险、2 起低风险。Gate-01 夜间入侵需优先处理。
+                </div>
+                <div class="report-section">
+                  <strong>待处理事项</strong>
+                  复核 Gate-01 夜间入侵；检查 Battery-04 摄像头遮挡；调整 Equip-03 夜间补光。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const events = [
+      {
+        id: 1,
+        time: "22:14",
+        camera: "Gate-01",
+        scenario: "夜间入侵",
+        type: "intrusion",
+        risk: "high",
+        riskText: "高风险",
+        status: "待复核",
+        reason: "画面中有人进入围栏内设备区，发生时间为夜间非工作时段，且靠近关键能源设备。",
+        actions: ["通知值班人员远程复核视频片段", "如无法确认身份，联系现场安保", "将事件写入今日巡检报告"]
+      },
+      {
+        id: 2,
+        time: "21:40",
+        camera: "Equip-03",
+        scenario: "低光",
+        type: "anomaly",
+        risk: "medium",
+        riskText: "中风险",
+        status: "已记录",
+        reason: "设备区画面亮度不足，逆变器周边细节不可见，可能影响夜间巡检判断。",
+        actions: ["检查夜视模式是否开启", "调整补光灯策略", "连续 30 分钟仍低光则加入日报"]
+      },
+      {
+        id: 3,
+        time: "19:05",
+        camera: "Battery-04",
+        scenario: "遮挡",
+        type: "anomaly",
+        risk: "medium",
+        riskText: "中风险",
+        status: "待复核",
+        reason: "摄像头视野右侧大面积被遮挡，BESS 区域无法完整巡检。",
+        actions: ["远程检查摄像头角度", "联系现场人员排查遮挡物", "恢复前提高该区域巡检优先级"]
+      },
+      {
+        id: 4,
+        time: "18:32",
+        camera: "Fence-02",
+        scenario: "普通运动",
+        type: "intrusion",
+        risk: "low",
+        riskText: "低风险",
+        status: "已记录",
+        reason: "围栏外侧出现短暂移动目标，未进入限制区域，暂不判断为入侵。",
+        actions: ["保留事件记录", "无需立即处理", "如同一区域重复出现再升级观察"]
+      }
+    ];
+
+    let selected = events[0];
+    let filter = "all";
+
+    const rows = document.getElementById("eventRows");
+    const toast = document.getElementById("toast");
+
+    function riskBadge(event) {
+      return `<span class="badge ${event.risk}">${event.riskText}</span>`;
+    }
+
+    function statusBadge(event) {
+      const cls = event.status === "已复核" || event.status === "已记录" ? "done" : "pending";
+      return `<span class="badge ${cls}">${event.status}</span>`;
+    }
+
+    function renderRows() {
+      const list = filter === "all" ? events : events.filter(item => item.type === filter);
+      rows.innerHTML = list.map(event => `
+        <tr data-id="${event.id}" class="${event.id === selected.id ? "active" : ""}">
+          <td>${event.time}</td>
+          <td>${event.camera}</td>
+          <td>${event.scenario}</td>
+          <td>${riskBadge(event)}</td>
+          <td>${statusBadge(event)}</td>
+        </tr>
+      `).join("");
+      rows.querySelectorAll("tr").forEach(row => {
+        row.addEventListener("click", () => {
+          selected = events.find(event => event.id === Number(row.dataset.id));
+          renderRows();
+          renderDetail();
+        });
+      });
+    }
+
+    function renderDetail() {
+      document.getElementById("detailScenario").textContent = selected.scenario;
+      document.getElementById("detailRisk").textContent = selected.riskText;
+      document.getElementById("detailCamera").textContent = selected.camera;
+      document.getElementById("detailTime").textContent = selected.time;
+      document.getElementById("detailReason").textContent = selected.reason;
+      document.getElementById("detailStatus").textContent = selected.status;
+      document.getElementById("detailStatus").className = `badge ${selected.status === "待复核" ? "pending" : "done"}`;
+      document.getElementById("detailActions").innerHTML = selected.actions.map(action => `<li>${action}</li>`).join("");
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      window.clearTimeout(showToast.timer);
+      showToast.timer = window.setTimeout(() => toast.classList.remove("show"), 1800);
+    }
+
+    document.querySelectorAll(".scenario").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".scenario").forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+        filter = button.dataset.scenario;
+        document.getElementById("filterName").textContent = button.querySelector("strong").textContent;
+        const list = filter === "all" ? events : events.filter(item => item.type === filter);
+        if (list.length) selected = list[0];
+        renderRows();
+        renderDetail();
+      });
+    });
+
+    document.getElementById("reviewBtn").addEventListener("click", () => {
+      selected.status = "已复核";
+      renderRows();
+      renderDetail();
+      document.getElementById("pendingEvents").textContent = events.filter(event => event.status === "待复核").length;
+      showToast("事件已标记为已复核");
+    });
+
+    document.getElementById("escalateBtn").addEventListener("click", () => {
+      showToast("已模拟升级告警给值班人员");
+    });
+
+    document.getElementById("addReportBtn").addEventListener("click", () => {
+      showToast("已加入今日巡检日报");
+    });
+
+    document.getElementById("simulateBtn").addEventListener("click", () => {
+      const newEvent = {
+        id: events.length + 1,
+        time: "23:02",
+        camera: "Equip-03",
+        scenario: "烟雾疑似",
+        type: "anomaly",
+        risk: "high",
+        riskText: "高风险",
+        status: "待复核",
+        reason: "设备区上方出现烟雾状画面，位置靠近储能设备，需要尽快人工确认。",
+        actions: ["立即通知值班人员复核", "检查设备温度和消防状态", "确认后升级为火灾隐患事件"]
+      };
+      events.unshift(newEvent);
+      selected = newEvent;
+      document.getElementById("totalEvents").textContent = events.length;
+      document.getElementById("highEvents").textContent = events.filter(event => event.risk === "high").length;
+      document.getElementById("pendingEvents").textContent = events.filter(event => event.status === "待复核").length;
+      renderRows();
+      renderDetail();
+      showToast("已模拟新增高风险事件");
+    });
+
+    document.getElementById("reportBtn").addEventListener("click", () => {
+      const high = events.filter(event => event.risk === "high").length;
+      const pending = events.filter(event => event.status === "待复核").length;
+      const latest = events[0];
+      document.getElementById("reportContent").innerHTML = `
+        <div class="report-section">
+          <strong>今日摘要</strong>
+          今日共发现 ${events.length} 起事件，其中 ${high} 起高风险，${pending} 起待人工复核。最新高风险来自 ${latest.camera}：${latest.scenario}。
+        </div>
+        <div class="report-section">
+          <strong>风险分布</strong>
+          夜间入侵 ${events.filter(event => event.type === "intrusion").length} 起；设备区异常 ${events.filter(event => event.type === "anomaly").length} 起；摄像头遮挡 1 起。
+        </div>
+        <div class="report-section">
+          <strong>待处理事项</strong>
+          优先复核高风险事件；检查 Battery-04 遮挡原因；确认 Equip-03 夜间低光和烟雾疑似事件。
+        </div>
+      `;
+      showToast("巡检日报已生成");
+    });
+
+    document.querySelectorAll(".camera").forEach(camera => {
+      camera.addEventListener("click", () => {
+        const matched = events.find(event => event.camera === camera.dataset.camera);
+        if (matched) {
+          selected = matched;
+          renderRows();
+          renderDetail();
+          showToast(`已切换到 ${matched.camera}`);
+        }
+      });
+    });
+
+    renderRows();
+    renderDetail();
+  </script>
+</body>
+</html>
