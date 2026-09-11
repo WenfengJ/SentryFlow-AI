@@ -107,3 +107,4 @@ SentryFlow-AI/
 
 当前阶段：方向验证、队友招募、MVP 规划。  
 Current phase: idea validation, team recruiting, and MVP planning.
+# SentryFlow-AI
