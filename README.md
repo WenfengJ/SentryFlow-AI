@@ -87,11 +87,14 @@ Looking for 2-3 teammates:
 
 ```text
 SentryFlow-AI/
+  assets/
+    team-flag.svg
   README.md
   docs/
     hackathon-brief.md
     mvp-roadmap.md
     on-site-recruiting-script.md
+    team-flag.md
     team-recruitment.md
   product/
     mvp-goal-and-prototype.md
