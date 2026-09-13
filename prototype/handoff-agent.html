@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SentryFlow AI - eufy Morning Handoff</title>
+  <style>
+    :root {
+      --bg: #f5f7f4;
+      --panel: #ffffff;
+      --ink: #17211b;
+      --muted: #657068;
+      --line: #dbe2dc;
+      --green: #1f7a4d;
+      --green-soft: #e7f4ec;
+      --amber: #a76513;
+      --amber-soft: #fff3df;
+      --red: #b3261e;
+      --red-soft: #fde8e6;
+      --blue: #2f5e8f;
+      --blue-soft: #e6eef8;
+      --shadow: 0 12px 30px rgba(29, 41, 33, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .shell {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: #18241d;
+      font-weight: 800;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .brand p {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ghost-button,
+    .solid-button {
+      height: 38px;
+      border-radius: 8px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .solid-button {
+      border-color: #18241d;
+      background: #18241d;
+      color: #fff;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: minmax(280px, 1.4fr) repeat(4, minmax(130px, 0.65fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .headline,
+    .metric,
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .headline {
+      padding: 18px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .headline h2 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.08;
+    }
+
+    .headline p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .metric {
+      padding: 16px;
+      min-height: 128px;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .metric strong {
+      display: block;
+      margin-top: 10px;
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .metric small {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 320px minmax(420px, 1fr) 360px;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .panel {
+      overflow: hidden;
+    }
+
+    .panel-header {
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .panel-header h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .panel-header span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .event-list {
+      display: grid;
+      gap: 10px;
+      padding: 12px;
+    }
+
+    .event {
+      width: 100%;
+      text-align: left;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 12px;
+      cursor: pointer;
+    }
+
+    .event.active {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px var(--green-soft);
+    }
+
+    .event-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .event-title {
+      font-weight: 750;
+      font-size: 14px;
+    }
+
+    .event-time {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .event p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 0 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .risk-high {
+      color: var(--red);
+      background: var(--red-soft);
+    }
+
+    .risk-mid {
+      color: var(--amber);
+      background: var(--amber-soft);
+    }
+
+    .risk-low {
+      color: var(--green);
+      background: var(--green-soft);
+    }
+
+    .risk-info {
+      color: var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .camera-stage {
+      padding: 16px;
+    }
+
+    .camera-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      min-height: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(135deg, #18241d, #3b4a3f 45%, #111a15);
+      background-size: 38px 38px, 38px 38px, auto;
+      color: #fff;
+    }
+
+    .camera-label {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .camera-label span {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 6px;
+      padding: 6px 8px;
+      font-size: 12px;
+    }
+
+    .scene-box {
+      position: absolute;
+      border: 2px solid #ffcf70;
+      width: 22%;
+      height: 46%;
+      right: 18%;
+      bottom: 17%;
+      border-radius: 8px;
+    }
+
+    .scene-note {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      max-width: 280px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.58);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .analysis-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fbfcfb;
+      min-height: 92px;
+    }
+
+    .analysis-card span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .analysis-card strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .handoff {
+      padding: 16px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .handoff h4 {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .handoff p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .action-box {
+      border: 1px solid #f0c8c4;
+      background: var(--red-soft);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .action-box strong {
+      color: var(--red);
+    }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: #fff;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .qa-box {
+      display: grid;
+      gap: 10px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+
+    .qa-box input {
+      height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 12px;
+      width: 100%;
+    }
+
+    .notify-box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfb;
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .phone-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+    }
+
+    .phone-row input {
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 10px;
+      min-width: 0;
+    }
+
+    .phone-row button,
+    .small-action {
+      height: 38px;
+      border: 1px solid #18241d;
+      border-radius: 8px;
+      background: #18241d;
+      color: #fff;
+      padding: 0 12px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .sms-preview {
+      border: 1px solid #c9d8cf;
+      background: var(--green-soft);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 13px;
+      line-height: 1.45;
+      color: #234432;
+    }
+
+    .status-closed {
+      border-color: #c9d8cf;
+      background: var(--green-soft);
+      color: #234432;
+    }
+
+    .qa-answer {
+      background: #f8faf8;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .lightweight {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      padding: 16px;
+    }
+
+    .step {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 12px;
+      min-height: 96px;
+    }
+
+    .step span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .step strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .why {
+      padding: 16px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .why-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      min-height: 88px;
+      background: #fff;
+    }
+
+    .why-item strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .why-item span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 1180px) {
+      .summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .headline {
+        grid-column: 1 / -1;
+      }
+
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .lightweight {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        padding: 12px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .actions {
+        width: 100%;
+      }
+
+      .ghost-button,
+      .solid-button {
+        flex: 1;
+      }
+
+      .summary {
+        grid-template-columns: 1fr;
+      }
+
+      .headline h2 {
+        font-size: 24px;
+      }
+
+      .analysis-grid,
+      .flow,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .phone-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark">SF</div>
+        <div>
+          <h1>SentryFlow AI</h1>
+          <p>eufy Morning Handoff Agent</p>
+        </div>
+      </div>
+      <div class="actions" aria-label="Demo actions">
+        <button class="ghost-button" type="button">Export handoff</button>
+        <button class="solid-button" type="button">Send to manager</button>
+      </div>
+    </header>
+
+    <section class="summary" aria-label="Morning summary">
+      <div class="headline">
+        <p class="eyebrow">Closed-store handoff</p>
+        <h2>47 alerts reviewed. 1 action needed before opening.</h2>
+        <p>昨晚的 motion alerts 已被整理成早上 30 秒能读完的安全交接：哪些是噪声，哪些已解释，哪个事件今天先处理。</p>
+      </div>
+      <div class="metric">
+        <span>Total alerts</span>
+        <strong>47</strong>
+        <small>来自 4 台 eufy 摄像头</small>
+      </div>
+      <div class="metric">
+        <span>Low value noise</span>
+        <strong>44</strong>
+        <small>雨水、昆虫、远处车灯</small>
+      </div>
+      <div class="metric">
+        <span>Explained events</span>
+        <strong>2</strong>
+        <small>员工返回取货、门口车辆经过</small>
+      </div>
+      <div class="metric">
+        <span>Action needed</span>
+        <strong>1</strong>
+        <small>后门停留事件需复核</small>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="panel" aria-label="Event queue">
+        <div class="panel-header">
+          <h3>Night events</h3>
+          <span>22:00-06:00</span>
+        </div>
+        <div class="event-list">
+          <button class="event active" type="button" data-index="0">
+            <div class="event-top">
+              <span class="event-title">Back Gate lingering</span>
+              <span class="pill risk-high">High</span>
+            </div>
+            <p>02:13，后门出现陌生人停留 38 秒。</p>
+          </button>
+          <button class="event" type="button" data-index="1">
+            <div class="event-top">
+              <span class="event-title">Staff return</span>
+              <span class="pill risk-low">Explained</span>
+            </div>
+            <p>23:18，员工返回取货，停留 4 分钟。</p>
+          </button>
+          <button class="event" type="button" data-index="2">
+            <div class="event-top">
+              <span class="event-title">Rain reflection</span>
+              <span class="pill risk-low">Noise</span>
+            </div>
+            <p>01:05，雨水和车灯反光触发运动提醒。</p>
+          </button>
+          <button class="event" type="button" data-index="3">
+            <div class="event-top">
+              <span class="event-title">Camera low light</span>
+              <span class="pill risk-mid">Review</span>
+            </div>
+            <p>03:42，Camera-03 夜间画面偏暗。</p>
+          </button>
+          <button class="event" type="button" data-index="4">
+            <div class="event-top">
+              <span class="event-title">Solar site after rain</span>
+              <span class="pill risk-info">Extension</span>
+            </div>
+            <p>暴雨后设备区可见性下降，建议远程复核。</p>
+          </button>
+        </div>
+      </aside>
+
+      <section class="panel" aria-label="Event evidence">
+        <div class="panel-header">
+          <h3 id="eventName">Back Gate lingering</h3>
+          <span id="eventMeta">BackGate-01 · 02:13</span>
+        </div>
+        <div class="camera-stage">
+          <div class="camera-frame" aria-label="Camera evidence mockup">
+            <div class="camera-label">
+              <span id="cameraId">BackGate-01</span>
+              <span>Night vision on</span>
+              <span>Motion event</span>
+            </div>
+            <div class="scene-box" aria-hidden="true"></div>
+            <div class="scene-note" id="sceneNote">Unknown person stayed near the back gate for 38 seconds after closing hours.</div>
+          </div>
+          <div class="analysis-grid">
+            <div class="analysis-card">
+              <span>What happened</span>
+              <strong id="whatHappened">陌生人在后门停留，未见进入画面。</strong>
+            </div>
+            <div class="analysis-card">
+              <span>Risk reasoning</span>
+              <strong id="riskReason">闭店后、后门区域、停留时间异常。</strong>
+            </div>
+            <div class="analysis-card">
+              <span>False positive check</span>
+              <strong id="falsePositive">不像雨水、昆虫或车灯触发。</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel" aria-label="Handoff">
+        <div class="panel-header">
+          <h3>Morning handoff</h3>
+          <span>30 sec read</span>
+        </div>
+        <div class="handoff">
+          <div class="action-box">
+            <strong>Priority action</strong>
+            <p id="priorityAction">开门营业前先检查后门门锁，并通知值班人员复核 02:13 画面。</p>
+          </div>
+          <div class="notify-box">
+            <h4>WhatsApp 交接</h4>
+            <div class="phone-row">
+              <input id="phoneInput" value="+60 12 345 6789" aria-label="Owner phone number" />
+              <button id="sendNotice" type="button">Send</button>
+            </div>
+            <div class="sms-preview" id="smsPreview">WhatsApp preview: 47 alerts reviewed. 1 action needed before opening. Tap to view handoff.</div>
+            <button class="small-action" id="closeHandoff" type="button">Mark handoff closed</button>
+          </div>
+          <div>
+            <h4>交接摘要</h4>
+            <p id="handoffText">昨晚共 47 条告警。44 条为低价值噪声，2 条已解释，1 条需要处理。最高风险来自后门陌生人停留事件。</p>
+          </div>
+          <ul class="checklist" aria-label="Next steps">
+            <li>先处理后门门锁和 02:13 画面复核。</li>
+            <li>Camera-03 建议调整补光，避免夜间漏看。</li>
+            <li>低价值噪声已归档，不推送给老板。</li>
+          </ul>
+          <div class="qa-box">
+            <input value="昨晚有什么异常？" aria-label="Ask SentryFlow AI" />
+            <div class="qa-answer">昨晚只有 1 件需要优先处理：后门 02:13 陌生人停留。其余多数为天气、反光或已解释员工活动。</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lightweight" aria-label="Lightweight architecture">
+      <div class="panel">
+        <div class="panel-header">
+          <h3>Lightweight architecture</h3>
+          <span>SDK ready, demo safe</span>
+        </div>
+        <div class="flow">
+          <div class="step">
+            <span>01</span>
+            <strong>eufy event or simulated event</strong>
+          </div>
+          <div class="step">
+            <span>02</span>
+            <strong>Unified event schema</strong>
+          </div>
+          <div class="step">
+            <span>03</span>
+            <strong>Snapshot and device state</strong>
+          </div>
+          <div class="step">
+            <span>04</span>
+            <strong>AI review and risk reasoning</strong>
+          </div>
+          <div class="step">
+            <span>05</span>
+            <strong>Morning handoff</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h3>Why it is lightweight</h3>
+          <span>Not another NVR platform</span>
+        </div>
+        <div class="why">
+          <div class="why-grid">
+            <div class="why-item">
+              <strong>事件驱动</strong>
+              <span>只处理告警、截图和短视频，不要求持续分析多路实时流。</span>
+            </div>
+            <div class="why-item">
+              <strong>套餐升级</strong>
+              <span>不替代安装商，而是给摄像头安装包增加 AI 交接能力。</span>
+            </div>
+            <div class="why-item">
+              <strong>小场景优先</strong>
+              <span>面向老板、店长、仓管和远程资产负责人，不做重型指挥中心。</span>
+            </div>
+            <div class="why-item">
+              <strong>接入可替换</strong>
+              <span>SDK 可用接真实设备；不可用也能用同一事件格式稳定演示。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const events = [
+      {
+        name: "Back Gate lingering",
+        meta: "BackGate-01 · 02:13",
+        camera: "BackGate-01",
+        note: "Unknown person stayed near the back gate for 38 seconds after closing hours.",
+        what: "陌生人在后门停留，未见进入画面。",
+        risk: "闭店后、后门区域、停留时间异常。",
+        falsePositive: "不像雨水、昆虫或车灯触发。",
+        action: "开门营业前先检查后门门锁，并通知值班人员复核 02:13 画面。",
+        handoff: "昨晚共 47 条告警。44 条为低价值噪声，2 条已解释，1 条需要处理。最高风险来自后门陌生人停留事件。"
+      },
+      {
+        name: "Staff return",
+        meta: "FrontDoor-02 · 23:18",
+        camera: "FrontDoor-02",
+        note: "Known staff returned to pick up goods and left after 4 minutes.",
+        what: "已知员工返回取货，行为与门禁记录一致。",
+        risk: "低风险，属于可解释的闭店后活动。",
+        falsePositive: "不是误报，但不需要升级为安全事件。",
+        action: "记录为已解释事件，无需通知老板。",
+        handoff: "员工返回取货事件已解释，可归档。当前仍只有后门停留事件需要优先处理。"
+      },
+      {
+        name: "Rain reflection",
+        meta: "Parking-01 · 01:05",
+        camera: "Parking-01",
+        note: "Rain reflection and passing headlights triggered motion detection.",
+        what: "停车区出现雨水反光和远处车灯变化。",
+        risk: "低风险，未看到人员接近或停留。",
+        falsePositive: "高度疑似天气和灯光触发。",
+        action: "归档为低价值噪声，不进入今日待办。",
+        handoff: "雨水和车灯告警已降噪，减少无效查看。"
+      },
+      {
+        name: "Camera low light",
+        meta: "Warehouse-03 · 03:42",
+        camera: "Warehouse-03",
+        note: "Low-light area reduced visibility in the warehouse corner.",
+        what: "仓库角落夜间画面偏暗，影响复核质量。",
+        risk: "中风险，主要风险是后续事件可能看不清。",
+        falsePositive: "不是运动误报，是设备可用性问题。",
+        action: "今天调整补光或摄像头角度。",
+        handoff: "Camera-03 建议进入设备维护清单，避免夜间漏看。"
+      },
+      {
+        name: "Solar site after rain",
+        meta: "Panel-East · 07:20",
+        camera: "Panel-East",
+        note: "Post-rain visibility dropped near the edge asset zone.",
+        what: "暴雨后设备区可见性下降，局部疑似遮挡。",
+        risk: "中风险，可能影响远程状态确认。",
+        falsePositive: "不像入侵，更像天气后的运维检查项。",
+        action: "先远程复核 Battery-02，再安排现场人员检查东侧阵列。",
+        handoff: "能源样例显示：SentryFlow 不只做安防，也能把远程资产状态整理成巡检交接。"
+      }
+    ];
+
+    const buttons = document.querySelectorAll(".event");
+    const fields = {
+      eventName: document.getElementById("eventName"),
+      eventMeta: document.getElementById("eventMeta"),
+      cameraId: document.getElementById("cameraId"),
+      sceneNote: document.getElementById("sceneNote"),
+      whatHappened: document.getElementById("whatHappened"),
+      riskReason: document.getElementById("riskReason"),
+      falsePositive: document.getElementById("falsePositive"),
+      priorityAction: document.getElementById("priorityAction"),
+      handoffText: document.getElementById("handoffText"),
+      smsPreview: document.getElementById("smsPreview")
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const event = events[Number(button.dataset.index)];
+        buttons.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        fields.eventName.textContent = event.name;
+        fields.eventMeta.textContent = event.meta;
+        fields.cameraId.textContent = event.camera;
+        fields.sceneNote.textContent = event.note;
+        fields.whatHappened.textContent = event.what;
+        fields.riskReason.textContent = event.risk;
+        fields.falsePositive.textContent = event.falsePositive;
+        fields.priorityAction.textContent = event.action;
+        fields.handoffText.textContent = event.handoff;
+        fields.smsPreview.textContent = "WhatsApp preview: " + event.handoff;
+      });
+    });
+
+    document.getElementById("sendNotice").addEventListener("click", () => {
+      const phone = document.getElementById("phoneInput").value || "owner phone";
+      fields.smsPreview.textContent = "Sent on WhatsApp to " + phone + ": 47 alerts reviewed. 1 action needed before opening. Tap to view handoff.";
+    });
+
+    document.getElementById("closeHandoff").addEventListener("click", () => {
+      fields.smsPreview.textContent = "Handoff closed: manager assigned to check the back gate before opening.";
+      document.querySelector(".action-box").classList.add("status-closed");
+      fields.priorityAction.textContent = "已安排店长开门前复核后门门锁，交接状态已关闭。";
+    });
+  </script>
+</body>
+</html>

@@ -46,6 +46,46 @@ SentryFlow AI 不试图证明“AI 摄像头能看懂画面”。
 不是多卖一个摄像头，而是把普通摄像头套餐升级成“有人值守感”的安防服务。
 ```
 
+## 演示体验：WhatsApp 交接卡
+
+用户买摄像头时，安装商帮他绑定一个 WhatsApp 号码。之后每天早上，老板不是登录后台看监控，而是收到一张交接卡：
+
+```text
+Good morning. Your store was mostly safe last night.
+
+47 alerts reviewed.
+44 ignored as rain/light/insects.
+2 explained as staff activity.
+1 needs attention: back gate, 02:13 AM.
+
+Recommended action:
+Check the back gate lock before opening.
+
+[View evidence] [Forward to manager] [Mark as handled]
+```
+
+点开之后，不进入复杂 dashboard，而是一个极简证据页：
+
+```text
+事件画面
+AI 判断
+为什么不是误报
+建议动作
+
+[已处理] [转发店长] [需要巡检]
+```
+
+所以轻量级不是因为“发了一条 WhatsApp”，而是整个产品边界变轻了：用户不需要使用安防平台，也能完成一次安全交接。
+
+| 平台式 CCTV | SentryFlow 轻量式 |
+| --- | --- |
+| 用户登录后台 | 用户收到 WhatsApp 交接卡 |
+| 看多路摄像头 | 只看需要处理的事件 |
+| 管理设备、权限、录像 | 只完成一次交接 |
+| 值班员持续监控 | AI 先复核，用户只确认 |
+| 项目制部署 | 摄像头套餐增值服务 |
+| 强调系统能力 | 强调少看、少跑、少漏 |
+
 ## 故事一：闭店后的 47 条告警
 
 ### 定位
