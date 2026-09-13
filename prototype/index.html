@@ -176,6 +176,130 @@
       margin-bottom: 14px;
     }
 
+    .team-flag {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 14px;
+      padding: 18px;
+      background:
+        linear-gradient(135deg, rgba(31,115,241,.96), rgba(16,37,82,.98)),
+        radial-gradient(circle at 80% 20%, rgba(34,197,94,.35), transparent 32%);
+      border: 1px solid rgba(147, 197, 253, .45);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      color: #fff;
+    }
+
+    .team-flag:before {
+      content: "";
+      position: absolute;
+      right: -36px;
+      top: -44px;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: rgba(250, 204, 21, .20);
+    }
+
+    .team-flag:after {
+      content: "";
+      position: absolute;
+      right: 44px;
+      bottom: 22px;
+      width: 128px;
+      height: 52px;
+      transform: skewX(-14deg);
+      border-radius: 6px;
+      background: repeating-linear-gradient(90deg, rgba(191,219,254,.75) 0 16px, rgba(96,165,250,.86) 16px 19px);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, .22);
+      opacity: .62;
+    }
+
+    .flag-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .flag-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      color: #dbeafe;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .flag-title {
+      margin: 14px 0 8px;
+      font-size: 26px;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .flag-desc {
+      max-width: 800px;
+      color: #dbeafe;
+      line-height: 1.72;
+      font-size: 14px;
+    }
+
+    .flag-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .flag-tag {
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.16);
+      color: #eff6ff;
+      font-size: 12px;
+    }
+
+    .flag-side {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+      padding: 13px;
+      border-radius: 8px;
+      background: rgba(15, 23, 42, .24);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+
+    .flag-side-title {
+      font-size: 13px;
+      font-weight: 780;
+      color: #fff;
+    }
+
+    .role-chip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 10px;
+      border-radius: 7px;
+      background: rgba(255,255,255,.12);
+      font-size: 13px;
+    }
+
+    .role-chip span {
+      color: #bfdbfe;
+      font-size: 12px;
+    }
+
     .card,
     .panel {
       background: var(--panel);
@@ -548,6 +672,7 @@
       .sidebar { display: none; }
       .layout { grid-template-columns: 1fr; }
       .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .flag-content { grid-template-columns: 1fr; }
       .scenario-tabs { grid-template-columns: 1fr; }
     }
   </style>
@@ -616,6 +741,34 @@
           <div class="card-label">今日风险</div>
           <div class="card-value" style="color: var(--amber);">偏高</div>
           <div class="card-note">夜间入侵增多</div>
+        </div>
+      </section>
+
+      <section class="team-flag">
+        <div class="flag-content">
+          <div>
+            <div class="flag-kicker">团队旗帜 · 面向东南亚远程场站</div>
+            <div class="flag-title">SentryFlow AI 巡检小队</div>
+            <div class="flag-desc">
+              我们想把 eufy 摄像头从家庭看护带到更高价值的 B 端场景：海外太阳能 / 储能场站、工业园区和远程工地。
+              MVP 先跑通夜间入侵、设备区异常、每日巡检报告，让摄像头事件能被 AI 理解、解释，并推动后续处理。
+              队伍不预设固定队长，谁在某个方向更有经验，谁就主导对应部分。
+            </div>
+            <div class="flag-tags">
+              <span class="flag-tag">硬件 + AI</span>
+              <span class="flag-tag">海外场站</span>
+              <span class="flag-tag">工业安防</span>
+              <span class="flag-tag">可演示闭环</span>
+              <span class="flag-tag">市场调研可对接</span>
+            </div>
+          </div>
+          <div class="flag-side">
+            <div class="flag-side-title">正在招募 2-3 位队友</div>
+            <div class="role-chip">多模态 / CV <span>画面风险识别</span></div>
+            <div class="role-chip">前端 / 产品 <span>Dashboard + 报告</span></div>
+            <div class="role-chip">IoT / 后端 <span>事件流 + SDK</span></div>
+            <div class="role-chip">调研 / Pitch <span>东南亚市场</span></div>
+          </div>
         </div>
       </section>
 
