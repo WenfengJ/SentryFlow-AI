@@ -4,7 +4,103 @@
 阶段：Round 2 / Market Agent  
 目标：调研 Anker / eufy 产品与 SDK、中国竞品、马来西亚市场机会，并为 Round 3 / Solution Agent 提供方向决策依据。
 
-## 1. Market Agent 总判断
+## 1. 承接的前序判断
+
+本轮市场调研不是从零开始，而是承接 Round 1 / Strategy Agent 的判断，再用外部资料做验证、强化或修正。下面这张表用于告诉项目经理：上一轮哪些判断可以继续沿用，哪些需要调整。
+
+| 编号 | Round 1 结论 | 原状态 | 本轮调研后的处理 |
+| --- | --- | --- | --- |
+| F-STR-001 | Anker / eufy 智能安防赛道更看重真实场景闭环，而不是纯技术展示。 | confirmed | 沿用。eufy 产品页和市场竞品调研进一步说明，基础识别能力已普遍存在，项目必须强调“理解、处置、反馈”。 |
+| F-STR-002 | 评审喜欢具体场景：一个用户、一个空间、一个任务。 | likely | 强化。中国竞品已经覆盖大量泛家庭 AI 能力，项目更需要选择一个清晰场景，不宜做万能平台。 |
+| F-STR-003 | 当前方向不算跑偏，但“远程能源/工业场站”表达可能太 B2B、太远、太大。 | likely | 修正并强化。马来西亚资料支持商业/工业/远程资产有机会，但 eufy 产品心智更偏家庭和小商业，因此建议从“远程能源场站平台”调整为“小商业/轻工业/远程边缘资产的 eufy AI 安防交接 Agent”。 |
+| F-STR-004 | 需要确认 eufy SDK/API 或现场设备能力。 | hypothesis | 降级为高风险待确认。公开资料未确认 eufy Security 有稳定完整的第三方官方开放 SDK/API；Round 3 必须设计 SDK/API 可用与不可用两条路径。 |
+| F-STR-005 | Demo 必须体现 eufy 设备能力，例如运动事件、夜视、设备状态、PTZ、灯光、隐私区。 | likely | 部分验证。eufy 官方产品资料确认夜视、4G/太阳能、360 度 PTZ、AI 检测、本地存储、设备联动等能力；但具体 SDK 能否调用这些能力仍待确认。 |
+| F-STR-006 | “误报处理”和“处置建议”比单纯识别更适合安防场景。 | likely | 强化。中国竞品已经普遍具备人形、宠物、哭声、区域入侵等识别能力，差异化应放在误报复核、交接报告、自然语言问答和处置闭环。 |
+
+## 2. 本轮带来的关键变化
+
+本轮没有推翻 Round 1 的主判断，但带来了四处会影响后续方案设计的关键变化。
+
+### 2.1 SDK/API 可用性不能作为默认前提
+
+```text
+原先判断：
+Round 1 将 eufy SDK/API 作为待确认能力，并建议 Demo 可设计官方 SDK 可用和不可用两条路径。
+
+本轮证据：
+公开资料未确认 eufy Security 有稳定完整的第三方官方开放 SDK/API；Home Assistant 官方 EufyHome 集成不等同 eufy Security 官方开放 SDK；社区 eufy_security / eufy-security-ws 存在但不稳定或非官方。
+
+更新后的判断：
+Round 3 不能把“官方 SDK/API 可用”作为唯一主路径。必须把模拟 eufy 事件流 + 样例视频/截图作为同等重要的兜底路径。
+
+对后续方案的影响：
+技术方案要以事件抽象层开头，而不是直接绑定 SDK。Pitch 中只能说“如果现场官方 SDK/API 可用，可接入真实事件和设备状态”，不能宣称公开 SDK 已确认可用。
+```
+
+### 2.2 远程能源场站不适合作为唯一主叙事
+
+```text
+原先判断：
+Round 1 认为远程能源/储能场站有差异化，但存在离 eufy 消费级安防心智较远的风险。
+
+本轮证据：
+eufy 当前公开产品更偏家庭、小商业、户外和轻量安防；马来西亚本地 CCTV 安装商覆盖 home / office / factory / store / farm 等场景；Milesight 等竞品已经覆盖 4G/solar-powered perimeter sensing 这类远程边缘场景。
+
+更新后的判断：
+项目主叙事建议从“远程能源场站 AI 巡检”修正为“面向小商业、仓库、轻工业和远程边缘资产的 eufy AI 安防交接 Agent”。太阳能/储能场站可以作为高价值 Demo 样例或扩展场景。
+
+对后续方案的影响：
+Round 3 需要重新比较“小商业/轻工业夜间守护”与“远程太阳能/储能边缘资产守护”，不要默认沿用旧 README 标题。
+```
+
+### 2.3 AI 识别能力不是差异化核心
+
+```text
+原先判断：
+Round 1 已提示“处置 Agent”比“识别 Agent”更好。
+
+本轮证据：
+中国竞品已经在家庭、看店、老人、儿童、宠物、庭院等场景提供人形、人脸、宠物、哭声、区域入侵、越界、跌倒、声光报警等能力。
+
+更新后的判断：
+Round 3 的核心功能不应写成“识别人/车/宠物/烟雾”，而应写成“事件复核、风险解释、处置建议、交接报告、用户问答”。
+
+对后续方案的影响：
+MVP 必须把评审看到的第一屏从检测标签改成事件处置闭环。
+```
+
+### 2.4 马来西亚能源场景不一定只讲安防
+
+```text
+补充判断：
+马来西亚靠近赤道，太阳能资源本身不是主要瓶颈。真正值得讨论的是：在高日照、热带雨季、湿热、云雨变化、远程分散部署的环境下，摄像头和 AI Agent 能不能帮助能源资产完成日常状态确认和风险交接。
+
+本轮证据：
+World Bank / Global Solar Atlas 提供马来西亚太阳辐照和 PV power potential 数据；World Bank 的全球 PV 潜力研究说明高潜力国家通常具有较低季节性，太阳能输出在月份之间相对稳定。公开能源资料也显示，马来西亚正在扩大可再生能源装机。
+
+更新后的判断：
+如果继续保留太阳能/储能场景，不一定只强调“安防”。可以把方向扩展成“能源资产守护 Agent”或“太阳能/储能场站交接 Agent”，覆盖入侵、遮挡、低光、积水/暴雨后可见性、设备区异常、巡检摘要等。
+
+对后续方案的影响：
+Round 3 应比较两种叙事：
+1. AI 安防交接 Agent：更贴近 eufy 智能安防赛道，容易讲清楚。
+2. AI 能源资产守护 Agent：更有差异化，可结合马来西亚太阳能资源和远程运维，但需要避免偏离 eufy 智能安防赛道。
+```
+
+## 3. 对后续方案的影响
+
+下面这张表把本轮调研带来的变化翻译成 Round 3 / Solution Agent 必须执行的动作。
+
+| 来源 | 原判断 | 更新后的判断 | 原因 | Round 3 必须怎么做 |
+| --- | --- | --- | --- | --- |
+| Round 1 Strategy | SDK/API 可用性待确认，可设计两条路径。 | 公开资料未确认稳定完整的 eufy Security 官方开放 SDK/API，模拟事件流兜底必须成为正式技术路径。 | Round 2 查到官方公开 SDK 证据不足，社区方案非官方且稳定性有风险。 | 技术架构必须先设计统一事件抽象，再分别适配真实 SDK 和模拟事件。 |
+| Round 1 Strategy | 当前方向不算跑偏，但远程能源/工业场站可能太 B2B。 | 方向应从“远程能源场站平台”调整为“小商业/轻工业/仓库/远程边缘资产的 AI 安防交接 Agent”。 | eufy 产品心智更偏家庭、小商业、户外轻量安防；马来西亚本地市场也覆盖 home/office/factory/store/farm。 | Solution Agent 必须重新评分候选方向，不要默认保留旧主场景。 |
+| Round 1 Strategy | 强化 eufy 原生能力。 | 已验证 eufy 有夜视、4G/太阳能、360 度 PTZ、本地 AI、本地存储、跨摄像头追踪、每日安全报告等公开能力；但 SDK 可调用性仍不确定。 | eufy 官方产品页和功能页支持产品能力，SDK/API 公开性证据不足。 | Demo 可展示这些能力概念，但实现上要准备模拟状态和模拟事件。 |
+| Round 1 Strategy | 马来西亚/海外小型场站痛点需要市场证据。 | 马来西亚 CCTV 市场和本地安装商资料支持商业、工业、商铺、农场等场景存在需求，但具体 AI CCTV 渗透率和太阳能/储能痛点仍需补证。 | 市场报告和安装商资料能证明 CCTV 需求，不能完全证明 AI Agent 需求。 | Pitch 可以说“机会假设”，不要夸大马来西亚 AI CCTV 空白。 |
+| Round 1 Strategy | 误报处理和处置建议是重要方向。 | 该判断被强化：基础 AI 识别已成熟，差异化应转向误报复核、交接摘要、自然语言问答和处置闭环。 | 中国竞品已有大量识别和场景技能。 | MVP 功能优先级应从“识别多类别”改为“把事件转成可执行交接”。 |
+| 用户补充判断 | 马来西亚天气下太阳能资源一定不愁，是否结合能源方向的发挥点不一定是安防。 | 该判断成立，建议把太阳能/储能从“安防场景”扩展为“能源资产守护/运维交接场景”。 | 马来西亚具备太阳能资源基础；能源场景的问题更可能是远程运维、天气后状态确认、遮挡、设备区异常和交接，而不只是入侵。 | Round 3 要单独比较“AI 安防交接 Agent”和“AI 能源资产守护 Agent”，判断哪个更贴比赛、可演示、能拿奖。 |
+
+## 4. Market Agent 总判断
 
 SentryFlow AI 不应被包装成“从零做一个工业 CCTV AI 平台”。更适合 Anker / eufy 黑客松的市场定位是：
 
@@ -17,11 +113,12 @@ SentryFlow AI 不应被包装成“从零做一个工业 CCTV AI 平台”。更
 - eufy 现有产品能力已经覆盖 4K、太阳能、4G、360 度 PTZ、夜视、本地存储、AI 检测、跨摄像头追踪、每日报告等基础。
 - 中国市场的 AI 摄像头已经在家庭、看店、母婴、宠物、老人、庭院、区域入侵、声光报警等场景高度成熟，单纯做“识别”不新。
 - 马来西亚 CCTV 市场仍以 Hikvision、Dahua、UNV、TP-Link、Ezviz 等硬件和安装包为主，AI 能力在增长，但大量本地方案仍停留在安装、远程查看、运动检测、夜视、基础告警层面。
+- 马来西亚太阳能资源具备基础优势，因此能源方向的发挥点不应只讲“有没有太阳”，而应讲“远程能源资产如何低成本完成状态确认、风险交接和运维摘要”。
 - 最值得切入的是“低成本、易部署、少人值守的边缘场景”，而不是大型政府/城市安防，也不是中国式高度内卷的家庭摄像头场景。
 
-## 2. 第一部分：Anker / eufy 产品与 SDK
+## 5. 第一部分：Anker / eufy 产品与 SDK
 
-### 2.1 Key Findings
+### 5.1 关键发现
 
 1. Anker 业务主线包括充电储能、智能创新、智能影音；eufy 属于智能创新类核心品牌，覆盖 Security、Clean、Mom & Baby、eufyMake 等产品系列。
 2. eufy Security 的核心安防产品矩阵包括智能无线安防摄像头、PoE/NVR 系统、智能门铃、智能锁、传感器、HomeBase 本地中枢等。
@@ -31,7 +128,7 @@ SentryFlow AI 不应被包装成“从零做一个工业 CCTV AI 平台”。更
 6. eufy 相关社区集成可以作为“可行性启发”，但不适合在比赛 Pitch 中宣称官方 SDK 已开放，除非现场官方明确提供。
 7. 对黑客松来说，最稳妥的技术表达是“两条路径”：现场官方 SDK/API 可用则接真实设备；不可用则用模拟 eufy 事件流和样例视频完成闭环。
 
-### 2.2 Evidence Table
+### 5.2 Evidence Table
 
 | Claim | Source | Date | Confidence |
 | --- | --- | --- | --- |
@@ -47,7 +144,7 @@ SentryFlow AI 不应被包装成“从零做一个工业 CCTV AI 平台”。更
 | bropat eufy-security-ws 明确提示旧 API 正被 Eufy 迁移/关闭，未来稳定性不保证。 | bropat/hassio-eufy-security-ws，访问日期 2026-09-13，https://github.com/bropat/hassio-eufy-security-ws/blob/master/README.md | 2026-09-13 | high |
 | eufy 社区仍有用户询问 eufy Security API/HomeBase 3 API，说明公开 API 诉求存在但未被官方清晰满足。 | eufy Community API 讨论，发布于 2025-10-30，访问日期 2026-09-13，https://community.eufy.com/t/api-for-eufy-security/5759489 | 2026-09-13 | medium |
 
-### 2.3 Implication for SentryFlow AI
+### 5.3 Implication for SentryFlow AI
 
 eufy 已经有较强“看见”和“基础智能检测”能力，所以项目不能只做：
 
@@ -69,13 +166,13 @@ eufy 已经有较强“看见”和“基础智能检测”能力，所以项目
 - 用 daily report 和 cross-camera tracking 做差异化连接，但不要照搬，要升级成“运维/安防 Agent 报告”。
 - SDK/API 不要赌死，现场要准备模拟事件流兜底。
 
-### 2.4 Risks / Unknowns
+### 5.4 风险和未知项
 
 - 官方比赛现场可能提供内部 SDK，但公开网页无法确认能力边界。
 - 公开社区 API 不稳定，不适合做主路径。
 - eufy 已有 Daily Security Reports，项目需要强调“面向具体场景的处置闭环”，否则容易和官方已有功能撞车。
 
-### 2.5 Recommendation
+### 5.5 Recommendation
 
 Round 3 应优先设计“事件处置 Agent”，不要做底层摄像头平台。推荐技术入口：
 
@@ -87,9 +184,9 @@ eufy event/snapshot/video clip/device state
   -> daily briefing / user Q&A
 ```
 
-## 3. 第二部分：中国竞品与 AI 摄像头成熟场景
+## 6. 第二部分：中国竞品与 AI 摄像头成熟场景
 
-### 3.1 Key Findings
+### 6.1 关键发现
 
 1. 中国消费级智能摄像头市场竞争高度成熟，头部品牌包括萤石、小米、乔安、普联、海雀、乐橙等；专业安防侧包括海康威视、大华、宇视、华为好望、天地伟业等。
 2. 2025 年上半年，中国智能摄像头市场头部集中度明显提升；公开报告口径中，萤石、小米等处于领先位置，但不同机构和统计口径会导致排名差异。
@@ -98,7 +195,7 @@ eufy event/snapshot/video clip/device state
 5. 中国竞品已经把“摄像头 + AI 技能”做到很细，尤其家庭和看店场景。黑客松如果只做家庭看护或宠物日记，容易撞题。
 6. 机会不在“识别更多类别”，而在“跨事件理解 + 误报复核 + 处置建议 + 报告 + 多设备联动 + 行业化场景”。
 
-### 3.2 Evidence Table
+### 6.2 Evidence Table
 
 | Claim | Source | Date | Confidence |
 | --- | --- | --- | --- |
@@ -111,7 +208,7 @@ eufy event/snapshot/video clip/device state
 | 小豚当家覆盖孩子看护、宠物看护、老人看护、庭院看护、店铺看护、火焰检测等场景，宣传哭声侦测、宝宝围栏、跌倒侦测、区域布防、人脸识别、声光报警等。 | 小豚当家官网，访问日期 2026-09-13，https://www.xiaotun.cn/?about_2= | 2026-09-13 | medium |
 | 中兴家庭 DICT 方案将家庭摄像头定位为家庭、庭院、宠物、商铺、仓库等场景，并强调 AI 人形/宠物识别、降低误报、远程查看、双向对讲、全彩夜视。 | 中兴通讯，访问日期 2026-09-13，https://www.zte.com.cn/china/solutions_latest/gigabit_home_broadband/home_dict.html | 2026-09-13 | high |
 
-### 3.3 竞品矩阵
+### 6.3 竞品矩阵
 
 | 厂商/品牌 | 主要场景 | AI 能力 | 定位 | 对 SentryFlow AI 的启发 |
 | --- | --- | --- | --- | --- |
@@ -123,7 +220,7 @@ eufy event/snapshot/video clip/device state
 | 小豚当家 | 华为智选生态、家庭看护 | 老人跌倒、宠物、儿童、店铺、火焰检测 | 家庭/陪伴细分 | 说明中国市场已把生活场景做细，普通家庭看护难出彩 |
 | 海康威视/大华/宇视/华为好望 | 城市、园区、工厂、交通、政企 | 行业级 AI 视频结构化、周界、行为分析、平台化管理 | 专业安防 | 大型平台不适合 24 小时黑客松，SentryFlow 应做轻量边缘 Agent |
 
-### 3.4 Implication for SentryFlow AI
+### 6.4 Implication for SentryFlow AI
 
 中国竞品说明：
 
@@ -146,13 +243,13 @@ eufy event/snapshot/video clip/device state
 
 其中 Demo 选择最直观的一个场景即可。
 
-### 3.5 Risks / Unknowns
+### 6.5 风险和未知项
 
 - 中国市场份额来源口径差异明显，Pitch 中不要同时混用多个排名。
 - 部分产品功能来自品牌宣传或体验文章，不能等同第三方评测结论。
 - 中国竞品能力强，不宜把“人形识别、区域入侵、声光报警”说成独创。
 
-### 3.6 Recommendation
+### 6.6 Recommendation
 
 Round 3 不建议选择“家庭老人/儿童/宠物看护”作为主方向，除非能做出很强情感体验。更推荐：
 
@@ -169,9 +266,9 @@ Round 3 不建议选择“家庭老人/儿童/宠物看护”作为主方向，�
 - 每日交接报告
 - 可接 eufy 太阳能/4G/360 度摄像头
 
-## 4. 第三部分：马来西亚市场机会
+## 7. 第三部分：马来西亚市场机会
 
-### 4.1 Key Findings
+### 7.1 关键发现
 
 1. 马来西亚 CCTV 市场仍有增长空间，公开市场报告称 2025 年 Malaysia CCTV camera market 规模约 6.48 亿美元，并预计 2026-2034 年 CAGR 18.32%；该报告为商业研究报告，数值可作为方向性参考，Pitch 中应谨慎使用。
 2. 工业、商业、政府/公共安全、零售、住宅都是马来西亚 CCTV 需求来源；公开报告称工业在 2025 年终端垂直市场占比 33%，主要需求来自周界安全、运营监控、工作场所安全合规和资产保护。
@@ -180,7 +277,7 @@ Round 3 不建议选择“家庭老人/儿童/宠物看护”作为主方向，�
 5. AI 功能正在进入马来西亚市场，但很多本地销售表达仍集中在 motion detection、night vision、mobile notification、remote monitoring、AI human detection、AI motion detection，Agent 式总结和处置闭环不常见。
 6. 马来西亚更适合作为“海外边缘场景”验证市场，而不是与中国家庭摄像头正面对抗。
 
-### 4.2 Evidence Table
+### 7.2 Evidence Table
 
 | Claim | Source | Date | Confidence |
 | --- | --- | --- | --- |
@@ -196,7 +293,7 @@ Round 3 不建议选择“家庭老人/儿童/宠物看护”作为主方向，�
 | NKTSolution Kuching 套餐宣传 AI Motion Detection、Night Vision，授权品牌包括 Hikvision、Dahua、Ezviz、Supa，4-8 路套餐 RM1,950-RM3,999。 | NKTSolution，访问日期 2026-09-13，https://www.nktsolution.com/services/ | 2026-09-13 | medium |
 | 6Wresearch Malaysia Smart Home Security Camera 报告覆盖 indoor/outdoor cameras、AI-powered doorbell、baby/pet monitoring、AI tracking、face recognition、motion detection、object tracking、night vision，品牌包括 Arlo、Wyze、Blink、Ring、Google Nest、Eufy 等。 | 6Wresearch，发布于 2025-04，更新于 2025-08，访问日期 2026-09-13，https://www.6wresearch.com/industry-report/malaysia-smart-home-security-camera-market | 2026-09-13 | medium |
 
-### 4.3 本地竞品与定位
+### 7.3 本地竞品与定位
 
 | 品牌/厂商 | 类型 | 场景 | 技术水平 | 价格/定位 | 对项目启发 |
 | --- | --- | --- | --- | --- | --- |
@@ -208,7 +305,7 @@ Round 3 不建议选择“家庭老人/儿童/宠物看护”作为主方向，�
 | Milesight via Camart | AI CCTV/工业方案 | 商业、工业、周界、4G/太阳能 | AI visual verification、无线、太阳能、周界感知 | 工业/项目型 | 与 SentryFlow 远程边缘资产场景高度相似，是重要竞品和参考 |
 | 本地安装商/集成商 | 方案集成 | home / office / factory / store / farm | 以安装、布线、远程查看、基础 AI 为主 | 套餐化 | SentryFlow 可以作为这些硬件包的 AI 增值服务 |
 
-### 4.4 Implication for SentryFlow AI
+### 7.4 Implication for SentryFlow AI
 
 马来西亚市场给出的启发：
 
@@ -217,14 +314,14 @@ Round 3 不建议选择“家庭老人/儿童/宠物看护”作为主方向，�
 3. 工业、小办公室、商铺、仓库、农场等场景比纯家庭更适合体现商业价值。
 4. 太阳能/4G/无线周界方案已有竞品，说明远程边缘场景真实存在，但也说明必须做出 Agent 层差异化。
 
-### 4.5 Risks / Unknowns
+### 7.5 风险和未知项
 
 - IMARC、6Wresearch 等商业报告公开页信息有限，具体份额和品牌排名需要购买报告才能确认。
 - 本地安装商价格是网站报价，地区和实际工况差异较大。
 - 马来西亚 AI CCTV 是否“不饱和”只能做中等可信度判断，需要更多本地案例和客户访谈。
 - 太阳能/储能场站数据还不够，需要 Round 3 或后续补一轮专门的 energy-site security 证据。
 
-### 4.6 Recommendation
+### 7.6 Recommendation
 
 Round 3 推荐优先比较以下项目方向：
 
@@ -241,9 +338,9 @@ Round 3 推荐优先比较以下项目方向：
 
 可用太阳能/储能场站作为 Demo 场景之一，但不建议把唯一主标题写得过重工业化。
 
-## 5. 对项目切入点的启发
+## 8. 对项目切入点的启发
 
-### 5.1 不建议主打
+### 8.1 不建议主打
 
 - 泛用 AI 视频分析平台
 - 单纯人形/车辆/宠物/包裹识别
@@ -251,7 +348,7 @@ Round 3 推荐优先比较以下项目方向：
 - 中国式家庭摄像头全场景看护
 - 复杂工业安全合规平台
 
-### 5.2 建议主打
+### 8.2 建议主打
 
 ```text
 AI Security Handoff Agent
@@ -273,7 +370,7 @@ eufy AI 安防交接 Agent
 今天开店/巡检前需要先看什么？
 ```
 
-### 5.3 推荐场景表达
+### 8.3 推荐场景表达
 
 比“远程能源场站 AI 巡检”更稳的表达：
 
@@ -287,7 +384,7 @@ eufy AI 安防交接 Agent
 从小商铺后门，到仓库围栏，再到小型太阳能场站，eufy 摄像头都可以从被动录像机升级为会交接风险的守护 Agent。
 ```
 
-## 6. 下一轮 Solution Agent 必须决策的问题
+## 9. 下一轮 Solution Agent 必须决策的问题
 
 1. 主方向到底选“小商业/轻工业夜间守护”，还是“远程太阳能/储能场站巡检”？
 2. Demo 里是否保留太阳能场站？如果保留，是主场景还是扩展场景？
@@ -312,7 +409,27 @@ eufy AI 安防交接 Agent
    - 前端一键触发事件
 7. 最终 Pitch 需要避免哪些未经证实的市场说法？
 
-## 7. Market Agent 结论
+## 10. 后续可复用事实清单
+
+下面这些是后续方案设计和路演材料可以复用的事实。状态为 `confirmed` 的可以直接使用；状态为 `likely` 的可以谨慎使用，但不要写成绝对结论。
+
+| 编号 | 结论 | 状态 | 来源 | 适用位置 | 使用提醒 |
+| --- | --- | --- | --- | --- | --- |
+| F-EUFY-001 | eufy Security 的公开产品矩阵覆盖摄像头、PoE/NVR、智能门铃、智能锁、传感器和 HomeBase。 | confirmed | eufy Security Products | 方案设计、路演 | 可用于说明 eufy 已有完整安防硬件入口。 |
+| F-EUFY-002 | eufy 公开产品能力覆盖本地存储、隐私、4K/2K、夜视、太阳能、4G、360 度 PTZ、AI 人/车/宠物/包裹/人脸检测、跨摄像头追踪、每日报告和自动化。 | confirmed | eufy 官方产品页和功能页 | Demo 设计、路演 | 可以用于设计 Demo 的设备能力映射，但不能直接等同 SDK 可调用。 |
+| F-SDK-001 | 公开资料未确认 eufy Security 有稳定完整的第三方官方开放 SDK/API。 | likely | eufy official site scan, Home Assistant EufyHome, eufy community API discussions, bropat/eufy-security-ws | 技术架构、风险兜底 | Pitch 中不能宣称公开 SDK 已确认可用；现场官方若提供 SDK，可作为路径 A。 |
+| F-SDK-002 | eufy Security 社区集成存在，但属于非官方或社区维护方案，稳定性和合规性不适合作为黑客松主路径承诺。 | confirmed | fuatakgun/eufy_security, bropat/hassio-eufy-security-ws | 技术架构 | 可作为可行性启发，不建议写成官方能力。 |
+| F-CN-001 | 中国智能摄像头市场在家庭、看店、宠物、母婴、老人、庭院、商铺等场景已经高度成熟。 | likely | 观研报告网、IT之家转洛图科技、TP-Link、小豚当家、中兴通讯等 | 方向取舍、竞品判断 | 不要主打普通家庭全场景看护，除非情感体验特别强。 |
+| F-CN-002 | 主流中国竞品已覆盖人形、人脸、宠物、哭声、区域入侵、越界、声光报警、智能追踪、录像筛选、跌倒和火焰检测等能力。 | confirmed | TP-Link、小豚当家、中兴通讯、360 体验文章 | 差异化判断 | 项目差异化不能写成“我们能识别人/宠物/区域入侵”。 |
+| F-MY-001 | 马来西亚 CCTV 市场存在家庭、商业、公共、工业、零售、农场等需求，本地安装商常以硬件包、布线、安装和售后打包销售。 | likely | IMARC, ClickBina, CCTV Installation Malaysia, Zashtech, LT Computer Solution | 市场机会、路演 | 可用于说明目标市场有摄像头购买基础。 |
+| F-MY-002 | 马来西亚 CCTV 常见价格区间因地区和配置差异较大，公开安装商报价显示 4 路系统大约 RM900-RM3,500，8 路系统大约 RM1,800-RM7,000。 | likely | ClickBina, Penang Renovations, LT Computer Solution, HJ Security, NKTSolution | 路演、商业价值 | 只能作为区间参考，不要当作精确市场价格。 |
+| F-MY-003 | 马来西亚 AI CCTV 正在增长，但公开销售表达仍多集中在远程查看、运动检测、夜视、移动通知、AI human detection、AI motion detection。 | likely | IMARC, local installer pages, 6Wresearch, Camart Milesight | 机会判断、路演 | Agent 式处置、交接报告和问答有表达空间，但“未普及”不能绝对化。 |
+| F-MY-SOLAR-001 | 马来西亚具备可用于太阳能项目初步评估的公开太阳辐照和 PV power potential 数据，太阳能资源基础不是主要短板。 | confirmed | World Bank Data Catalog: Malaysia solar irradiation and PV power potential maps; Global Solar Atlas | 方向取舍、能源场景判断 | 可以支撑能源方向，但不要把项目讲成发电效率优化。 |
+| F-MY-SOLAR-002 | 结合能源方向时，发挥点不一定是安防；更适合讲“能源资产守护/运维交接”，包括天气后状态确认、遮挡、可见性、设备区异常和风险摘要。 | hypothesis | 用户补充判断 + Market synthesis + World Bank solar data | Round 3 方案比较 | 需要 Solution Agent 判断是否比纯安防更贴合 eufy 智能安防赛道。 |
+| F-OPP-001 | 项目推荐方向应从“远程能源场站 AI 视频平台”调整为“eufy AI 安防交接 Agent”，服务小商业、轻工业、仓库、农场和远程边缘资产。 | likely | Market synthesis based on eufy products, China competitors, Malaysia market | 方案收敛 | Round 3 必须重新评分并决定是否保留太阳能/储能为主场景。 |
+| F-OPP-002 | 核心差异化应放在误报复核、风险解释、处置建议、每日交接报告和自然语言问答，而不是基础识别。 | confirmed | Round 1 strategy + China competitor evidence + eufy existing features | MVP、路演 | MVP 第一屏应展示处置闭环。 |
+
+## 11. Market Agent 结论
 
 ```text
 Agent: Market Agent
@@ -320,33 +437,60 @@ Agent: Market Agent
 Scope:
 联网调研 Anker/eufy 产品与 SDK、中国智能摄像头竞品、马来西亚 CCTV/AI CCTV 市场，并为项目切入点提供依据。
 
-Key Findings:
+本轮使用材料:
+1. docs/prepare/round1-strategy-agent.md
+2. docs/prepare/round2-market-agent.md 已有调研证据
+3. eufy 官方产品页、安克年报、Home Assistant/社区集成、中国竞品资料、马来西亚市场和安装商资料
+
+承接的前序判断:
+1. 比赛更看重真实场景闭环，而不是纯技术展示。
+2. 当前方向不算跑偏，但远程能源/工业表达存在过大、过 B2B、离 eufy 心智较远的风险。
+3. eufy 原生能力和 SDK/API 可用性是后续方案关键。
+4. 误报处理、处置建议和巡检摘要比基础识别更适合拿奖表达。
+
+本轮关键发现:
 1. eufy 已具备摄像头、门铃、门锁、HomeBase、本地 AI、每日安全报告、跨摄像头追踪、太阳能、4G、360 度 PTZ 等能力。
 2. 公开资料未确认 eufy Security 有稳定完整的第三方官方开放 SDK/API；社区方案存在但稳定性和官方性不足。
 3. 中国 AI 摄像头市场成熟，家庭/看店/老人/儿童/宠物等场景功能高度丰富，单纯识别类 Demo 不够新。
 4. 马来西亚 CCTV 市场仍在增长，主流销售以 Hikvision/Dahua/UNV/TP-Link/Ezviz 等安装包和本地集成为主，AI 正在普及但 Agent 式处置闭环仍有表达空间。
 5. SentryFlow AI 应从“远程能源场站平台”调整为“eufy AI 安防交接 Agent”，重点服务小商业、轻工业、仓库、农场和远程边缘资产。
+6. 如果继续结合能源方向，发挥点不一定是安防，而可以是“能源资产守护/运维交接”：天气后状态确认、遮挡和可见性检查、设备区异常、风险摘要。
 
-Risks / Unknowns:
+本轮关键变化:
+1. SDK/API 公开可用性不能作为默认前提，需要从“待确认”降级为“高风险待确认”。
+2. 远程能源场站有差异化，但不适合作为唯一强绑定主叙事，需要改成更贴近 eufy 的小商业/轻工业/远程边缘资产。
+3. 基础识别能力已经成熟，不能作为项目核心差异化。
+4. 马来西亚太阳能资源不是主要问题，能源方向的发挥点应从“安防”扩展到“能源资产状态交接”。
+
+对后续方案的影响:
+1. 修正 Round 1 的 SDK/API 假设：公开资料无法确认官方开放 SDK/API，Round 3 必须设计模拟事件流兜底。
+2. 修正 Round 1 的场景表达：从“远程能源场站 AI 巡检”调整为“eufy AI 安防交接 Agent”，太阳能/储能作为可选高价值样例。
+3. 强化 Round 1 的 Agent 定义：重点从识别转向误报复核、风险解释、处置建议、每日交接和问答。
+4. 补充能源方向的新表达：如果保留太阳能/储能，Round 3 要比较“AI 安防交接 Agent”和“AI 能源资产守护 Agent”。
+
+风险和未知项:
 1. 官方 SDK/API 和现场资源边界仍需赛事方确认。
 2. 马来西亚具体品牌份额和 AI CCTV 渗透率缺少免费公开精确数据。
 3. 太阳能/储能场站在马来西亚的安防痛点需要进一步专项验证。
 4. eufy 已有 Daily Security Reports，项目必须做出更具体的场景化处置差异。
 
-Implication for Project:
+对项目的含义:
 保留“摄像头从看见到处置”的核心，但建议弱化重工业平台感，强化 eufy 设备能力、轻量部署、夜间/闭店后交接、误报复核、每日摘要和用户问答。
 
-Recommendation:
+建议:
 Round 3 重点评估四个候选方向：小商业/轻工业夜间守护、远程太阳能/储能边缘资产守护、商铺/仓库闭店后异常事件交接、家庭/小商业误报复核与每日安全摘要。优先选择 24 小时内最容易稳定演示、最贴近 eufy 硬件生态、又能体现马来西亚市场机会的方向。
 
-Confidence:
+后续可复用事实:
+见第 10 节。Round 3 必须使用这些事实，尤其是 F-SDK-001、F-MY-SOLAR-001、F-MY-SOLAR-002、F-OPP-001、F-OPP-002。
+
+整体可信度:
 medium-high
 
-Next Research Needed:
+下一步需要补充:
 需要 Solution Agent 决定主场景、MVP 事件、技术兜底路径和路演表达；如时间允许，后续补充马来西亚太阳能/仓储/小商业安防案例。
 ```
 
-## 8. Sources
+## 12. Sources
 
 - eufy Security Products，访问日期 2026-09-13：https://us.eufy.com/collections/security
 - eufy Security Features，访问日期 2026-09-13：https://www.eufy.com/security-features
@@ -368,6 +512,9 @@ Next Research Needed:
 - 小豚当家官网，访问日期 2026-09-13：https://www.xiaotun.cn/?about_2=
 - 中兴通讯家庭 DICT，访问日期 2026-09-13：https://www.zte.com.cn/china/solutions_latest/gigabit_home_broadband/home_dict.html
 - IMARC Malaysia CCTV Camera Market，访问日期 2026-09-13：https://www.imarcgroup.com/malaysia-cctv-camera-market
+- World Bank: Solar Photovoltaic Power Potential by Country，访问日期 2026-09-13：https://www.worldbank.org/en/topic/energy/publication/solar-photovoltaic-power-potential-by-country
+- World Bank Data Catalog: Malaysia - Solar irradiation and PV power potential maps，访问日期 2026-09-13：https://datacatalog.worldbank.org/search/dataset/0041753/malaysia-solar-irradiation-and-pv-power-potential-maps
+- Global Solar Atlas: Global PV Potential Study，访问日期 2026-09-13：https://globalsolaratlas.info/global-pv-potential-study
 - ClickBina CCTV Installation Cost Malaysia 2026，访问日期 2026-09-13：https://clickbina.com/guides/cctv-installation-cost-malaysia/
 - CCTV Installation Malaysia，访问日期 2026-09-13：https://www.cctvinstallation.my/
 - Zashtech CCTV System Malaysia，访问日期 2026-09-13：https://www.zashtech.com/services/cctv-installation/
@@ -377,4 +524,3 @@ Next Research Needed:
 - HJ Security Malaysia，访问日期 2026-09-13：https://www.hikvisionhj.com/blogs/cctv-surveillance-systems-kuching/how-much-does-cctv-installation-cost-in-kuching-2024-2025-price-guide-hj-security
 - NKTSolution，访问日期 2026-09-13：https://www.nktsolution.com/services/
 - 6Wresearch Malaysia Smart Home Security Camera，访问日期 2026-09-13：https://www.6wresearch.com/industry-report/malaysia-smart-home-security-camera-market
-
