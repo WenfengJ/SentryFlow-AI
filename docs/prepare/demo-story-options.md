@@ -1,6 +1,5 @@
 # Demo 故事选项
 
-生成日期：2026-09-13  
 用途：为 SentryFlow AI 黑客松路演选择一个有记忆点、能讲清购买理由的产品故事。
 
 ## 故事背后的商业价值
@@ -91,7 +90,7 @@ AI 判断
 ### 定位
 
 ```text
-eufy Morning Handoff Agent
+eufy Morning Handoff
 把一夜的摄像头告警，变成早上 30 秒能读完的安全交接。
 ```
 
