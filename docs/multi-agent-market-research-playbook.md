@@ -58,7 +58,7 @@ Pitch Agent / 路演整合 Agent
 
 ### 共享事实账本
 
-每一轮结束后，都要维护一个 `Shared Facts / 共享事实账本`。它可以放在当轮文档末尾，也可以单独沉淀到 `docs/prepare/shared-facts.md`。
+每一轮结束后，都要维护一个 `Shared Facts / 共享事实账本`。它可以放在当轮文档末尾，也可以单独沉淀到 `docs/v2-design/shared-facts.md`。
 
 格式：
 
@@ -128,8 +128,8 @@ Impact:
 Solution Agent 必须设计 A/B 两条路径；Pitch Agent 必须弱化 SDK 相关说法。
 
 Files / Sections To Update:
-docs/prepare/round1-strategy-agent.md 的 SDK 风险说明
-docs/prepare/round3-solution-agent.md 的技术架构
+docs/v2-design/round1-strategy-agent.md 的 SDK 风险说明
+docs/v2-design/round3-solution-agent.md 的技术架构
 最终 Pitch 的技术可行性表述
 ```
 
@@ -214,11 +214,11 @@ Pitch Agent 必须删除或降级：
 - 前两轮的关键变化和对后续方案的影响
 - 当前项目文档摘要：
   - `README.md`
-  - `docs/hackathon-brief.md`
-  - `product/mvp-goal-and-prototype.md`
-  - `product/user-stories.md`
-  - `docs/mvp-roadmap.md`
-  - `prompts/inspection-agent-prompts.md`
+  - `docs/v1-design/hackathon-brief.md`
+  - `docs/v1-design/product/mvp-goal-and-prototype.md`
+  - `docs/v1-design/product/user-stories.md`
+  - `docs/v1-design/mvp-roadmap.md`
+  - `docs/v1-design/prompts/inspection-agent-prompts.md`
 
 注意：Solution Agent 可以推翻当前方向，不必迁就已有原型或当前 focus。
 

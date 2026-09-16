@@ -1,116 +1,109 @@
 # SentryFlow AI
 
-面向海外远程能源场站的智能摄像头巡检 Agent  
-AI camera inspection agent for overseas remote energy sites
+SentryFlow AI 是一个面向 Anker / eufy 智能安防黑客松的产品方案项目。
 
-> 让 eufy 摄像头成为太阳能与储能场站的 AI 巡检员。  
-> Turn eufy cameras into AI inspection agents for solar and energy storage sites.
+当前整理后分为两个版本：
 
-SentryFlow AI 面向远程太阳能、储能和工业场站，把摄像头事件转化为风险解释、处置建议和每日巡检摘要。  
-SentryFlow AI is built for remote solar, energy storage, and industrial sites. It turns camera events into risk explanations, recommended actions, and daily inspection summaries.
+- `v2`：当前参赛主线，推荐用于比赛提交、Demo 和路演。
+- `v1`：早期设计方向，保留为长期愿景和扩展参考。
 
-## 黑客松方向 / Hackathon Direction
+## 当前推荐方向
 
-本项目面向 Anker / eufy 生态的黑客松挑战赛事，优先选择「远程能源 / 储能 / 太阳能场站」作为主场景，工业园区、工厂、矿区、仓库作为可扩展场景。  
-This project is designed for an Anker / eufy ecosystem hackathon. The primary scenario is remote energy, storage, and solar sites, with industrial parks, factories, mines, and warehouses as expansion scenarios.
+参赛建议使用 `v2`：
 
-目标不是做一个通用监控大屏，而是做一个能帮助海外业主、运维团队、安防服务商降低远程巡检成本的 AI Agent。  
-The goal is not a generic CCTV dashboard. The goal is an AI Agent that helps overseas site owners, operations teams, and security service providers reduce remote inspection costs.
+```text
+SentryFlow AI：面向小商业、仓库、轻工业和远程边缘资产的 eufy AI 安防交接服务。
+```
 
-## MVP 范围 / MVP Scope
+核心思路：
 
-### 1. 夜间入侵 / Night Intrusion
+```text
+不是再做一个“会识别”的摄像头，
+而是让 eufy 摄像头把一夜的告警整理成可复核、可交接、可执行的安全摘要。
+```
 
-有人进入围栏、设备区或禁入区域时，Agent 识别事件，并生成风险解释、可能原因、处置建议和人工复核判断。  
-When a person enters a fenced area, equipment zone, or restricted zone, the Agent detects the event and generates a risk explanation, possible cause, recommended action, and human-review decision.
+最适合黑客松路演的 Demo 故事：
 
-### 2. 设备区异常 / Equipment-zone Anomaly
+```text
+eufy Morning Handoff
+47 条告警，最后只告诉你 1 件该处理的事。
+From 47 alerts to 1 clear action.
+```
 
-摄像头画面出现遮挡、低光、烟雾 / 火光、异常停留、设备区可疑活动时，系统标记风险。  
-When the camera view shows obstruction, low light, smoke / fire, abnormal stay, or suspicious equipment-zone activity, the system flags the risk.
+## 版本关系
 
-### 3. 自动巡检报告 / Automated Inspection Report
+| 版本 | 定位 | 适合用途 | 当前判断 |
+| --- | --- | --- | --- |
+| v2 | eufy AI 安防交接服务 | 黑客松参赛、Demo、Pitch、最终方案 | 推荐作为主线 |
+| v1 | 远程能源 / 工业场站 AI 巡检 Agent | 长期愿景、扩展场景、原始思路追溯 | 不建议作为本次参赛主叙事 |
 
-每天生成场站巡检摘要：事件次数、风险等级、摄像头 / 设备状态、待处理事项和建议优先级。  
-The system generates a daily site inspection summary covering event count, risk level, camera / device status, pending issues, and recommended priority.
+## 为什么参赛选 v2
 
-## 为什么重要 / Why This Matters
+v1 的早期设想是让 eufy 摄像头成为远程太阳能、储能和工业场站的 AI 巡检员。这个方向有差异化，但对黑客松来说偏重、偏 B2B，也更容易讲成工业平台。
 
-海外远程能源场站通常具备这些特点：场地分散、人工巡检成本高、夜间和边界安全风险明显、传统 CCTV 只记录画面不解释风险、小型业主需要低成本且易部署的远程方案。  
-Remote overseas energy sites are often distributed, costly to inspect manually, exposed to night and perimeter risks, and underserved by traditional CCTV systems that record footage without explaining risks. Smaller operators need low-cost, easy-to-deploy remote solutions.
+v2 将方向收敛为小商业、仓库、轻工业和远程边缘资产的“安防交接服务”。它更贴近 eufy 智能安防赛道，也更容易在 24 小时内做出稳定 Demo：
 
-SentryFlow AI 尝试把摄像头从「被动录像设备」升级为「主动巡检 Agent」。  
-SentryFlow AI upgrades cameras from passive recording devices into active inspection agents.
+```text
+模拟或真实 eufy 事件
+-> AI 复核
+-> 风险分级
+-> 误报判断
+-> 处置建议
+-> 晨间交接摘要
+-> 用户问答
+```
 
-## 调研方向 / Research Tracks
+一句话判断：
 
-当前需要调研 6 个方向：  
-The current research work is split into six tracks:
+```text
+参赛用 v2，v1 作为长期愿景和扩展素材。
+```
 
-1. 马来西亚工业园区和工厂 AI CCTV 需求 / Malaysia industrial park and factory AI CCTV demand
-2. 太阳能 / 储能场站远程巡检需求 / Remote inspection needs for solar and energy storage sites
-3. PPE 合规和 OSHA / 安全监管场景 / PPE compliance and OSHA-style safety scenarios
-4. 矿区 / 远程工地摄像头巡检 / Camera inspection for mines and remote construction sites
-5. eufy SDK 能力：隐私区、运动事件、PTZ、夜视、灯光 / eufy SDK capabilities: privacy zones, motion events, PTZ, night vision, lights
-6. 竞品：Hikvision、Milesight、本地 AI CCTV 厂商、工业 AI 视频分析平台 / Competitors: Hikvision, Milesight, local AI CCTV vendors, industrial AI video analytics platforms
+## 阅读入口
 
-详情见 [research/research-plan.md](research/research-plan.md).  
-See [research/research-plan.md](research/research-plan.md) for details.
+建议从这里开始：
 
-## 目标用户 / Target Users
+1. [v2 黑客松参赛设计](docs/v2-design/README.md)  
+   当前主线。用于理解最终参赛方向、市场判断、方案收敛、Demo 故事和技术演示方案。
+2. [v1 原始产品方向](docs/v1-design/README.md)  
+   早期方向。用于理解项目最初为什么从远程能源、储能和工业场站切入。
+3. [Anker / eufy 官方赛题资料整理](参赛规则.md)  
+   用于核对赛题背景和智能安防赛道要求。
 
-- 海外太阳能 / 储能场站业主 / Overseas solar and energy storage site owners
-- 工业园区和工厂安全负责人 / Safety managers in industrial parks and factories
-- 远程工地和矿区管理方 / Managers of remote construction sites and mines
-- 安防服务商 / Security service providers
-- eufy / Anker 海外硬件渠道和方案团队 / eufy / Anker overseas hardware and solution teams
-
-## 招募角色 / Team Roles Wanted
-
-计划招募 2-3 位队友：  
-Looking for 2-3 teammates:
-
-- AI / CV Engineer: 视频事件识别、风险解释、多模态模型调用 / video event recognition, risk explanation, multimodal model integration
-- Frontend / Product Engineer: Demo 页面、巡检报告、事件工作台 / demo UI, inspection report, event workbench
-- IoT / Backend Engineer: 摄像头事件接入、数据流、定时报告、部署 / camera event ingestion, data flow, scheduled reports, deployment
-- Product / Research Partner: 海外场景调研、竞品分析、Pitch 材料 / overseas market research, competitor analysis, pitch materials
-
-## Demo 流程 / Suggested Demo Flow
-
-1. 上传或接入一段夜间能源场站摄像头画面 / Upload or connect a night-time remote energy site camera clip
-2. 系统识别入侵、低光、遮挡、烟雾等风险 / Detect intrusion, low light, obstruction, smoke, and other risks
-3. Agent 输出风险解释和处置建议 / Generate risk explanation and recommended action
-4. Dashboard 展示事件列表和风险等级 / Show events and risk levels in a dashboard
-5. 自动生成一份每日场站巡检报告 / Generate a daily site inspection report
-
-## 项目结构 / Repository Structure
+## 目录结构
 
 ```text
 SentryFlow-AI/
-  assets/
-    team-flag.svg
   README.md
   docs/
-    hackathon-brief.md
-    mvp-roadmap.md
-    on-site-recruiting-script.md
-    team-flag.md
-    team-recruitment.md
-  product/
-    mvp-goal-and-prototype.md
-    user-stories.md
-  prototype/
-    index.html
-  prompts/
-    inspection-agent-prompts.md
+    v2-design/
+      README.md
+      01-strategy-review.md
+      02-market-research.md
+      03-solution-plan.md
+      04-demo-story-options.md
+      05-technical-demo-plan.md
+    v1-design/
+      README.md
+      00-original-root-readme.md
+      hackathon-brief.md
+      mvp-roadmap.md
+      product/
+      research/
+      prompts/
+      team-flag.md
+      team-recruitment.md
+    multi-agent-market-research-playbook.md
   refer/
     anker-eufy-smart-security-official-brief.md
-  research/
-    research-plan.md
 ```
 
-## 当前状态 / Status
+## 当前工作重点
 
-当前阶段：方向验证、队友招募、MVP 规划。  
-Current phase: idea validation, team recruiting, and MVP planning.
-# SentryFlow-AI
+下一步应围绕 v2 推进：
+
+1. 把 Demo 固定为 `eufy Morning Handoff`。
+2. 准备 47 条告警到 1 条行动建议的演示数据。
+3. 做一个轻量网页工作台和手机通知/交接卡模拟。
+4. 明确 eufy SDK/API 可用与不可用两条技术路径。
+5. 将 v1 的能源/工业场站内容作为扩展场景，不放在主线开头。

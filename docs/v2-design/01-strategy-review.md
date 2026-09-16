@@ -328,5 +328,5 @@ Next Research Needed:
 - Anker 1st Hackathon Challenge 官方页，访问日期 2026-09-13：https://career.anker-in.com/hackathon
 - 本项目资料：`refer/anker-eufy-smart-security-official-brief.md`
 - 本项目资料：`README.md`
-- 本项目资料：`docs/hackathon-brief.md`
-- 本项目资料：`product/user-stories.md`
+- 本项目资料：`docs/v1-design/hackathon-brief.md`
+- 本项目资料：`docs/v1-design/product/user-stories.md`
