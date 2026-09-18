@@ -1,31 +1,39 @@
 # v2 黑客松参赛设计
 
-v2 是当前推荐的参赛主线：
+SentryFlow AI v2 是本次参赛主线：
 
 ```text
 SentryFlow AI：面向小商业、仓库、轻工业和远程边缘资产的 eufy AI 安防交接服务。
 ```
 
-它从 v1 的“远程能源/工业场站 AI 巡检 Agent”收敛而来，更适合 Anker / eufy 智能安防赛道、24 小时 Demo 和路演表达。
+v2 从 v1 的“远程能源/工业场站 AI 巡检 Agent”收敛而来，主线更贴近 Anker / eufy 智能安防赛道，也更适合 24 小时 Demo 和现场路演。
 
-## 先读最终稿
-
-如果只读一份，请先读：
+## Core Materials
 
 1. [00 v2 最终产品设计](./00-final-product-design.md)  
-   当前最完整的参赛产品稿，包含产品定位、用户、商业、Demo、技术方案和 24 小时 task list。
+   产品定位、目标用户、商业价值、Demo 闭环、技术摘要和 24 小时 task list。
+2. [06 技术架构与实现方案](./06-technical-architecture.md)  
+   系统模块、数据结构、API、AI Prompt、SDK/模拟双路径和 24 小时实现顺序。
+3. [07 Demo 路演脚本](./07-demo-script.md)  
+   3 分钟现场路演、90 秒短视频和演示前检查。
+4. [08 评委 Q&A / 答辩问题库](./08-judge-qa.md)  
+   SDK、竞品、商业、技术和风险边界的答辩口径。
+5. [09 提交材料清单](./09-submission-checklist.md)  
+   最终提交包中的 README、Demo、Pitch、截图、答辩和兜底材料。
+6. [10 Pitch Deck 大纲](./10-pitch-deck-outline.md)  
+   5-7 页 Pitch Deck 页结构。
+7. [11 Evidence Log / 证据账本](./11-evidence-log.md)  
+   可引用事实、来源和表达边界。
 
-## 过程文档阅读顺序
-
-建议按下面顺序阅读：
+## Research & Decision Records
 
 1. [01 黑客松方向评审判断](./01-strategy-review.md)  
-   先判断项目方向是否符合 Anker / eufy 智能安防赛道，以及拿奖导向下要强化什么。
+   赛题匹配度、评审期待和方向风险。
 2. [02 产品、竞品与马来西亚市场调研](./02-market-research.md)  
-   再用产品、竞品和市场资料验证前面的判断，确认哪些方向可继续推进。
+   eufy 产品能力、SDK/API 风险、中国竞品、马来西亚 CCTV 市场和本地安装商线索。
 3. [03 方向收敛与 24 小时方案](./03-solution-plan.md)  
-   接着把方向收敛成黑客松 24 小时内可以完成、可以演示的方案。
+   候选方向评分、主方向收敛、SDK/模拟双路径和 MVP 范围。
 4. [04 Demo 故事选项](./04-demo-story-options.md)  
-   然后选择路演时最容易被听懂、最有记忆点的 Demo 故事。
+   “47 条告警”、太阳能小站和安全交班三个故事版本。
 5. [05 技术与演示方案](./05-technical-demo-plan.md)  
-   最后阅读技术实现、演示路径和路演表达的收口方案。
+   技术演示路径、路演故事线和轻量原型说明。

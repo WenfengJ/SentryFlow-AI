@@ -146,15 +146,17 @@ flowchart LR
 
 ## 文档入口
 
-建议先读最终稿：
+Core materials:
 
 1. [v2 最终产品设计](docs/v2-design/00-final-product-design.md)  
-   当前最完整的参赛产品稿，包含产品定位、用户、商业、Demo、技术和 task list。
-2. [v2 设计过程文档](docs/v2-design/README.md)  
-   记录策略评审、市场调研、方案收敛、Demo 故事和技术演示方案。
-3. [v1 原始产品方向](docs/v1-design/README.md)  
+   完整产品稿：产品定位、用户、商业、Demo、技术和 task list。
+2. [v2 技术架构与实现方案](docs/v2-design/06-technical-architecture.md)  
+   面向开发实现，包含模块、数据结构、API、AI Prompt、SDK/模拟双路径和 24 小时实现顺序。
+3. [v2 设计过程文档](docs/v2-design/README.md)  
+   策略评审、市场调研、方案收敛、Demo 故事和技术演示方案。
+4. [v1 原始产品方向](docs/v1-design/README.md)  
    早期能源/工业场站巡检方向，保留为长期愿景和扩展素材。
-4. [参赛规则](参赛规则.md)  
+5. [参赛规则](参赛规则.md)  
    官方赛题资料整理。
 
 ## 版本关系
