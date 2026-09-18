@@ -474,3 +474,301 @@ Task 8：预留模型调用 adapter
 打开 ai rules：知道 AI 怎么判断。
 打开 final package：知道怎么提交比赛。
 ```
+
+---
+
+## P5：补预选材料包
+
+### 15. 新增 `docs/v2-design/22-preliminary-submission-one-pager.md`
+
+预选阶段需要一份短材料，让评审在 1-2 分钟内判断项目是否值得进入下一轮。
+
+必须包含：
+
+```text
+1. 项目名称
+2. 赛道：Smart Security / eufy
+3. 一句话介绍
+4. 用户痛点
+5. 解决方案
+6. 当前 Demo 能看到什么
+7. 技术实现方式
+8. eufy 适配点
+9. 团队分工
+10. 预选后 24 小时内能完成什么
+```
+
+内容要求：
+
+- 不写长篇市场背景。
+- 不写过大的未来愿景。
+- 第一屏必须出现：`47 条告警 -> 1 个清楚动作`。
+- 明确当前是模拟事件流，不承诺已接官方 SDK。
+
+验收标准：
+
+- 评审只看这一页，也能判断项目贴 eufy、有 Demo、有技术路径。
+
+---
+
+### 16. 新增 `docs/v2-design/23-submission-form-copy.md`
+
+准备提交表单可直接复制的短文案。
+
+必须包含：
+
+#### 项目一句话
+
+控制在 120 字以内：
+
+```text
+SentryFlow AI 把 eufy 摄像头的一夜告警整理成晨间安防交接，让用户从 47 条告警里只处理 1 个清楚动作。
+```
+
+#### 项目简介
+
+控制在 500 字以内，结构固定：
+
+```text
+问题：eufy 摄像头能产生大量 motion alerts，但用户很难每天复盘。
+方案：SentryFlow AI 复核夜间事件，区分 ignored / explained / action_needed。
+Demo：模拟 47 条夜间告警，输出 44 条忽略、2 条解释、1 条需要处理。
+技术：Event Schema + AI Review + Risk Engine + Handoff Summary + Q&A + Actions。
+边界：当前不承诺官方 SDK 接入，使用模拟事件流保证预选材料可验证。
+```
+
+#### 技术亮点
+
+控制在 5 条以内：
+
+- 统一 Event Schema，隔离真实 SDK 和模拟事件流。
+- AI 复核事件截图、时间、区域和设备状态。
+- 风险排序把大量告警压缩成少量可处理动作。
+- 问答只基于已复核事件和交接摘要回答。
+- 处置状态支持 Assigned / Handoff closed。
+
+#### 当前完成度
+
+必须写成事实：
+
+```text
+已完成：产品设计、Pitch Deck、静态原型、Demo Guide、技术架构、答辩 Q&A。
+待完成：工程化数据包、可运行 API、Demo 视频、截图素材。
+```
+
+验收标准：
+
+- 提交表单时可以直接复制，不需要现场再写。
+
+---
+
+### 17. 新增 `docs/v2-design/24-repo-readme-submission-version.md`
+
+准备一版面向预选评审的 README 内容。
+
+必须包含：
+
+```text
+1. 项目名称和一句话
+2. Demo 截图或 Pitch Deck 链接
+3. 当前原型入口
+4. 快速运行方式
+5. 核心功能
+6. 技术架构图
+7. 数据流说明
+8. 当前完成度
+9. SDK/API 边界说明
+10. 团队分工
+11. License / credits
+```
+
+README 第一屏必须出现：
+
+- `SentryFlow AI`
+- `eufy Morning Handoff`
+- `47 alerts -> 1 clear action`
+- 原型入口：`prototype/handoff-agent.html`
+- Pitch Deck：`pitch/SentryFlow-AI-pitch-deck.pdf`
+
+验收标准：
+
+- 技术评审打开仓库首页，不需要翻目录就知道项目怎么跑、跑出来什么。
+
+---
+
+### 18. 新增 `docs/v2-design/25-demo-video-script.md`
+
+预选材料通常需要视频或录屏链接。视频不需要拍得复杂，但必须证明项目能被看见。
+
+必须准备两个版本：
+
+#### 60-90 秒预选版
+
+结构固定：
+
+```text
+0-10 秒：一句话说明项目
+10-25 秒：展示 47 / 44 / 2 / 1 总览
+25-45 秒：点开后门 02:13 高风险事件
+45-65 秒：展示 AI 问答和建议动作
+65-90 秒：点击通知店长或标记已复核，展示状态变化
+```
+
+#### 3 分钟路演版
+
+结构固定：
+
+```text
+0:00-0:30 痛点
+0:30-1:00 产品方案
+1:00-2:10 原型演示
+2:10-2:40 技术架构
+2:40-3:00 eufy 适配和下一步
+```
+
+视频画面必须出现：
+
+- 原型首页。
+- 47/44/2/1 数据。
+- 后门高风险事件。
+- AI 问答。
+- 处置状态变化。
+- 架构图或 Pitch Deck 技术页。
+
+验收标准：
+
+- 即使评审不运行项目，只看视频也能理解作品已经有可演示闭环。
+
+---
+
+### 19. 新增 `docs/v2-design/26-judging-evidence-map.md`
+
+把评审可能看的点和项目材料一一对应，避免材料分散。
+
+建议表格：
+
+```text
+评审关注点 | 证明材料 | 文件位置 | 当前状态
+是否贴 eufy | eufy 适配说明 / Pitch Deck 第 6 页 | docs + pitch | 已有，需同步
+是否有 Demo | 原型入口 / 视频 / 截图 | prototype + docs | 原型已有，视频待补
+是否有代码 | app/data + API 实现 | app/ | 待补
+是否有技术亮点 | AI Review / Risk Engine / Q&A | docs/v2-design/15 | 待补
+是否边界清楚 | limitations disclosure | docs/v2-design/19 | 待补
+是否能 24 小时落地 | implementation plan | docs/v2-design/16 | 待补
+```
+
+验收标准：
+
+- 提交前能一眼看到每个评审点对应的证据在哪里。
+
+---
+
+### 20. 新增 `docs/v2-design/27-team-and-build-plan.md`
+
+预选阶段需要证明团队不是只有想法，还能在决赛 24 小时内做出来。
+
+必须包含：
+
+```text
+1. 团队成员与角色
+2. 24 小时开发排期
+3. 决赛现场优先级
+4. SDK 可用时的接入计划
+5. SDK 不可用时的兜底计划
+6. Demo 负责人
+7. Pitch 负责人
+8. 风险负责人
+```
+
+24 小时排期建议：
+
+```text
+0-2 小时：确认 SDK/API、设备、Demo 路径
+2-6 小时：完成数据和接口
+6-12 小时：完成前端交互
+12-16 小时：接入 AI 或固定 reviewed events 兜底
+16-20 小时：联调 Demo 和录屏
+20-24 小时：Pitch、答辩、提交包整理
+```
+
+验收标准：
+
+- 评审能看到团队知道如何从预选材料推进到现场成品。
+
+---
+
+### 21. 新增 `docs/v2-design/28-originality-and-credits.md`
+
+预选材料应主动说明作品原创性、引用来源和第三方资源，避免被认为只是套壳或复制。
+
+必须包含：
+
+- 项目原创部分。
+- 使用的公开资料。
+- 使用的第三方库或工具。
+- 是否使用 AI 辅助生成文档、代码或原型。
+- eufy / Anker 商标归属说明。
+- 当前项目与官方产品的关系：参赛原型，不代表官方功能。
+
+验收标准：
+
+- 项目提交时能清楚说明原创性和引用边界。
+
+---
+
+### 22. 新增 `docs/v2-design/29-preliminary-submission-checklist.md`
+
+单独整理预选提交清单。
+
+必须检查：
+
+```text
+- [ ] 一句话项目介绍
+- [ ] 500 字项目简介
+- [ ] Pitch Deck PDF
+- [ ] 原型入口
+- [ ] GitHub / repo 链接
+- [ ] README 首页说明
+- [ ] Demo 视频或录屏链接
+- [ ] 截图素材
+- [ ] 技术架构图
+- [ ] SDK/API 边界说明
+- [ ] 团队分工
+- [ ] 24 小时 Build Plan
+- [ ] 原创性与引用说明
+- [ ] 联系方式
+```
+
+验收标准：
+
+- 提交前按这一份逐项打勾。
+
+---
+
+## 预选材料优先级
+
+### 预选 P0：必须先补
+
+```text
+1. docs/v2-design/22-preliminary-submission-one-pager.md
+2. docs/v2-design/23-submission-form-copy.md
+3. docs/v2-design/24-repo-readme-submission-version.md
+4. docs/v2-design/29-preliminary-submission-checklist.md
+```
+
+### 预选 P1：强烈补
+
+```text
+5. docs/v2-design/25-demo-video-script.md
+6. docs/v2-design/26-judging-evidence-map.md
+7. docs/v2-design/27-team-and-build-plan.md
+```
+
+### 预选 P2：提交前补齐
+
+```text
+8. docs/v2-design/28-originality-and-credits.md
+9. Demo 视频链接
+10. 截图素材包
+11. 原型运行录屏
+```
