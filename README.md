@@ -148,9 +148,9 @@ flowchart LR
 
 Core materials:
 
-1. [v2 最终产品设计](docs/v2-design/00-final-product-design.md)  
+1. [v2 最终产品设计](docs/v2-design/00-产品定位-final-product-design.md)  
    完整产品稿：产品定位、用户、商业、Demo、技术和 task list。
-2. [v2 技术架构与实现方案](docs/v2-design/06-technical-architecture.md)  
+2. [v2 技术架构与实现方案](docs/v2-design/06-工程架构-technical-architecture.md)  
    面向开发实现，包含模块、数据结构、API、AI Prompt、SDK/模拟双路径和 24 小时实现顺序。
 3. [v2 设计过程文档](docs/v2-design/README.md)  
    策略评审、市场调研、方案收敛、Demo 故事和技术演示方案。

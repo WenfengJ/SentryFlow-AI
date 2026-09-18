@@ -4,17 +4,17 @@
 
 ## P0 必做
 
-- [x] v2 最终产品设计：`00-final-product-design.md`
-- [x] v2 技术架构与实现方案：`06-technical-architecture.md`
-- [x] Demo 路演脚本：`07-demo-script.md`
-- [x] 评委 Q&A / 答辩问题库：`08-judge-qa.md`
-- [x] 提交材料清单：`09-submission-checklist.md`
-- [x] Demo 运行说明：`DEMO_GUIDE.md`
+- [x] v2 最终产品设计：`00-产品定位-final-product-design.md`
+- [x] v2 技术架构与实现方案：`06-工程架构-technical-architecture.md`
+- [x] Demo 路演脚本：`07-路演脚本-demo-script.md`
+- [x] 评委 Q&A / 答辩问题库：`08-答辩QA-judge-qa.md`
+- [x] 提交材料清单：`09-提交清单-submission-checklist.md`
+- [x] Demo 运行说明：`DEMO-GUIDE-Demo指南.md`
 
 ## P1 强烈建议
 
-- [x] Pitch Deck 大纲：`10-pitch-deck-outline.md`
-- [x] Evidence Log / 证据账本：`11-evidence-log.md`
+- [x] Pitch Deck 大纲：`10-PitchDeck大纲-pitch-deck-outline.md`
+- [x] Evidence Log / 证据账本：`11-证据账本-evidence-log.md`
 - [ ] Demo Video 分镜脚本：`12-demo-video-storyboard.md`
 - [ ] 关键截图清单：`13-screenshot-shot-list.md`
 
@@ -28,9 +28,9 @@
 
 ## 当前执行顺序
 
-1. `07-demo-script.md`，已完成
-2. `08-judge-qa.md`
-3. `09-submission-checklist.md`
-4. `10-pitch-deck-outline.md`
-5. `DEMO_GUIDE.md`
-6. `11-evidence-log.md`
+1. `07-路演脚本-demo-script.md`，已完成
+2. `08-答辩QA-judge-qa.md`
+3. `09-提交清单-submission-checklist.md`
+4. `10-PitchDeck大纲-pitch-deck-outline.md`
+5. `DEMO-GUIDE-Demo指南.md`
+6. `11-证据账本-evidence-log.md`

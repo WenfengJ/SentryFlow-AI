@@ -171,6 +171,6 @@ eufy 适配点：
 
 ## Supporting Materials
 
-- `07-demo-script.md`：现场讲稿。
-- `08-judge-qa.md`：答辩口径。
-- `06-technical-architecture.md`：技术细节。
+- `07-路演脚本-demo-script.md`：现场讲稿。
+- `08-答辩QA-judge-qa.md`：答辩口径。
+- `06-工程架构-technical-architecture.md`：技术细节。

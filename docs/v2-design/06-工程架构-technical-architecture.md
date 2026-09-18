@@ -57,8 +57,8 @@ SentryFlow-AI/
   README.md
   docs/
     v2-design/
-      00-final-product-design.md
-      06-technical-architecture.md
+      00-产品定位-final-product-design.md
+      06-工程架构-technical-architecture.md
   prototype/
     handoff-agent.html
     index.html

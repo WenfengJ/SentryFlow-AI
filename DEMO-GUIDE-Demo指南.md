@@ -136,7 +136,7 @@ SDK 可用时，事件来自真实 eufy 设备；SDK 不稳定时，使用模拟
 
 ## 6. Related Materials
 
-- `docs/v2-design/00-final-product-design.md`
-- `docs/v2-design/06-technical-architecture.md`
-- `docs/v2-design/07-demo-script.md`
-- `docs/v2-design/08-judge-qa.md`
+- `docs/v2-design/00-产品定位-final-product-design.md`
+- `docs/v2-design/06-工程架构-technical-architecture.md`
+- `docs/v2-design/07-路演脚本-demo-script.md`
+- `docs/v2-design/08-答辩QA-judge-qa.md`

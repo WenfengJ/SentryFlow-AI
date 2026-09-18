@@ -51,12 +51,12 @@ SentryFlow AI v2 的证据账本，用于统一路演、答辩和 Pitch Deck 中
 
 主要来源来自项目内调研文档：
 
-- `docs/v2-design/02-market-research.md`
-- `docs/v2-design/03-solution-plan.md`
-- `docs/v2-design/05-technical-demo-plan.md`
+- `docs/v2-design/02-市场竞品eufy背调-market-research.md`
+- `docs/v2-design/03-方案收敛-solution-plan.md`
+- `docs/v2-design/05-技术演示方案-technical-demo-plan.md`
 - `参赛规则.md`
 
-外部来源已在 `02-market-research.md` 的 Sources 部分整理，包括：
+外部来源已在 `02-市场竞品eufy背调-market-research.md` 的 Sources 部分整理，包括：
 
 - eufy Security Products / Features / eufyCam / 360 Security Cameras
 - Home Assistant EufyHome
