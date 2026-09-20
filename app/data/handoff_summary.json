@@ -1,0 +1,54 @@
+{
+  "handoff_id": "handoff_2026_09_20_store_001",
+  "site_id": "site_store_001",
+  "site_name": "Bukit Bintang Mini Mart",
+  "site_type": "small_retail_store",
+  "timezone": "Asia/Kuala_Lumpur",
+  "business_hours": "09:00-21:00",
+  "period": {
+    "start": "2026-09-19T22:00:00+08:00",
+    "end": "2026-09-20T06:00:00+08:00",
+    "label": "Last night after closing"
+  },
+  "source": "mock_event_stream",
+  "demo_claim": "47 alerts -> 1 clear action",
+  "total_alerts": 47,
+  "ignored_alerts": 44,
+  "explained_alerts": 2,
+  "action_needed": 1,
+  "review_result_breakdown": {
+    "ignored": 44,
+    "explained": 2,
+    "action_needed": 1
+  },
+  "ignored_breakdown": {
+    "insect_near_lens": 7,
+    "low_light_or_occlusion": 6,
+    "normal_passerby": 8,
+    "rain_reflection": 8,
+    "signboard_light_reflection": 4,
+    "tree_shadow": 4,
+    "vehicle_headlight": 7
+  },
+  "camera_breakdown": {
+    "Aisle-03": 6,
+    "BackGate-01": 8,
+    "FrontDoor-02": 10,
+    "Parking-01": 15,
+    "Signboard-04": 8
+  },
+  "top_risk_event_id": "evt_001",
+  "top_risk_camera": "BackGate-01",
+  "top_risk_area": "后门",
+  "top_risk_time": "02:13",
+  "top_risk_reason": "事件发生在闭店后，位置是后门敏感区域，人员停留时间超过普通经过。",
+  "summary_text": "昨晚整体安全。47 条告警已复核，44 条忽略，2 条已解释，1 条需要处理。最高风险来自后门 02:13 陌生人停留事件。",
+  "user_facing_summary": "开门前先看后门。其余告警已经解释或忽略。",
+  "recommended_next_action": "开门前检查后门门锁，并请店长复核 02:13 的 BackGate-01 画面。",
+  "qa_scope": [
+    "reviewed_events.json",
+    "handoff_summary.json"
+  ],
+  "status": "action_needed",
+  "generated_from": "reviewed_events.json"
+}

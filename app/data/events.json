@@ -1,0 +1,2356 @@
+[
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_004",
+    "occurred_at": "2026-09-19T22:05:12+08:00",
+    "local_time": "22:05",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 5,
+    "raw_alert_title": "Rain reflection on parking lot",
+    "raw_alert_text": "Rain and wet ground reflected passing light.",
+    "thumbnail": "assets/demo/rain_reflection-004.jpg",
+    "clip": "assets/demo/rain_reflection-004.mp4",
+    "tags": [
+      "rain",
+      "reflection",
+      "weather"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_005",
+    "occurred_at": "2026-09-19T22:11:47+08:00",
+    "local_time": "22:11",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "camera_placement": "店铺正门，面向人行道",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 8,
+    "raw_alert_title": "Passerby outside front door",
+    "raw_alert_text": "A passerby walked along the sidewalk and did not stop.",
+    "thumbnail": "assets/demo/normal_passerby-005.jpg",
+    "clip": "assets/demo/normal_passerby-005.mp4",
+    "tags": [
+      "passerby",
+      "outside",
+      "no_stop"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 86,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_006",
+    "occurred_at": "2026-09-19T22:18:33+08:00",
+    "local_time": "22:18",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "camera_placement": "店铺招牌和卷帘门上方",
+    "event_type": "signboard_light_reflection",
+    "motion_label": "light",
+    "duration_seconds": 4,
+    "raw_alert_title": "Signboard light flicker",
+    "raw_alert_text": "Signboard reflection changed brightness near the shutter.",
+    "thumbnail": "assets/demo/signboard_light_reflection-006.jpg",
+    "clip": "assets/demo/signboard_light_reflection-006.mp4",
+    "tags": [
+      "signboard",
+      "reflection",
+      "brightness_change"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 88,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_007",
+    "occurred_at": "2026-09-19T22:26:19+08:00",
+    "local_time": "22:26",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "camera_placement": "后门外侧，靠近货物入口",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 3,
+    "raw_alert_title": "Small object near lens",
+    "raw_alert_text": "Small insect crossed close to the back gate camera lens.",
+    "thumbnail": "assets/demo/insect_near_lens-007.jpg",
+    "clip": "assets/demo/insect_near_lens-007.mp4",
+    "tags": [
+      "insect",
+      "near_lens",
+      "short_motion"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 78,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_008",
+    "occurred_at": "2026-09-19T22:37:08+08:00",
+    "local_time": "22:37",
+    "camera_id": "Aisle-03",
+    "camera_area": "店内走廊",
+    "camera_placement": "收银台到货架之间",
+    "event_type": "low_light_or_occlusion",
+    "motion_label": "low_light",
+    "duration_seconds": 11,
+    "raw_alert_title": "Low light noise inside aisle",
+    "raw_alert_text": "Low light caused unstable motion near shelf edge.",
+    "thumbnail": "assets/demo/low_light_or_occlusion-008.jpg",
+    "clip": "assets/demo/low_light_or_occlusion-008.mp4",
+    "tags": [
+      "low_light",
+      "indoor",
+      "no_person"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 82,
+      "network": "Wi-Fi",
+      "signal": "fair",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_009",
+    "occurred_at": "2026-09-19T22:48:56+08:00",
+    "local_time": "22:48",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 6,
+    "raw_alert_title": "Headlights passed parking area",
+    "raw_alert_text": "Headlights swept across the parking camera.",
+    "thumbnail": "assets/demo/vehicle_headlight-009.jpg",
+    "clip": "assets/demo/vehicle_headlight-009.mp4",
+    "tags": [
+      "headlight",
+      "parking",
+      "light_change"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_010",
+    "occurred_at": "2026-09-19T22:59:40+08:00",
+    "local_time": "22:59",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "camera_placement": "店铺正门，面向人行道",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 9,
+    "raw_alert_title": "Pedestrian passed storefront",
+    "raw_alert_text": "Pedestrian passed the storefront without approaching the door.",
+    "thumbnail": "assets/demo/normal_passerby-010.jpg",
+    "clip": "assets/demo/normal_passerby-010.mp4",
+    "tags": [
+      "passerby",
+      "front_door",
+      "no_stop"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 86,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_011",
+    "occurred_at": "2026-09-19T23:07:15+08:00",
+    "local_time": "23:07",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 5,
+    "raw_alert_title": "Rain reflection in parking area",
+    "raw_alert_text": "Wet ground reflection triggered motion detection.",
+    "thumbnail": "assets/demo/rain_reflection-011.jpg",
+    "clip": "assets/demo/rain_reflection-011.mp4",
+    "tags": [
+      "rain",
+      "reflection",
+      "weather"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_002",
+    "occurred_at": "2026-09-19T23:18:42+08:00",
+    "local_time": "23:18",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "camera_placement": "店铺正门，面向人行道",
+    "event_type": "staff_return_pickup",
+    "motion_label": "person",
+    "duration_seconds": 240,
+    "raw_alert_title": "Person detected at Front Door",
+    "raw_alert_text": "Known staff returned to pick up goods after closing.",
+    "thumbnail": "assets/demo/front-door-staff-2318.jpg",
+    "clip": "assets/demo/front-door-staff-2318.mp4",
+    "tags": [
+      "person",
+      "known_staff",
+      "front_door",
+      "explained_by_note"
+    ],
+    "story_role": "explained",
+    "device_state": {
+      "online": true,
+      "battery": 86,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_012",
+    "occurred_at": "2026-09-19T23:22:31+08:00",
+    "local_time": "23:22",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "camera_placement": "后门外侧，靠近货物入口",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 4,
+    "raw_alert_title": "Insect near back camera",
+    "raw_alert_text": "Insect movement appeared close to lens.",
+    "thumbnail": "assets/demo/insect_near_lens-012.jpg",
+    "clip": "assets/demo/insect_near_lens-012.mp4",
+    "tags": [
+      "insect",
+      "near_lens",
+      "short_motion"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 78,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_013",
+    "occurred_at": "2026-09-19T23:36:28+08:00",
+    "local_time": "23:36",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "camera_placement": "店铺招牌和卷帘门上方",
+    "event_type": "tree_shadow",
+    "motion_label": "shadow",
+    "duration_seconds": 12,
+    "raw_alert_title": "Tree shadow on shutter",
+    "raw_alert_text": "Wind moved tree shadow across the storefront shutter.",
+    "thumbnail": "assets/demo/tree_shadow-013.jpg",
+    "clip": "assets/demo/tree_shadow-013.mp4",
+    "tags": [
+      "tree_shadow",
+      "wind",
+      "outside"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 88,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_014",
+    "occurred_at": "2026-09-19T23:49:02+08:00",
+    "local_time": "23:49",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 5,
+    "raw_alert_title": "Headlight reflection",
+    "raw_alert_text": "Vehicle headlights crossed the edge of frame.",
+    "thumbnail": "assets/demo/vehicle_headlight-014.jpg",
+    "clip": "assets/demo/vehicle_headlight-014.mp4",
+    "tags": [
+      "headlight",
+      "reflection",
+      "edge_of_frame"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_015",
+    "occurred_at": "2026-09-20T00:03:37+08:00",
+    "local_time": "00:03",
+    "camera_id": "Aisle-03",
+    "camera_area": "店内走廊",
+    "camera_placement": "收银台到货架之间",
+    "event_type": "low_light_or_occlusion",
+    "motion_label": "low_light",
+    "duration_seconds": 10,
+    "raw_alert_title": "Aisle exposure shift",
+    "raw_alert_text": "Night vision exposure shifted in low light.",
+    "thumbnail": "assets/demo/low_light_or_occlusion-015.jpg",
+    "clip": "assets/demo/low_light_or_occlusion-015.mp4",
+    "tags": [
+      "low_light",
+      "night_vision",
+      "exposure_shift"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 82,
+      "network": "Wi-Fi",
+      "signal": "fair",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_016",
+    "occurred_at": "2026-09-20T00:12:11+08:00",
+    "local_time": "00:12",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "camera_placement": "店铺正门，面向人行道",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 7,
+    "raw_alert_title": "Sidewalk passerby",
+    "raw_alert_text": "Person passed on sidewalk and exited frame.",
+    "thumbnail": "assets/demo/normal_passerby-016.jpg",
+    "clip": "assets/demo/normal_passerby-016.mp4",
+    "tags": [
+      "passerby",
+      "outside",
+      "no_stop"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 86,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_017",
+    "occurred_at": "2026-09-20T00:18:55+08:00",
+    "local_time": "00:18",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 6,
+    "raw_alert_title": "Wet ground reflection",
+    "raw_alert_text": "Reflection from wet parking area changed brightness.",
+    "thumbnail": "assets/demo/rain_reflection-017.jpg",
+    "clip": "assets/demo/rain_reflection-017.mp4",
+    "tags": [
+      "rain",
+      "wet_ground",
+      "reflection"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_018",
+    "occurred_at": "2026-09-20T00:32:44+08:00",
+    "local_time": "00:32",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "camera_placement": "店铺招牌和卷帘门上方",
+    "event_type": "signboard_light_reflection",
+    "motion_label": "light",
+    "duration_seconds": 5,
+    "raw_alert_title": "Signboard reflection",
+    "raw_alert_text": "Light reflection moved across signboard camera.",
+    "thumbnail": "assets/demo/signboard_light_reflection-018.jpg",
+    "clip": "assets/demo/signboard_light_reflection-018.mp4",
+    "tags": [
+      "signboard",
+      "reflection",
+      "no_person"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 88,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_003",
+    "occurred_at": "2026-09-20T00:41:06+08:00",
+    "local_time": "00:41",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "camera_placement": "店铺正门，面向人行道",
+    "event_type": "delivery_vehicle_passed",
+    "motion_label": "vehicle",
+    "duration_seconds": 7,
+    "raw_alert_title": "Vehicle motion near Front Door",
+    "raw_alert_text": "Delivery vehicle passed outside the store without stopping.",
+    "thumbnail": "assets/demo/front-road-0041.jpg",
+    "clip": "assets/demo/front-road-0041.mp4",
+    "tags": [
+      "vehicle",
+      "delivery_route",
+      "roadside",
+      "no_stop"
+    ],
+    "story_role": "explained",
+    "device_state": {
+      "online": true,
+      "battery": 86,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_019",
+    "occurred_at": "2026-09-20T00:56:28+08:00",
+    "local_time": "00:56",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "camera_placement": "后门外侧，靠近货物入口",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 3,
+    "raw_alert_title": "Tiny object near lens",
+    "raw_alert_text": "Small insect moved across upper right of frame.",
+    "thumbnail": "assets/demo/insect_near_lens-019.jpg",
+    "clip": "assets/demo/insect_near_lens-019.mp4",
+    "tags": [
+      "insect",
+      "near_lens",
+      "no_person"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 78,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_020",
+    "occurred_at": "2026-09-20T01:05:09+08:00",
+    "local_time": "01:05",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 6,
+    "raw_alert_title": "Rain reflection near parking line",
+    "raw_alert_text": "Rain streaks and reflection caused motion alert.",
+    "thumbnail": "assets/demo/rain_reflection-020.jpg",
+    "clip": "assets/demo/rain_reflection-020.mp4",
+    "tags": [
+      "rain",
+      "reflection",
+      "parking"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_021",
+    "occurred_at": "2026-09-20T01:14:47+08:00",
+    "local_time": "01:14",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "camera_placement": "店铺正门，面向人行道",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 8,
+    "raw_alert_title": "Late pedestrian passing",
+    "raw_alert_text": "Pedestrian stayed on sidewalk and did not approach door.",
+    "thumbnail": "assets/demo/normal_passerby-021.jpg",
+    "clip": "assets/demo/normal_passerby-021.mp4",
+    "tags": [
+      "passerby",
+      "outside",
+      "no_stop"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 86,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_022",
+    "occurred_at": "2026-09-20T01:26:30+08:00",
+    "local_time": "01:26",
+    "camera_id": "Aisle-03",
+    "camera_area": "店内走廊",
+    "camera_placement": "收银台到货架之间",
+    "event_type": "low_light_or_occlusion",
+    "motion_label": "occlusion",
+    "duration_seconds": 13,
+    "raw_alert_title": "Partial shelf occlusion",
+    "raw_alert_text": "Shelf-edge shadow caused partial occlusion in low light.",
+    "thumbnail": "assets/demo/low_light_or_occlusion-022.jpg",
+    "clip": "assets/demo/low_light_or_occlusion-022.mp4",
+    "tags": [
+      "occlusion",
+      "low_light",
+      "indoor"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 82,
+      "network": "Wi-Fi",
+      "signal": "fair",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_023",
+    "occurred_at": "2026-09-20T01:39:18+08:00",
+    "local_time": "01:39",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 4,
+    "raw_alert_title": "Car light at road edge",
+    "raw_alert_text": "Car light passed across parking camera edge.",
+    "thumbnail": "assets/demo/vehicle_headlight-023.jpg",
+    "clip": "assets/demo/vehicle_headlight-023.mp4",
+    "tags": [
+      "headlight",
+      "road_edge",
+      "no_person"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_024",
+    "occurred_at": "2026-09-20T01:44:39+08:00",
+    "local_time": "01:44",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "camera_placement": "店铺招牌和卷帘门上方",
+    "event_type": "tree_shadow",
+    "motion_label": "shadow",
+    "duration_seconds": 14,
+    "raw_alert_title": "Moving tree shadow",
+    "raw_alert_text": "Wind moved tree shadow over the shutter.",
+    "thumbnail": "assets/demo/tree_shadow-024.jpg",
+    "clip": "assets/demo/tree_shadow-024.mp4",
+    "tags": [
+      "tree_shadow",
+      "wind",
+      "outside"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 88,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_025",
+    "occurred_at": "2026-09-20T01:52:04+08:00",
+    "local_time": "01:52",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "camera_placement": "后门外侧，靠近货物入口",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 3,
+    "raw_alert_title": "Insect close to lens",
+    "raw_alert_text": "Fast near-lens motion without human outline.",
+    "thumbnail": "assets/demo/insect_near_lens-025.jpg",
+    "clip": "assets/demo/insect_near_lens-025.mp4",
+    "tags": [
+      "insect",
+      "near_lens",
+      "short_motion"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 78,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_026",
+    "occurred_at": "2026-09-20T02:04:55+08:00",
+    "local_time": "02:04",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 7,
+    "raw_alert_title": "Rain reflection before 02:13",
+    "raw_alert_text": "Wet ground reflection triggered a parking alert.",
+    "thumbnail": "assets/demo/rain_reflection-026.jpg",
+    "clip": "assets/demo/rain_reflection-026.mp4",
+    "tags": [
+      "rain",
+      "reflection",
+      "parking"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_001",
+    "occurred_at": "2026-09-20T02:13:18+08:00",
+    "local_time": "02:13",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "camera_placement": "后门外侧，靠近货物入口",
+    "event_type": "after_hours_person_lingering",
+    "motion_label": "person",
+    "duration_seconds": 38,
+    "raw_alert_title": "Person detected near Back Gate",
+    "raw_alert_text": "A person stayed near the back gate after closing time.",
+    "thumbnail": "assets/demo/back-gate-0213.jpg",
+    "clip": "assets/demo/back-gate-0213.mp4",
+    "tags": [
+      "person",
+      "after_hours",
+      "back_gate",
+      "lingering",
+      "sensitive_area"
+    ],
+    "story_role": "top_risk",
+    "device_state": {
+      "online": true,
+      "battery": 78,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_027",
+    "occurred_at": "2026-09-20T02:22:05+08:00",
+    "local_time": "02:22",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "camera_placement": "店铺正门，面向人行道",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 8,
+    "raw_alert_title": "Person walked past front door",
+    "raw_alert_text": "Person passed outside after the 02:13 back gate event.",
+    "thumbnail": "assets/demo/normal_passerby-027.jpg",
+    "clip": "assets/demo/normal_passerby-027.mp4",
+    "tags": [
+      "passerby",
+      "outside",
+      "no_stop"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 86,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_028",
+    "occurred_at": "2026-09-20T02:28:31+08:00",
+    "local_time": "02:28",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 5,
+    "raw_alert_title": "Headlight sweep",
+    "raw_alert_text": "Headlight changed brightness near parked car.",
+    "thumbnail": "assets/demo/vehicle_headlight-028.jpg",
+    "clip": "assets/demo/vehicle_headlight-028.mp4",
+    "tags": [
+      "headlight",
+      "parking",
+      "reflection"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_029",
+    "occurred_at": "2026-09-20T02:41:19+08:00",
+    "local_time": "02:41",
+    "camera_id": "Aisle-03",
+    "camera_area": "店内走廊",
+    "camera_placement": "收银台到货架之间",
+    "event_type": "low_light_or_occlusion",
+    "motion_label": "low_light",
+    "duration_seconds": 12,
+    "raw_alert_title": "Night vision exposure noise",
+    "raw_alert_text": "Night vision exposure adjusted inside aisle.",
+    "thumbnail": "assets/demo/low_light_or_occlusion-029.jpg",
+    "clip": "assets/demo/low_light_or_occlusion-029.mp4",
+    "tags": [
+      "low_light",
+      "night_vision",
+      "no_person"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 82,
+      "network": "Wi-Fi",
+      "signal": "fair",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_030",
+    "occurred_at": "2026-09-20T02:49:53+08:00",
+    "local_time": "02:49",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "camera_placement": "店铺招牌和卷帘门上方",
+    "event_type": "signboard_light_reflection",
+    "motion_label": "light",
+    "duration_seconds": 6,
+    "raw_alert_title": "Storefront sign reflection",
+    "raw_alert_text": "Reflection moved across signboard camera.",
+    "thumbnail": "assets/demo/signboard_light_reflection-030.jpg",
+    "clip": "assets/demo/signboard_light_reflection-030.mp4",
+    "tags": [
+      "signboard",
+      "reflection",
+      "brightness_change"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 88,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_031",
+    "occurred_at": "2026-09-20T02:58:40+08:00",
+    "local_time": "02:58",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "camera_placement": "后门外侧，靠近货物入口",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 4,
+    "raw_alert_title": "Insect near back gate lens",
+    "raw_alert_text": "Small insect crossed near BackGate-01 lens.",
+    "thumbnail": "assets/demo/insect_near_lens-031.jpg",
+    "clip": "assets/demo/insect_near_lens-031.mp4",
+    "tags": [
+      "insect",
+      "near_lens",
+      "back_gate"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 78,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_032",
+    "occurred_at": "2026-09-20T03:07:13+08:00",
+    "local_time": "03:07",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 5,
+    "raw_alert_title": "Rain reflection after midnight",
+    "raw_alert_text": "Rain and wet ground reflected light.",
+    "thumbnail": "assets/demo/rain_reflection-032.jpg",
+    "clip": "assets/demo/rain_reflection-032.mp4",
+    "tags": [
+      "rain",
+      "reflection",
+      "weather"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_033",
+    "occurred_at": "2026-09-20T03:19:36+08:00",
+    "local_time": "03:19",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "camera_placement": "店铺正门，面向人行道",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 9,
+    "raw_alert_title": "Normal passerby",
+    "raw_alert_text": "Person walked by on public sidewalk.",
+    "thumbnail": "assets/demo/normal_passerby-033.jpg",
+    "clip": "assets/demo/normal_passerby-033.mp4",
+    "tags": [
+      "passerby",
+      "outside",
+      "no_stop"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 86,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_034",
+    "occurred_at": "2026-09-20T03:33:21+08:00",
+    "local_time": "03:33",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "camera_placement": "店铺招牌和卷帘门上方",
+    "event_type": "tree_shadow",
+    "motion_label": "shadow",
+    "duration_seconds": 13,
+    "raw_alert_title": "Wind shadow movement",
+    "raw_alert_text": "Wind moved tree branch shadow near storefront.",
+    "thumbnail": "assets/demo/tree_shadow-034.jpg",
+    "clip": "assets/demo/tree_shadow-034.mp4",
+    "tags": [
+      "tree_shadow",
+      "wind",
+      "outside"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 88,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_035",
+    "occurred_at": "2026-09-20T03:47:59+08:00",
+    "local_time": "03:47",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 4,
+    "raw_alert_title": "Roadside headlight",
+    "raw_alert_text": "Roadside headlight crossed frame edge.",
+    "thumbnail": "assets/demo/vehicle_headlight-035.jpg",
+    "clip": "assets/demo/vehicle_headlight-035.mp4",
+    "tags": [
+      "headlight",
+      "road_edge",
+      "no_person"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_036",
+    "occurred_at": "2026-09-20T03:58:18+08:00",
+    "local_time": "03:58",
+    "camera_id": "Aisle-03",
+    "camera_area": "店内走廊",
+    "camera_placement": "收银台到货架之间",
+    "event_type": "low_light_or_occlusion",
+    "motion_label": "occlusion",
+    "duration_seconds": 11,
+    "raw_alert_title": "Low-light shelf shadow",
+    "raw_alert_text": "Shelf shadow shifted under night vision.",
+    "thumbnail": "assets/demo/low_light_or_occlusion-036.jpg",
+    "clip": "assets/demo/low_light_or_occlusion-036.mp4",
+    "tags": [
+      "low_light",
+      "occlusion",
+      "indoor"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 82,
+      "network": "Wi-Fi",
+      "signal": "fair",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_037",
+    "occurred_at": "2026-09-20T04:02:16+08:00",
+    "local_time": "04:02",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "camera_placement": "后门外侧，靠近货物入口",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 3,
+    "raw_alert_title": "Small insect motion",
+    "raw_alert_text": "Near-lens insect movement at back gate.",
+    "thumbnail": "assets/demo/insect_near_lens-037.jpg",
+    "clip": "assets/demo/insect_near_lens-037.mp4",
+    "tags": [
+      "insect",
+      "near_lens",
+      "short_motion"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 78,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_038",
+    "occurred_at": "2026-09-20T04:18:25+08:00",
+    "local_time": "04:18",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 6,
+    "raw_alert_title": "Rain reflection on parking surface",
+    "raw_alert_text": "Wet surface reflection triggered motion.",
+    "thumbnail": "assets/demo/rain_reflection-038.jpg",
+    "clip": "assets/demo/rain_reflection-038.mp4",
+    "tags": [
+      "rain",
+      "reflection",
+      "parking"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_039",
+    "occurred_at": "2026-09-20T04:27:34+08:00",
+    "local_time": "04:27",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "camera_placement": "店铺正门，面向人行道",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 7,
+    "raw_alert_title": "Sidewalk movement",
+    "raw_alert_text": "Person passed outside and did not stop.",
+    "thumbnail": "assets/demo/normal_passerby-039.jpg",
+    "clip": "assets/demo/normal_passerby-039.mp4",
+    "tags": [
+      "passerby",
+      "outside",
+      "no_stop"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 86,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_040",
+    "occurred_at": "2026-09-20T04:36:08+08:00",
+    "local_time": "04:36",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "camera_placement": "店铺招牌和卷帘门上方",
+    "event_type": "signboard_light_reflection",
+    "motion_label": "light",
+    "duration_seconds": 5,
+    "raw_alert_title": "Light shift near signboard",
+    "raw_alert_text": "Brightness changed around signboard edge.",
+    "thumbnail": "assets/demo/signboard_light_reflection-040.jpg",
+    "clip": "assets/demo/signboard_light_reflection-040.mp4",
+    "tags": [
+      "signboard",
+      "reflection",
+      "no_person"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 88,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_041",
+    "occurred_at": "2026-09-20T04:44:52+08:00",
+    "local_time": "04:44",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 5,
+    "raw_alert_title": "Headlight near parking entrance",
+    "raw_alert_text": "Vehicle light passed parking entrance.",
+    "thumbnail": "assets/demo/vehicle_headlight-041.jpg",
+    "clip": "assets/demo/vehicle_headlight-041.mp4",
+    "tags": [
+      "headlight",
+      "parking",
+      "reflection"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_042",
+    "occurred_at": "2026-09-20T04:51:44+08:00",
+    "local_time": "04:51",
+    "camera_id": "Aisle-03",
+    "camera_area": "店内走廊",
+    "camera_placement": "收银台到货架之间",
+    "event_type": "low_light_or_occlusion",
+    "motion_label": "low_light",
+    "duration_seconds": 12,
+    "raw_alert_title": "Indoor low-light noise",
+    "raw_alert_text": "Night vision created low-light motion noise.",
+    "thumbnail": "assets/demo/low_light_or_occlusion-042.jpg",
+    "clip": "assets/demo/low_light_or_occlusion-042.mp4",
+    "tags": [
+      "low_light",
+      "night_vision",
+      "indoor"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 82,
+      "network": "Wi-Fi",
+      "signal": "fair",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_043",
+    "occurred_at": "2026-09-20T05:04:12+08:00",
+    "local_time": "05:04",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "camera_placement": "后门外侧，靠近货物入口",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 3,
+    "raw_alert_title": "Lens insect at dawn",
+    "raw_alert_text": "Insect moved close to back gate lens.",
+    "thumbnail": "assets/demo/insect_near_lens-043.jpg",
+    "clip": "assets/demo/insect_near_lens-043.mp4",
+    "tags": [
+      "insect",
+      "near_lens",
+      "dawn"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 78,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_044",
+    "occurred_at": "2026-09-20T05:11:07+08:00",
+    "local_time": "05:11",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 6,
+    "raw_alert_title": "Wet ground reflection at dawn",
+    "raw_alert_text": "Wet ground reflected early traffic lights.",
+    "thumbnail": "assets/demo/rain_reflection-044.jpg",
+    "clip": "assets/demo/rain_reflection-044.mp4",
+    "tags": [
+      "rain",
+      "reflection",
+      "dawn"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_045",
+    "occurred_at": "2026-09-20T05:17:39+08:00",
+    "local_time": "05:17",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "camera_placement": "店铺正门，面向人行道",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 9,
+    "raw_alert_title": "Early pedestrian",
+    "raw_alert_text": "Early pedestrian passed storefront without stopping.",
+    "thumbnail": "assets/demo/normal_passerby-045.jpg",
+    "clip": "assets/demo/normal_passerby-045.mp4",
+    "tags": [
+      "passerby",
+      "outside",
+      "no_stop"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 86,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": true,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_046",
+    "occurred_at": "2026-09-20T05:28:06+08:00",
+    "local_time": "05:28",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "camera_placement": "店铺招牌和卷帘门上方",
+    "event_type": "tree_shadow",
+    "motion_label": "shadow",
+    "duration_seconds": 12,
+    "raw_alert_title": "Dawn tree shadow",
+    "raw_alert_text": "Tree shadow moved across shutter as light changed.",
+    "thumbnail": "assets/demo/tree_shadow-046.jpg",
+    "clip": "assets/demo/tree_shadow-046.mp4",
+    "tags": [
+      "tree_shadow",
+      "dawn",
+      "outside"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 88,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "site_id": "site_store_001",
+    "site_name": "Bukit Bintang Mini Mart",
+    "site_type": "small_retail_store",
+    "timezone": "Asia/Kuala_Lumpur",
+    "business_hours": "09:00-21:00",
+    "period": {
+      "start": "2026-09-19T22:00:00+08:00",
+      "end": "2026-09-20T06:00:00+08:00",
+      "label": "Last night after closing"
+    },
+    "source": "mock_event_stream",
+    "source_note": "Demo-safe mock events shaped like eufy motion alerts.",
+    "event_id": "evt_047",
+    "occurred_at": "2026-09-20T05:37:50+08:00",
+    "local_time": "05:37",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "camera_placement": "门口停车位和路边",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 5,
+    "raw_alert_title": "Early traffic headlight",
+    "raw_alert_text": "Traffic headlight crossed parking view.",
+    "thumbnail": "assets/demo/vehicle_headlight-047.jpg",
+    "clip": "assets/demo/vehicle_headlight-047.mp4",
+    "tags": [
+      "headlight",
+      "parking",
+      "dawn"
+    ],
+    "story_role": "noise",
+    "device_state": {
+      "online": true,
+      "battery": 91,
+      "network": "Wi-Fi",
+      "signal": "good",
+      "night_vision": true,
+      "local_storage": "HomeBase",
+      "privacy_zone_enabled": true
+    },
+    "context": {
+      "business_hours": "09:00-21:00",
+      "is_after_hours": true,
+      "sensitive_area": false,
+      "weather": "light rain",
+      "store_status": "closed"
+    }
+  }
+]

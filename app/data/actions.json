@@ -1,0 +1,58 @@
+[
+  {
+    "action_id": "act_001",
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_001",
+    "action_type": "assign_review",
+    "label": "通知店长复核",
+    "actor": "owner",
+    "assignee": "store_manager",
+    "from_status": "action_needed",
+    "to_status": "assigned",
+    "note": "请复核 02:13 后门画面，并在开门前检查门锁。",
+    "display_text": "Assigned: 已通知店长复核 02:13 后门画面。",
+    "created_at": "2026-09-20T08:20:00+08:00"
+  },
+  {
+    "action_id": "act_002",
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_001",
+    "action_type": "schedule_inspection",
+    "label": "安排巡检",
+    "actor": "owner",
+    "assignee": "morning_shift",
+    "from_status": "assigned",
+    "to_status": "assigned",
+    "note": "优先检查后门门锁、地面痕迹和 BackGate-01 画面。",
+    "display_text": "Assigned: 已安排早班先检查后门。",
+    "created_at": "2026-09-20T08:22:00+08:00"
+  },
+  {
+    "action_id": "act_003",
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_001",
+    "action_type": "manager_reviewed_clip",
+    "label": "店长已复核画面",
+    "actor": "store_manager",
+    "assignee": "owner",
+    "from_status": "assigned",
+    "to_status": "reviewed",
+    "note": "画面已复核，未见进入店内，仍需检查门锁。",
+    "display_text": "Reviewed: 店长已复核 02:13 画面。",
+    "created_at": "2026-09-20T08:27:00+08:00"
+  },
+  {
+    "action_id": "act_004",
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_001",
+    "action_type": "mark_reviewed",
+    "label": "标记已复核",
+    "actor": "owner",
+    "assignee": "owner",
+    "from_status": "reviewed",
+    "to_status": "handoff_closed",
+    "note": "后门门锁已检查，今日晨间交接关闭。",
+    "display_text": "Handoff closed: 后门事件已复核，今日不再重复提醒。",
+    "created_at": "2026-09-20T08:31:00+08:00"
+  }
+]

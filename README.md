@@ -146,6 +146,13 @@ AI 的角色是复核、解释和交接。高风险或不确定事件仍需人�
 | --- | --- |
 | [最终产品设计](docs/00-产品定位-final-product-design.md) | 产品定位、用户、核心场景、完整路径、产品输出和边界 |
 | [技术架构](docs/06-工程架构-technical-architecture.md) | 系统模块、数据结构、SDK/模拟双路径和实现方案 |
+| [AI Review 规则](docs/15-ai-review-rules.md) | AI 输入、输出、风险分类、问答边界和评委追问口径 |
+| [技术实现计划](docs/16-technical-implementation-plan.md) | 工程任务拆分、Task 1-5 Demo 主路径、API 与 adapter 预留 |
+| [页面规格](docs/17-page-spec.md) | 晨间总览、事件列表、详情、问答、处置状态和技术展示的设计开发规格 |
+| [截图清单](docs/18-screenshot-shot-list.md) | Pitch、提交页和 Demo Video 可复用的截图素材清单 |
+| [边界披露](docs/19-limitations-disclosure.md) | SDK、模拟事件流、AI 安全裁决和人工复核边界 |
+| [Demo Video 脚本](docs/20-demo-video-storyboard.md) | 90 秒和 3 分钟录屏脚本 |
+| [最终提交包](docs/21-final-submission-package.md) | GitHub、Pitch、视频、原型、数据、架构、边界和 Q&A 最终索引 |
 | [路演脚本](docs/07-路演脚本-demo-script.md) | 3 分钟演示和 90 秒短版讲法 |
 | [答辩 Q&A](docs/08-答辩QA-judge-qa.md) | 评委可能追问的定位、技术、SDK、边界问题 |
 | [Demo Guide](DEMO-GUIDE-Demo指南.md) | 原型打开方式、现场演示步骤和 fallback |

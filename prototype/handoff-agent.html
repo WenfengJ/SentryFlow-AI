@@ -22,9 +22,7 @@
       --shadow: 0 12px 30px rgba(29, 41, 33, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -35,10 +33,7 @@
       letter-spacing: 0;
     }
 
-    button,
-    input {
-      font: inherit;
-    }
+    button, input { font: inherit; }
 
     .shell {
       max-width: 1440px;
@@ -51,7 +46,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .brand {
@@ -62,8 +57,8 @@
     }
 
     .mark {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: 8px;
       display: grid;
       place-items: center;
@@ -74,7 +69,7 @@
 
     .brand h1 {
       margin: 0;
-      font-size: 20px;
+      font-size: 21px;
       line-height: 1.2;
     }
 
@@ -84,14 +79,15 @@
       font-size: 13px;
     }
 
-    .actions {
+    .top-actions {
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    .ghost-button,
-    .solid-button {
+    .ghost-button, .solid-button, .small-action, .qa-chip {
       height: 38px;
       border-radius: 8px;
       padding: 0 14px;
@@ -102,43 +98,60 @@
       white-space: nowrap;
     }
 
-    .solid-button {
+    .solid-button, .small-action.primary {
       border-color: #18241d;
       background: #18241d;
       color: #fff;
     }
 
+    .solid-button.replay {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .status-ribbon {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .status-ribbon strong { color: var(--green); }
+    .status-ribbon span { color: var(--muted); font-size: 13px; }
+
     .summary {
       display: grid;
-      grid-template-columns: minmax(280px, 1.4fr) repeat(4, minmax(130px, 0.65fr));
+      grid-template-columns: minmax(280px, 1.35fr) repeat(4, minmax(130px, 0.65fr));
       gap: 12px;
       margin-bottom: 16px;
     }
 
-    .headline,
-    .metric,
-    .panel {
+    .headline, .metric, .panel {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
       box-shadow: var(--shadow);
     }
 
-    .headline {
-      padding: 18px;
-    }
+    .headline { padding: 18px; }
 
     .eyebrow {
       margin: 0 0 8px;
       color: var(--green);
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 750;
       text-transform: uppercase;
     }
 
     .headline h2 {
       margin: 0;
-      font-size: 30px;
+      font-size: 29px;
       line-height: 1.08;
     }
 
@@ -154,39 +167,22 @@
       min-height: 128px;
     }
 
-    .metric span {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .metric strong {
-      display: block;
-      margin-top: 10px;
-      font-size: 30px;
-      line-height: 1;
-    }
-
-    .metric small {
-      display: block;
-      margin-top: 12px;
-      color: var(--muted);
-      line-height: 1.35;
-    }
+    .metric span { display: block; color: var(--muted); font-size: 13px; }
+    .metric strong { display: block; margin-top: 10px; font-size: 31px; line-height: 1; }
+    .metric small { display: block; margin-top: 12px; color: var(--muted); line-height: 1.35; }
+    .metric.action strong { color: var(--red); }
 
     .workspace {
       display: grid;
-      grid-template-columns: 320px minmax(420px, 1fr) 360px;
+      grid-template-columns: 330px minmax(430px, 1fr) 380px;
       gap: 16px;
       align-items: start;
     }
 
-    .panel {
-      overflow: hidden;
-    }
+    .panel { overflow: hidden; }
 
     .panel-header {
-      padding: 16px;
+      padding: 15px 16px;
       border-bottom: 1px solid var(--line);
       display: flex;
       justify-content: space-between;
@@ -194,20 +190,28 @@
       align-items: center;
     }
 
-    .panel-header h3 {
-      margin: 0;
-      font-size: 16px;
-    }
-
-    .panel-header span {
-      color: var(--muted);
-      font-size: 12px;
-    }
+    .panel-header h3 { margin: 0; font-size: 16px; }
+    .panel-header span { color: var(--muted); font-size: 12px; }
 
     .event-list {
       display: grid;
-      gap: 10px;
+      gap: 14px;
       padding: 12px;
+      max-height: 690px;
+      overflow: auto;
+    }
+
+    .event-group { display: grid; gap: 8px; }
+
+    .group-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
     .event {
@@ -233,23 +237,9 @@
       margin-bottom: 8px;
     }
 
-    .event-title {
-      font-weight: 750;
-      font-size: 14px;
-    }
-
-    .event-time {
-      color: var(--muted);
-      font-size: 12px;
-      white-space: nowrap;
-    }
-
-    .event p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.4;
-    }
+    .event-title { font-weight: 750; font-size: 14px; }
+    .event-time { color: var(--muted); font-size: 12px; white-space: nowrap; }
+    .event p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.4; }
 
     .pill {
       display: inline-flex;
@@ -258,33 +248,33 @@
       padding: 0 8px;
       border-radius: 999px;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 750;
       white-space: nowrap;
     }
 
-    .risk-high {
-      color: var(--red);
-      background: var(--red-soft);
+    .risk-high { color: var(--red); background: var(--red-soft); }
+    .risk-mid { color: var(--amber); background: var(--amber-soft); }
+    .risk-low { color: var(--green); background: var(--green-soft); }
+    .risk-info { color: var(--blue); background: var(--blue-soft); }
+
+    .camera-stage { padding: 16px; }
+
+    .evidence-meta {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 12px;
     }
 
-    .risk-mid {
-      color: var(--amber);
-      background: var(--amber-soft);
+    .meta-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: #fbfcfb;
     }
 
-    .risk-low {
-      color: var(--green);
-      background: var(--green-soft);
-    }
-
-    .risk-info {
-      color: var(--blue);
-      background: var(--blue-soft);
-    }
-
-    .camera-stage {
-      padding: 16px;
-    }
+    .meta-card span { display: block; color: var(--muted); font-size: 12px; }
+    .meta-card strong { display: block; margin-top: 5px; font-size: 14px; }
 
     .camera-frame {
       position: relative;
@@ -332,7 +322,7 @@
       position: absolute;
       right: 12px;
       bottom: 12px;
-      max-width: 280px;
+      max-width: 300px;
       padding: 10px 12px;
       border-radius: 8px;
       background: rgba(0, 0, 0, 0.58);
@@ -353,19 +343,27 @@
       border-radius: 8px;
       padding: 12px;
       background: #fbfcfb;
-      min-height: 92px;
+      min-height: 106px;
     }
 
-    .analysis-card span {
+    .analysis-card span { color: var(--muted); font-size: 12px; }
+    .analysis-card strong { display: block; margin-top: 8px; font-size: 15px; line-height: 1.35; }
+
+    .evidence-list {
+      display: grid;
+      gap: 8px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .evidence-list li {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 9px 11px;
+      background: #fff;
       color: var(--muted);
-      font-size: 12px;
-    }
-
-    .analysis-card strong {
-      display: block;
-      margin-top: 8px;
-      font-size: 15px;
-      line-height: 1.35;
+      font-size: 13px;
     }
 
     .handoff {
@@ -374,17 +372,8 @@
       gap: 14px;
     }
 
-    .handoff h4 {
-      margin: 0;
-      font-size: 15px;
-    }
-
-    .handoff p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
-    }
+    .handoff h4 { margin: 0; font-size: 15px; }
+    .handoff p { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
 
     .action-box {
       border: 1px solid #f0c8c4;
@@ -393,76 +382,19 @@
       padding: 14px;
     }
 
-    .action-box strong {
-      color: var(--red);
-    }
+    .action-box strong { color: var(--red); }
+    .action-box.status-assigned { border-color: #d9c08c; background: var(--amber-soft); }
+    .action-box.status-assigned strong { color: var(--amber); }
+    .action-box.status-closed { border-color: #c9d8cf; background: var(--green-soft); }
+    .action-box.status-closed strong { color: var(--green); }
 
-    .checklist {
+    .action-grid {
       display: grid;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .checklist li {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 10px 12px;
-      background: #fff;
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    .qa-box {
-      display: grid;
-      gap: 10px;
-      border-top: 1px solid var(--line);
-      padding-top: 14px;
-    }
-
-    .qa-box input {
-      height: 40px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 0 12px;
-      width: 100%;
-    }
-
-    .notify-box {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fbfcfb;
-      padding: 12px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .phone-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr;
       gap: 8px;
     }
 
-    .phone-row input {
-      height: 38px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 0 10px;
-      min-width: 0;
-    }
-
-    .phone-row button,
-    .small-action {
-      height: 38px;
-      border: 1px solid #18241d;
-      border-radius: 8px;
-      background: #18241d;
-      color: #fff;
-      padding: 0 12px;
-      cursor: pointer;
-      white-space: nowrap;
-    }
+    .small-action { width: 100%; }
 
     .sms-preview {
       border: 1px solid #c9d8cf;
@@ -474,10 +406,32 @@
       color: #234432;
     }
 
-    .status-closed {
-      border-color: #c9d8cf;
-      background: var(--green-soft);
-      color: #234432;
+    .qa-box {
+      display: grid;
+      gap: 10px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+
+    .qa-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .qa-chip {
+      height: 34px;
+      padding: 0 10px;
+      font-size: 13px;
+      background: #fff;
+    }
+
+    .qa-box input {
+      height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 12px;
+      width: 100%;
     }
 
     .qa-answer {
@@ -505,7 +459,6 @@
     }
 
     .step {
-      position: relative;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: #fff;
@@ -513,21 +466,10 @@
       min-height: 96px;
     }
 
-    .step span {
-      color: var(--muted);
-      font-size: 12px;
-    }
+    .step span { color: var(--muted); font-size: 12px; }
+    .step strong { display: block; margin-top: 8px; font-size: 14px; line-height: 1.35; }
 
-    .step strong {
-      display: block;
-      margin-top: 8px;
-      font-size: 14px;
-      line-height: 1.35;
-    }
-
-    .why {
-      padding: 16px;
-    }
+    .why { padding: 16px; }
 
     .why-grid {
       display: grid;
@@ -544,73 +486,24 @@
       background: #fff;
     }
 
-    .why-item strong {
-      display: block;
-      font-size: 14px;
-    }
-
-    .why-item span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.4;
-    }
+    .why-item strong { display: block; font-size: 14px; }
+    .why-item span { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.4; }
 
     @media (max-width: 1180px) {
-      .summary {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .headline {
-        grid-column: 1 / -1;
-      }
-
-      .workspace {
-        grid-template-columns: 1fr;
-      }
-
-      .lightweight {
-        grid-template-columns: 1fr;
-      }
+      .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .headline { grid-column: 1 / -1; }
+      .workspace { grid-template-columns: 1fr; }
+      .lightweight { grid-template-columns: 1fr; }
+      .event-list { max-height: none; }
     }
 
     @media (max-width: 720px) {
-      .shell {
-        padding: 12px;
-      }
-
-      .topbar {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .actions {
-        width: 100%;
-      }
-
-      .ghost-button,
-      .solid-button {
-        flex: 1;
-      }
-
-      .summary {
-        grid-template-columns: 1fr;
-      }
-
-      .headline h2 {
-        font-size: 24px;
-      }
-
-      .analysis-grid,
-      .flow,
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .phone-row {
-        grid-template-columns: 1fr;
-      }
+      .shell { padding: 12px; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .top-actions { width: 100%; justify-content: stretch; }
+      .ghost-button, .solid-button { flex: 1; }
+      .summary, .evidence-meta, .analysis-grid, .flow, .why-grid { grid-template-columns: 1fr; }
+      .headline h2 { font-size: 24px; }
     }
   </style>
 </head>
@@ -621,40 +514,49 @@
         <div class="mark">SF</div>
         <div>
           <h1>SentryFlow AI</h1>
-          <p>eufy Morning Handoff Agent</p>
+          <p>eufy Morning Handoff · 晨间安防交接</p>
         </div>
       </div>
-      <div class="actions" aria-label="Demo actions">
-        <button class="ghost-button" type="button">Export handoff</button>
-        <button class="solid-button" type="button">Send to manager</button>
+      <div class="top-actions" aria-label="Demo actions">
+        <button class="ghost-button" id="exportHandoff" type="button">导出交接摘要</button>
+        <button class="solid-button replay" id="startReplay" type="button">开始昨晚事件回放</button>
+        <button class="solid-button" id="topSendManager" type="button">通知店长复核</button>
       </div>
     </header>
 
+    <section class="status-ribbon" aria-label="Demo status">
+      <div>
+        <strong id="demoStatus">Demo ready</strong>
+        <span id="demoStatusText">点击“开始昨晚事件回放”，查看 47 条告警如何压缩成 1 个清楚动作。</span>
+      </div>
+      <span id="handoffStatus">Status: Action needed</span>
+    </section>
+
     <section class="summary" aria-label="Morning summary">
       <div class="headline">
-        <p class="eyebrow">Closed-store handoff</p>
-        <h2>47 alerts reviewed. 1 action needed before opening.</h2>
-        <p>昨晚的 motion alerts 已被整理成早上 30 秒能读完的安全交接：哪些是噪声，哪些已解释，哪个事件今天先处理。</p>
+        <p class="eyebrow">eufy Morning Handoff</p>
+        <h2>47 条告警已复核。开门前只处理 1 件事。</h2>
+        <p>昨晚的 motion alerts 已被整理成 30 秒能读完的安全交接：哪些是噪声，哪些已解释，哪个事件今天先处理。</p>
       </div>
       <div class="metric">
         <span>Total alerts</span>
-        <strong>47</strong>
+        <strong id="metricTotal">47</strong>
         <small>来自 4 台 eufy 摄像头</small>
       </div>
       <div class="metric">
-        <span>Low value noise</span>
-        <strong>44</strong>
+        <span>Ignored</span>
+        <strong id="metricIgnored">44</strong>
         <small>雨水、昆虫、远处车灯</small>
       </div>
       <div class="metric">
-        <span>Explained events</span>
-        <strong>2</strong>
-        <small>员工返回取货、门口车辆经过</small>
+        <span>Explained</span>
+        <strong id="metricExplained">2</strong>
+        <small>员工返回取货、正常经过</small>
       </div>
-      <div class="metric">
+      <div class="metric action">
         <span>Action needed</span>
-        <strong>1</strong>
-        <small>后门停留事件需复核</small>
+        <strong id="metricAction">1</strong>
+        <small>后门 02:13 事件需复核</small>
       </div>
     </section>
 
@@ -664,43 +566,7 @@
           <h3>Night events</h3>
           <span>22:00-06:00</span>
         </div>
-        <div class="event-list">
-          <button class="event active" type="button" data-index="0">
-            <div class="event-top">
-              <span class="event-title">Back Gate lingering</span>
-              <span class="pill risk-high">High</span>
-            </div>
-            <p>02:13，后门出现陌生人停留 38 秒。</p>
-          </button>
-          <button class="event" type="button" data-index="1">
-            <div class="event-top">
-              <span class="event-title">Staff return</span>
-              <span class="pill risk-low">Explained</span>
-            </div>
-            <p>23:18，员工返回取货，停留 4 分钟。</p>
-          </button>
-          <button class="event" type="button" data-index="2">
-            <div class="event-top">
-              <span class="event-title">Rain reflection</span>
-              <span class="pill risk-low">Noise</span>
-            </div>
-            <p>01:05，雨水和车灯反光触发运动提醒。</p>
-          </button>
-          <button class="event" type="button" data-index="3">
-            <div class="event-top">
-              <span class="event-title">Camera low light</span>
-              <span class="pill risk-mid">Review</span>
-            </div>
-            <p>03:42，Camera-03 夜间画面偏暗。</p>
-          </button>
-          <button class="event" type="button" data-index="4">
-            <div class="event-top">
-              <span class="event-title">Solar site after rain</span>
-              <span class="pill risk-info">Extension</span>
-            </div>
-            <p>暴雨后设备区可见性下降，建议远程复核。</p>
-          </button>
-        </div>
+        <div class="event-list" id="eventList"></div>
       </aside>
 
       <section class="panel" aria-label="Event evidence">
@@ -709,10 +575,16 @@
           <span id="eventMeta">BackGate-01 · 02:13</span>
         </div>
         <div class="camera-stage">
-          <div class="camera-frame" aria-label="Camera evidence mockup">
+          <div class="evidence-meta">
+            <div class="meta-card"><span>时间</span><strong id="eventTime">02:13</strong></div>
+            <div class="meta-card"><span>摄像头</span><strong id="eventCameraMeta">BackGate-01</strong></div>
+            <div class="meta-card"><span>区域</span><strong id="eventArea">后门</strong></div>
+            <div class="meta-card"><span>风险</span><strong id="eventRisk">High</strong></div>
+          </div>
+          <div class="camera-frame" aria-label="Camera evidence placeholder">
             <div class="camera-label">
               <span id="cameraId">BackGate-01</span>
-              <span>Night vision on</span>
+              <span id="cameraMode">Night vision on</span>
               <span>Motion event</span>
             </div>
             <div class="scene-box" aria-hidden="true"></div>
@@ -720,18 +592,19 @@
           </div>
           <div class="analysis-grid">
             <div class="analysis-card">
-              <span>What happened</span>
+              <span>事件解释</span>
               <strong id="whatHappened">陌生人在后门停留，未见进入画面。</strong>
             </div>
             <div class="analysis-card">
-              <span>Risk reasoning</span>
+              <span>风险原因</span>
               <strong id="riskReason">闭店后、后门区域、停留时间异常。</strong>
             </div>
             <div class="analysis-card">
-              <span>False positive check</span>
+              <span>误报说明</span>
               <strong id="falsePositive">不像雨水、昆虫或车灯触发。</strong>
             </div>
           </div>
+          <ul class="evidence-list" id="evidenceList" aria-label="Evidence points"></ul>
         </div>
       </section>
 
@@ -741,31 +614,33 @@
           <span>30 sec read</span>
         </div>
         <div class="handoff">
-          <div class="action-box">
-            <strong>Priority action</strong>
-            <p id="priorityAction">开门营业前先检查后门门锁，并通知值班人员复核 02:13 画面。</p>
+          <div class="action-box" id="actionBox">
+            <strong id="priorityLabel">Priority action</strong>
+            <p id="priorityAction">开门营业前先检查后门门锁，并通知店长复核 02:13 画面。</p>
           </div>
-          <div class="notify-box">
-            <h4>WhatsApp 交接</h4>
-            <div class="phone-row">
-              <input id="phoneInput" value="+60 12 345 6789" aria-label="Owner phone number" />
-              <button id="sendNotice" type="button">Send</button>
-            </div>
-            <div class="sms-preview" id="smsPreview">WhatsApp preview: 47 alerts reviewed. 1 action needed before opening. Tap to view handoff.</div>
-            <button class="small-action" id="closeHandoff" type="button">Mark handoff closed</button>
+
+          <div class="action-grid" aria-label="Action buttons">
+            <button class="small-action primary" id="notifyManager" type="button">通知店长复核</button>
+            <button class="small-action" id="scheduleCheck" type="button">安排巡检</button>
+            <button class="small-action" id="markReviewed" type="button">标记已复核</button>
           </div>
+
+          <div class="sms-preview" id="actionLog">Action needed: 后门 02:13 事件等待处理。</div>
+
           <div>
             <h4>交接摘要</h4>
             <p id="handoffText">昨晚共 47 条告警。44 条为低价值噪声，2 条已解释，1 条需要处理。最高风险来自后门陌生人停留事件。</p>
           </div>
-          <ul class="checklist" aria-label="Next steps">
-            <li>先处理后门门锁和 02:13 画面复核。</li>
-            <li>Camera-03 建议调整补光，避免夜间漏看。</li>
-            <li>低价值噪声已归档，不推送给老板。</li>
-          </ul>
+
           <div class="qa-box">
-            <input value="昨晚有什么异常？" aria-label="Ask SentryFlow AI" />
-            <div class="qa-answer">昨晚只有 1 件需要优先处理：后门 02:13 陌生人停留。其余多数为天气、反光或已解释员工活动。</div>
+            <h4>Ask SentryFlow AI</h4>
+            <div class="qa-chips">
+              <button class="qa-chip" type="button" data-question="昨晚有什么异常？">昨晚有什么异常？</button>
+              <button class="qa-chip" type="button" data-question="今天先处理哪里？">今天先处理哪里？</button>
+              <button class="qa-chip" type="button" data-question="哪些是误报？">哪些是误报？</button>
+            </div>
+            <input id="qaInput" value="昨晚有什么异常？" aria-label="Ask SentryFlow AI" />
+            <div class="qa-answer" id="qaAnswer">昨晚只有 1 件需要优先处理：后门 02:13 陌生人停留。其余多数为天气、反光或已解释员工活动。</div>
           </div>
         </div>
       </aside>
@@ -774,56 +649,29 @@
     <section class="lightweight" aria-label="Lightweight architecture">
       <div class="panel">
         <div class="panel-header">
-          <h3>Lightweight architecture</h3>
-          <span>SDK ready, demo safe</span>
+          <h3>Demo pipeline</h3>
+          <span>SDK ready, mock safe</span>
         </div>
         <div class="flow">
-          <div class="step">
-            <span>01</span>
-            <strong>eufy event or simulated event</strong>
-          </div>
-          <div class="step">
-            <span>02</span>
-            <strong>Unified event schema</strong>
-          </div>
-          <div class="step">
-            <span>03</span>
-            <strong>Snapshot and device state</strong>
-          </div>
-          <div class="step">
-            <span>04</span>
-            <strong>AI review and risk reasoning</strong>
-          </div>
-          <div class="step">
-            <span>05</span>
-            <strong>Morning handoff</strong>
-          </div>
+          <div class="step"><span>01</span><strong>eufy / mock events</strong></div>
+          <div class="step"><span>02</span><strong>Event Schema</strong></div>
+          <div class="step"><span>03</span><strong>AI Review</strong></div>
+          <div class="step"><span>04</span><strong>Risk Engine</strong></div>
+          <div class="step"><span>05</span><strong>Handoff + Actions</strong></div>
         </div>
       </div>
 
       <div class="panel">
         <div class="panel-header">
-          <h3>Why it is lightweight</h3>
-          <span>Not another NVR platform</span>
+          <h3>Why eufy</h3>
+          <span>Camera events -> handoff service</span>
         </div>
         <div class="why">
           <div class="why-grid">
-            <div class="why-item">
-              <strong>事件驱动</strong>
-              <span>只处理告警、截图和短视频，不要求持续分析多路实时流。</span>
-            </div>
-            <div class="why-item">
-              <strong>套餐升级</strong>
-              <span>不替代安装商，而是给摄像头安装包增加 AI 交接能力。</span>
-            </div>
-            <div class="why-item">
-              <strong>小场景优先</strong>
-              <span>面向老板、店长、仓管和远程资产负责人，不做重型指挥中心。</span>
-            </div>
-            <div class="why-item">
-              <strong>接入可替换</strong>
-              <span>SDK 可用接真实设备；不可用也能用同一事件格式稳定演示。</span>
-            </div>
+            <div class="why-item"><strong>运动事件</strong><span>把 motion alerts 变成可复核事件。</span></div>
+            <div class="why-item"><strong>夜视证据</strong><span>用截图或片段支撑风险解释。</span></div>
+            <div class="why-item"><strong>eufy App</strong><span>晨间交接可以成为自然入口。</span></div>
+            <div class="why-item"><strong>SDK 可替换</strong><span>真实接入和模拟事件共用同一套 Schema。</span></div>
           </div>
         </div>
       </div>
@@ -833,104 +681,273 @@
   <script>
     const events = [
       {
+        id: "evt_001",
+        group: "Action needed",
         name: "Back Gate lingering",
+        time: "02:13",
         meta: "BackGate-01 · 02:13",
         camera: "BackGate-01",
+        area: "后门",
+        risk: "High",
+        badgeClass: "risk-high",
+        summary: "后门出现陌生人停留 38 秒。",
         note: "Unknown person stayed near the back gate for 38 seconds after closing hours.",
-        what: "陌生人在后门停留，未见进入画面。",
-        risk: "闭店后、后门区域、停留时间异常。",
-        falsePositive: "不像雨水、昆虫或车灯触发。",
-        action: "开门营业前先检查后门门锁，并通知值班人员复核 02:13 画面。",
+        what: "陌生人在后门停留 38 秒，未见进入画面。",
+        riskReason: "事件发生在闭店后，位置是后门敏感区域，停留时间超过普通经过。",
+        falsePositive: "不像雨水、昆虫或车灯触发，也不是普通路过。",
+        evidence: ["营业外时间", "后门敏感区域", "人员停留 38 秒", "未匹配已解释员工事件"],
+        action: "开门营业前先检查后门门锁，并通知店长复核 02:13 画面。",
         handoff: "昨晚共 47 条告警。44 条为低价值噪声，2 条已解释，1 条需要处理。最高风险来自后门陌生人停留事件。"
       },
       {
+        id: "evt_002",
+        group: "Explained",
         name: "Staff return",
+        time: "23:18",
         meta: "FrontDoor-02 · 23:18",
         camera: "FrontDoor-02",
+        area: "前门",
+        risk: "Explained",
+        badgeClass: "risk-low",
+        summary: "员工返回取货，停留 4 分钟。",
         note: "Known staff returned to pick up goods and left after 4 minutes.",
         what: "已知员工返回取货，行为与门禁记录一致。",
-        risk: "低风险，属于可解释的闭店后活动。",
+        riskReason: "低风险，属于可解释的闭店后活动。",
         falsePositive: "不是误报，但不需要升级为安全事件。",
+        evidence: ["已知员工", "前门区域", "停留时间符合取货", "无异常逗留"],
         action: "记录为已解释事件，无需通知老板。",
         handoff: "员工返回取货事件已解释，可归档。当前仍只有后门停留事件需要优先处理。"
       },
       {
+        id: "evt_003",
+        group: "Explained",
+        name: "Delivery vehicle passed",
+        time: "00:41",
+        meta: "FrontDoor-02 · 00:41",
+        camera: "FrontDoor-02",
+        area: "门口道路",
+        risk: "Explained",
+        badgeClass: "risk-low",
+        summary: "门口车辆经过，没有停留。",
+        note: "A delivery vehicle passed the front door without stopping.",
+        what: "门口道路有车辆经过，没有接近店门。",
+        riskReason: "运动来源在道路侧，未进入敏感区域。",
+        falsePositive: "属于可解释经过，不进入待处理清单。",
+        evidence: ["道路侧移动", "无人员接近", "无停留", "无门锁相关动作"],
+        action: "归档为已解释事件。",
+        handoff: "门口车辆经过已解释，不需要今天处理。"
+      },
+      {
+        id: "evt_004",
+        group: "Ignored",
         name: "Rain reflection",
+        time: "01:05",
         meta: "Parking-01 · 01:05",
         camera: "Parking-01",
+        area: "停车区",
+        risk: "Ignored",
+        badgeClass: "risk-info",
+        summary: "雨水和车灯反光触发运动提醒。",
         note: "Rain reflection and passing headlights triggered motion detection.",
         what: "停车区出现雨水反光和远处车灯变化。",
-        risk: "低风险，未看到人员接近或停留。",
+        riskReason: "低风险，未看到人员接近或停留。",
         falsePositive: "高度疑似天气和灯光触发。",
+        evidence: ["雨水反光", "远处车灯", "无人员停留", "无敏感区域接近"],
         action: "归档为低价值噪声，不进入今日待办。",
         handoff: "雨水和车灯告警已降噪，减少无效查看。"
       },
       {
-        name: "Camera low light",
-        meta: "Warehouse-03 · 03:42",
-        camera: "Warehouse-03",
-        note: "Low-light area reduced visibility in the warehouse corner.",
-        what: "仓库角落夜间画面偏暗，影响复核质量。",
-        risk: "中风险，主要风险是后续事件可能看不清。",
-        falsePositive: "不是运动误报，是设备可用性问题。",
-        action: "今天调整补光或摄像头角度。",
-        handoff: "Camera-03 建议进入设备维护清单，避免夜间漏看。"
-      },
-      {
-        name: "Solar site after rain",
-        meta: "Panel-East · 07:20",
-        camera: "Panel-East",
-        note: "Post-rain visibility dropped near the edge asset zone.",
-        what: "暴雨后设备区可见性下降，局部疑似遮挡。",
-        risk: "中风险，可能影响远程状态确认。",
-        falsePositive: "不像入侵，更像天气后的运维检查项。",
-        action: "先远程复核 Battery-02，再安排现场人员检查东侧阵列。",
-        handoff: "能源样例显示：SentryFlow 不只做安防，也能把远程资产状态整理成巡检交接。"
+        id: "evt_005",
+        group: "Ignored",
+        name: "Insect near lens",
+        time: "02:58",
+        meta: "BackGate-01 · 02:58",
+        camera: "BackGate-01",
+        area: "后门",
+        risk: "Ignored",
+        badgeClass: "risk-info",
+        summary: "昆虫靠近镜头造成局部运动。",
+        note: "Small insect movement appeared close to the lens.",
+        what: "镜头近处出现小范围快速移动。",
+        riskReason: "运动贴近镜头，缺少人体轮廓和停留行为。",
+        falsePositive: "符合昆虫触发特征。",
+        evidence: ["近镜头移动", "无人体轮廓", "无区域进入", "持续时间短"],
+        action: "归档为误报。",
+        handoff: "昆虫触发事件已忽略，不影响今日交接。"
       }
     ];
 
-    const buttons = document.querySelectorAll(".event");
+    const state = {
+      selectedId: "evt_001",
+      handoffStatus: "Action needed",
+      replayStarted: false
+    };
+
+    const groupCounts = {
+      "Action needed": 1,
+      "Explained": 2,
+      "Ignored": 44
+    };
+
     const fields = {
+      eventList: document.getElementById("eventList"),
       eventName: document.getElementById("eventName"),
       eventMeta: document.getElementById("eventMeta"),
+      eventTime: document.getElementById("eventTime"),
+      eventCameraMeta: document.getElementById("eventCameraMeta"),
+      eventArea: document.getElementById("eventArea"),
+      eventRisk: document.getElementById("eventRisk"),
       cameraId: document.getElementById("cameraId"),
       sceneNote: document.getElementById("sceneNote"),
       whatHappened: document.getElementById("whatHappened"),
       riskReason: document.getElementById("riskReason"),
       falsePositive: document.getElementById("falsePositive"),
+      evidenceList: document.getElementById("evidenceList"),
+      priorityLabel: document.getElementById("priorityLabel"),
       priorityAction: document.getElementById("priorityAction"),
       handoffText: document.getElementById("handoffText"),
-      smsPreview: document.getElementById("smsPreview")
+      actionLog: document.getElementById("actionLog"),
+      qaInput: document.getElementById("qaInput"),
+      qaAnswer: document.getElementById("qaAnswer"),
+      actionBox: document.getElementById("actionBox"),
+      handoffStatus: document.getElementById("handoffStatus"),
+      demoStatus: document.getElementById("demoStatus"),
+      demoStatusText: document.getElementById("demoStatusText")
     };
 
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const event = events[Number(button.dataset.index)];
-        buttons.forEach((item) => item.classList.remove("active"));
-        button.classList.add("active");
-        fields.eventName.textContent = event.name;
-        fields.eventMeta.textContent = event.meta;
-        fields.cameraId.textContent = event.camera;
-        fields.sceneNote.textContent = event.note;
-        fields.whatHappened.textContent = event.what;
-        fields.riskReason.textContent = event.risk;
-        fields.falsePositive.textContent = event.falsePositive;
-        fields.priorityAction.textContent = event.action;
-        fields.handoffText.textContent = event.handoff;
-        fields.smsPreview.textContent = "WhatsApp preview: " + event.handoff;
+    function groupedEvents() {
+      return ["Action needed", "Explained", "Ignored"].map((group) => ({
+        group,
+        count: groupCounts[group],
+        events: events.filter((event) => event.group === group)
+      }));
+    }
+
+    function renderEventList() {
+      fields.eventList.innerHTML = groupedEvents().map(({ group, count, events: groupEvents }) => `
+        <div class="event-group">
+          <div class="group-title"><span>${group}</span><span>${count}</span></div>
+          ${groupEvents.map((event) => `
+            <button class="event ${event.id === state.selectedId ? "active" : ""}" type="button" data-event-id="${event.id}">
+              <div class="event-top">
+                <span class="event-title">${event.name}</span>
+                <span class="pill ${event.badgeClass}">${event.risk}</span>
+              </div>
+              <p><span class="event-time">${event.time}</span> · ${event.summary}</p>
+            </button>
+          `).join("")}
+        </div>
+      `).join("");
+
+      document.querySelectorAll(".event").forEach((button) => {
+        button.addEventListener("click", () => selectEvent(button.dataset.eventId));
       });
+    }
+
+    function selectedEvent() {
+      return events.find((event) => event.id === state.selectedId) || events[0];
+    }
+
+    function selectEvent(eventId) {
+      state.selectedId = eventId;
+      renderEventList();
+      renderEventDetail();
+    }
+
+    function renderEventDetail() {
+      const event = selectedEvent();
+      fields.eventName.textContent = event.name;
+      fields.eventMeta.textContent = event.meta;
+      fields.eventTime.textContent = event.time;
+      fields.eventCameraMeta.textContent = event.camera;
+      fields.eventArea.textContent = event.area;
+      fields.eventRisk.textContent = event.risk;
+      fields.cameraId.textContent = event.camera;
+      fields.sceneNote.textContent = event.note;
+      fields.whatHappened.textContent = event.what;
+      fields.riskReason.textContent = event.riskReason;
+      fields.falsePositive.textContent = event.falsePositive;
+      fields.priorityAction.textContent = event.action;
+      fields.handoffText.textContent = event.handoff;
+      fields.evidenceList.innerHTML = event.evidence.map((item) => `<li>${item}</li>`).join("");
+    }
+
+    function setStatus(nextStatus, message) {
+      state.handoffStatus = nextStatus;
+      fields.handoffStatus.textContent = "Status: " + nextStatus;
+      fields.actionLog.textContent = message;
+      fields.actionBox.classList.remove("status-assigned", "status-closed");
+
+      if (nextStatus === "Assigned" || nextStatus === "Reviewed") {
+        fields.actionBox.classList.add("status-assigned");
+        fields.priorityLabel.textContent = nextStatus;
+      }
+
+      if (nextStatus === "Handoff closed") {
+        fields.actionBox.classList.add("status-closed");
+        fields.priorityLabel.textContent = "Handoff closed";
+        fields.priorityAction.textContent = "今日交接已完成。后门 02:13 事件已复核，不再重复提醒。";
+      }
+    }
+
+    function answerQuestion(question) {
+      const answers = {
+        "昨晚有什么异常？": "昨晚只有 1 件需要优先处理：02:13，BackGate-01 后门区域出现陌生人停留 38 秒。其余 44 条已判断为雨水、车灯、昆虫或普通低风险运动，2 条已解释为员工活动。建议开门前先检查后门门锁，并请店长复核这段画面。",
+        "今天先处理哪里？": "先处理后门。原因是事件发生在营业外时间，位置是后门敏感区域，人员停留时间超过普通经过。下一步是检查后门门锁，并复核 02:13 的 BackGate-01 画面。",
+        "哪些是误报？": "44 条事件已归为 Ignored，主要是雨水、车灯反光、昆虫靠近镜头和普通路过。这些事件没有进入待处理清单。"
+      };
+
+      fields.qaInput.value = question;
+      fields.qaAnswer.textContent = answers[question] || answers["昨晚有什么异常？"];
+      selectEvent("evt_001");
+    }
+
+    document.getElementById("startReplay").addEventListener("click", () => {
+      state.replayStarted = true;
+      fields.demoStatus.textContent = "Replay complete";
+      fields.demoStatusText.textContent = "47 条告警已复核：44 条忽略，2 条解释，1 条需要处理。";
+      fields.actionLog.textContent = "回放完成：后门 02:13 事件已进入 Action needed。";
+      selectEvent("evt_001");
     });
 
-    document.getElementById("sendNotice").addEventListener("click", () => {
-      const phone = document.getElementById("phoneInput").value || "owner phone";
-      fields.smsPreview.textContent = "Sent on WhatsApp to " + phone + ": 47 alerts reviewed. 1 action needed before opening. Tap to view handoff.";
+    document.getElementById("notifyManager").addEventListener("click", () => {
+      setStatus("Assigned", "Assigned: 已通知店长复核 02:13 后门画面，并在开门前检查门锁。");
     });
 
-    document.getElementById("closeHandoff").addEventListener("click", () => {
-      fields.smsPreview.textContent = "Handoff closed: manager assigned to check the back gate before opening.";
-      document.querySelector(".action-box").classList.add("status-closed");
-      fields.priorityAction.textContent = "已安排店长开门前复核后门门锁，交接状态已关闭。";
+    document.getElementById("topSendManager").addEventListener("click", () => {
+      setStatus("Assigned", "Assigned: 已通知店长复核 02:13 后门画面，并在开门前检查门锁。");
     });
+
+    document.getElementById("scheduleCheck").addEventListener("click", () => {
+      setStatus("Assigned", "Assigned: 已安排巡检，优先检查后门门锁和 BackGate-01 画面。");
+    });
+
+    document.getElementById("markReviewed").addEventListener("click", () => {
+      if (state.handoffStatus === "Reviewed") {
+        setStatus("Handoff closed", "Handoff closed: 后门事件已复核，今日不再重复提醒。");
+        return;
+      }
+      if (state.handoffStatus === "Handoff closed") {
+        fields.actionLog.textContent = "Handoff closed: 今日交接已完成。";
+        return;
+      }
+      setStatus("Reviewed", "Reviewed: 用户已标记后门 02:13 事件完成复核。再次点击可关闭交接。");
+    });
+
+    document.getElementById("exportHandoff").addEventListener("click", () => {
+      fields.actionLog.textContent = "Exported: 47 alerts reviewed, 44 ignored, 2 explained, 1 action needed.";
+    });
+
+    document.querySelectorAll(".qa-chip").forEach((button) => {
+      button.addEventListener("click", () => answerQuestion(button.dataset.question));
+    });
+
+    fields.qaInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") answerQuestion(fields.qaInput.value.trim());
+    });
+
+    renderEventList();
+    renderEventDetail();
   </script>
 </body>
 </html>

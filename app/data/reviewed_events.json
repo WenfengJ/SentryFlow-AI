@@ -1,0 +1,1367 @@
+[
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_004",
+    "occurred_at": "2026-09-19T22:05:12+08:00",
+    "local_time": "22:05",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 5,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "雨水和湿地反光造成画面亮度变化。",
+    "risk_reason": "没有人员轮廓，也没有接近门窗或后门。",
+    "evidence_points": [
+      "雨水反光",
+      "湿地亮度变化",
+      "无人员轮廓",
+      "无门窗接触"
+    ],
+    "recommended_action": [
+      "忽略为天气噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_005",
+    "occurred_at": "2026-09-19T22:11:47+08:00",
+    "local_time": "22:11",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 8,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "路人从公共区域经过，没有靠近店门或停留。",
+    "risk_reason": "运动轨迹在店外公共区域，未进入敏感区域。",
+    "evidence_points": [
+      "公共区域经过",
+      "未停留",
+      "未接触门窗",
+      "运动轨迹离开画面"
+    ],
+    "recommended_action": [
+      "忽略，不进入今日待办"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_006",
+    "occurred_at": "2026-09-19T22:18:33+08:00",
+    "local_time": "22:18",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "event_type": "signboard_light_reflection",
+    "motion_label": "light",
+    "duration_seconds": 4,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "招牌或卷帘门反光造成亮度变化。",
+    "risk_reason": "变化来自固定物体表面反射，不是人员运动。",
+    "evidence_points": [
+      "招牌反光",
+      "亮度变化",
+      "无人员轮廓",
+      "无靠近门锁"
+    ],
+    "recommended_action": [
+      "忽略为外立面光线噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_007",
+    "occurred_at": "2026-09-19T22:26:19+08:00",
+    "local_time": "22:26",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 3,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "昆虫靠近镜头造成局部快速运动。",
+    "risk_reason": "运动贴近镜头，缺少人体轮廓和区域进入行为。",
+    "evidence_points": [
+      "近镜头移动",
+      "持续时间短",
+      "无人体轮廓",
+      "无进入动作"
+    ],
+    "recommended_action": [
+      "忽略为镜头近处误报"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_008",
+    "occurred_at": "2026-09-19T22:37:08+08:00",
+    "local_time": "22:37",
+    "camera_id": "Aisle-03",
+    "camera_area": "店内走廊",
+    "event_type": "low_light_or_occlusion",
+    "motion_label": "low_light",
+    "duration_seconds": 11,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.74,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "低光或局部遮挡导致画面变化。",
+    "risk_reason": "没有持续人员目标，事件不构成行动项。",
+    "evidence_points": [
+      "低光噪声",
+      "局部遮挡",
+      "无人员进入",
+      "无敏感区域行为"
+    ],
+    "recommended_action": [
+      "忽略；如重复出现可清洁镜头"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_009",
+    "occurred_at": "2026-09-19T22:48:56+08:00",
+    "local_time": "22:48",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 6,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "车灯扫过画面造成运动提醒。",
+    "risk_reason": "光线变化来自画面边缘，没有人员靠近。",
+    "evidence_points": [
+      "车灯反光",
+      "画面边缘变化",
+      "无停留",
+      "无人员目标"
+    ],
+    "recommended_action": [
+      "忽略为光线噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_010",
+    "occurred_at": "2026-09-19T22:59:40+08:00",
+    "local_time": "22:59",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 9,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "路人从公共区域经过，没有靠近店门或停留。",
+    "risk_reason": "运动轨迹在店外公共区域，未进入敏感区域。",
+    "evidence_points": [
+      "公共区域经过",
+      "未停留",
+      "未接触门窗",
+      "运动轨迹离开画面"
+    ],
+    "recommended_action": [
+      "忽略，不进入今日待办"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_011",
+    "occurred_at": "2026-09-19T23:07:15+08:00",
+    "local_time": "23:07",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 5,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "雨水和湿地反光造成画面亮度变化。",
+    "risk_reason": "没有人员轮廓，也没有接近门窗或后门。",
+    "evidence_points": [
+      "雨水反光",
+      "湿地亮度变化",
+      "无人员轮廓",
+      "无门窗接触"
+    ],
+    "recommended_action": [
+      "忽略为天气噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_002",
+    "occurred_at": "2026-09-19T23:18:42+08:00",
+    "local_time": "23:18",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "event_type": "staff_return_pickup",
+    "motion_label": "person",
+    "duration_seconds": 240,
+    "review_result": "explained",
+    "risk_level": "low",
+    "confidence": 0.86,
+    "false_positive_likelihood": "low",
+    "scene_summary": "已知员工闭店后返回取货，行为与交接备注一致。",
+    "risk_reason": "人员身份和行为可以解释，没有进入升级处理。",
+    "evidence_points": [
+      "已知员工",
+      "前门区域",
+      "停留时间符合取货",
+      "无撬门或异常停留"
+    ],
+    "recommended_action": [
+      "归档为已解释事件"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "explained",
+    "handoff_reason": "可解释活动，不占用早上处理时间。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_012",
+    "occurred_at": "2026-09-19T23:22:31+08:00",
+    "local_time": "23:22",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 4,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "昆虫靠近镜头造成局部快速运动。",
+    "risk_reason": "运动贴近镜头，缺少人体轮廓和区域进入行为。",
+    "evidence_points": [
+      "近镜头移动",
+      "持续时间短",
+      "无人体轮廓",
+      "无进入动作"
+    ],
+    "recommended_action": [
+      "忽略为镜头近处误报"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_013",
+    "occurred_at": "2026-09-19T23:36:28+08:00",
+    "local_time": "23:36",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "event_type": "tree_shadow",
+    "motion_label": "shadow",
+    "duration_seconds": 12,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "树影随风移动触发画面变化。",
+    "risk_reason": "运动形态是阴影变化，不是人或车辆。",
+    "evidence_points": [
+      "树影移动",
+      "风造成变化",
+      "无实体目标",
+      "无区域进入"
+    ],
+    "recommended_action": [
+      "忽略为环境阴影噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_014",
+    "occurred_at": "2026-09-19T23:49:02+08:00",
+    "local_time": "23:49",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 5,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "车灯扫过画面造成运动提醒。",
+    "risk_reason": "光线变化来自画面边缘，没有人员靠近。",
+    "evidence_points": [
+      "车灯反光",
+      "画面边缘变化",
+      "无停留",
+      "无人员目标"
+    ],
+    "recommended_action": [
+      "忽略为光线噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_015",
+    "occurred_at": "2026-09-20T00:03:37+08:00",
+    "local_time": "00:03",
+    "camera_id": "Aisle-03",
+    "camera_area": "店内走廊",
+    "event_type": "low_light_or_occlusion",
+    "motion_label": "low_light",
+    "duration_seconds": 10,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.74,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "低光或局部遮挡导致画面变化。",
+    "risk_reason": "没有持续人员目标，事件不构成行动项。",
+    "evidence_points": [
+      "低光噪声",
+      "局部遮挡",
+      "无人员进入",
+      "无敏感区域行为"
+    ],
+    "recommended_action": [
+      "忽略；如重复出现可清洁镜头"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_016",
+    "occurred_at": "2026-09-20T00:12:11+08:00",
+    "local_time": "00:12",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 7,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "路人从公共区域经过，没有靠近店门或停留。",
+    "risk_reason": "运动轨迹在店外公共区域，未进入敏感区域。",
+    "evidence_points": [
+      "公共区域经过",
+      "未停留",
+      "未接触门窗",
+      "运动轨迹离开画面"
+    ],
+    "recommended_action": [
+      "忽略，不进入今日待办"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_017",
+    "occurred_at": "2026-09-20T00:18:55+08:00",
+    "local_time": "00:18",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 6,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "雨水和湿地反光造成画面亮度变化。",
+    "risk_reason": "没有人员轮廓，也没有接近门窗或后门。",
+    "evidence_points": [
+      "雨水反光",
+      "湿地亮度变化",
+      "无人员轮廓",
+      "无门窗接触"
+    ],
+    "recommended_action": [
+      "忽略为天气噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_018",
+    "occurred_at": "2026-09-20T00:32:44+08:00",
+    "local_time": "00:32",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "event_type": "signboard_light_reflection",
+    "motion_label": "light",
+    "duration_seconds": 5,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "招牌或卷帘门反光造成亮度变化。",
+    "risk_reason": "变化来自固定物体表面反射，不是人员运动。",
+    "evidence_points": [
+      "招牌反光",
+      "亮度变化",
+      "无人员轮廓",
+      "无靠近门锁"
+    ],
+    "recommended_action": [
+      "忽略为外立面光线噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_003",
+    "occurred_at": "2026-09-20T00:41:06+08:00",
+    "local_time": "00:41",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "event_type": "delivery_vehicle_passed",
+    "motion_label": "vehicle",
+    "duration_seconds": 7,
+    "review_result": "explained",
+    "risk_level": "low",
+    "confidence": 0.83,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "配送车辆从门口道路经过，没有停留或接近店门。",
+    "risk_reason": "车辆移动轨迹在公共道路侧，和配送车辆经过相符。",
+    "evidence_points": [
+      "车辆经过",
+      "未停留",
+      "未进入敏感区域",
+      "无人员接近门锁"
+    ],
+    "recommended_action": [
+      "归档为已解释事件"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "explained",
+    "handoff_reason": "已解释的门口运动，不需要升级。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_019",
+    "occurred_at": "2026-09-20T00:56:28+08:00",
+    "local_time": "00:56",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 3,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "昆虫靠近镜头造成局部快速运动。",
+    "risk_reason": "运动贴近镜头，缺少人体轮廓和区域进入行为。",
+    "evidence_points": [
+      "近镜头移动",
+      "持续时间短",
+      "无人体轮廓",
+      "无进入动作"
+    ],
+    "recommended_action": [
+      "忽略为镜头近处误报"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_020",
+    "occurred_at": "2026-09-20T01:05:09+08:00",
+    "local_time": "01:05",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 6,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "雨水和湿地反光造成画面亮度变化。",
+    "risk_reason": "没有人员轮廓，也没有接近门窗或后门。",
+    "evidence_points": [
+      "雨水反光",
+      "湿地亮度变化",
+      "无人员轮廓",
+      "无门窗接触"
+    ],
+    "recommended_action": [
+      "忽略为天气噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_021",
+    "occurred_at": "2026-09-20T01:14:47+08:00",
+    "local_time": "01:14",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 8,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "路人从公共区域经过，没有靠近店门或停留。",
+    "risk_reason": "运动轨迹在店外公共区域，未进入敏感区域。",
+    "evidence_points": [
+      "公共区域经过",
+      "未停留",
+      "未接触门窗",
+      "运动轨迹离开画面"
+    ],
+    "recommended_action": [
+      "忽略，不进入今日待办"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_022",
+    "occurred_at": "2026-09-20T01:26:30+08:00",
+    "local_time": "01:26",
+    "camera_id": "Aisle-03",
+    "camera_area": "店内走廊",
+    "event_type": "low_light_or_occlusion",
+    "motion_label": "occlusion",
+    "duration_seconds": 13,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.74,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "低光或局部遮挡导致画面变化。",
+    "risk_reason": "没有持续人员目标，事件不构成行动项。",
+    "evidence_points": [
+      "低光噪声",
+      "局部遮挡",
+      "无人员进入",
+      "无敏感区域行为"
+    ],
+    "recommended_action": [
+      "忽略；如重复出现可清洁镜头"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_023",
+    "occurred_at": "2026-09-20T01:39:18+08:00",
+    "local_time": "01:39",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 4,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "车灯扫过画面造成运动提醒。",
+    "risk_reason": "光线变化来自画面边缘，没有人员靠近。",
+    "evidence_points": [
+      "车灯反光",
+      "画面边缘变化",
+      "无停留",
+      "无人员目标"
+    ],
+    "recommended_action": [
+      "忽略为光线噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_024",
+    "occurred_at": "2026-09-20T01:44:39+08:00",
+    "local_time": "01:44",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "event_type": "tree_shadow",
+    "motion_label": "shadow",
+    "duration_seconds": 14,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "树影随风移动触发画面变化。",
+    "risk_reason": "运动形态是阴影变化，不是人或车辆。",
+    "evidence_points": [
+      "树影移动",
+      "风造成变化",
+      "无实体目标",
+      "无区域进入"
+    ],
+    "recommended_action": [
+      "忽略为环境阴影噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_025",
+    "occurred_at": "2026-09-20T01:52:04+08:00",
+    "local_time": "01:52",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 3,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "昆虫靠近镜头造成局部快速运动。",
+    "risk_reason": "运动贴近镜头，缺少人体轮廓和区域进入行为。",
+    "evidence_points": [
+      "近镜头移动",
+      "持续时间短",
+      "无人体轮廓",
+      "无进入动作"
+    ],
+    "recommended_action": [
+      "忽略为镜头近处误报"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_026",
+    "occurred_at": "2026-09-20T02:04:55+08:00",
+    "local_time": "02:04",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 7,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "雨水和湿地反光造成画面亮度变化。",
+    "risk_reason": "没有人员轮廓，也没有接近门窗或后门。",
+    "evidence_points": [
+      "雨水反光",
+      "湿地亮度变化",
+      "无人员轮廓",
+      "无门窗接触"
+    ],
+    "recommended_action": [
+      "忽略为天气噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_001",
+    "occurred_at": "2026-09-20T02:13:18+08:00",
+    "local_time": "02:13",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "event_type": "after_hours_person_lingering",
+    "motion_label": "person",
+    "duration_seconds": 38,
+    "review_result": "action_needed",
+    "risk_level": "high",
+    "confidence": 0.91,
+    "false_positive_likelihood": "low",
+    "scene_summary": "02:13 后门出现陌生人停留 38 秒，未见进入画面。",
+    "risk_reason": "事件发生在闭店后，位置是后门敏感区域，人员停留时间超过普通经过。",
+    "evidence_points": [
+      "营业外时间",
+      "后门敏感区域",
+      "人员停留 38 秒",
+      "不像雨水、昆虫或车灯",
+      "未匹配已解释员工事件"
+    ],
+    "recommended_action": [
+      "开门前检查后门门锁",
+      "通知店长复核 02:13 的 BackGate-01 画面"
+    ],
+    "needs_human_review": true,
+    "handoff_status": "action_needed",
+    "handoff_reason": "唯一需要今天先处理的事件。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_027",
+    "occurred_at": "2026-09-20T02:22:05+08:00",
+    "local_time": "02:22",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 8,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "路人从公共区域经过，没有靠近店门或停留。",
+    "risk_reason": "运动轨迹在店外公共区域，未进入敏感区域。",
+    "evidence_points": [
+      "公共区域经过",
+      "未停留",
+      "未接触门窗",
+      "运动轨迹离开画面"
+    ],
+    "recommended_action": [
+      "忽略，不进入今日待办"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_028",
+    "occurred_at": "2026-09-20T02:28:31+08:00",
+    "local_time": "02:28",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 5,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "车灯扫过画面造成运动提醒。",
+    "risk_reason": "光线变化来自画面边缘，没有人员靠近。",
+    "evidence_points": [
+      "车灯反光",
+      "画面边缘变化",
+      "无停留",
+      "无人员目标"
+    ],
+    "recommended_action": [
+      "忽略为光线噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_029",
+    "occurred_at": "2026-09-20T02:41:19+08:00",
+    "local_time": "02:41",
+    "camera_id": "Aisle-03",
+    "camera_area": "店内走廊",
+    "event_type": "low_light_or_occlusion",
+    "motion_label": "low_light",
+    "duration_seconds": 12,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.74,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "低光或局部遮挡导致画面变化。",
+    "risk_reason": "没有持续人员目标，事件不构成行动项。",
+    "evidence_points": [
+      "低光噪声",
+      "局部遮挡",
+      "无人员进入",
+      "无敏感区域行为"
+    ],
+    "recommended_action": [
+      "忽略；如重复出现可清洁镜头"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_030",
+    "occurred_at": "2026-09-20T02:49:53+08:00",
+    "local_time": "02:49",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "event_type": "signboard_light_reflection",
+    "motion_label": "light",
+    "duration_seconds": 6,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "招牌或卷帘门反光造成亮度变化。",
+    "risk_reason": "变化来自固定物体表面反射，不是人员运动。",
+    "evidence_points": [
+      "招牌反光",
+      "亮度变化",
+      "无人员轮廓",
+      "无靠近门锁"
+    ],
+    "recommended_action": [
+      "忽略为外立面光线噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_031",
+    "occurred_at": "2026-09-20T02:58:40+08:00",
+    "local_time": "02:58",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 4,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "昆虫靠近镜头造成局部快速运动。",
+    "risk_reason": "运动贴近镜头，缺少人体轮廓和区域进入行为。",
+    "evidence_points": [
+      "近镜头移动",
+      "持续时间短",
+      "无人体轮廓",
+      "无进入动作"
+    ],
+    "recommended_action": [
+      "忽略为镜头近处误报"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_032",
+    "occurred_at": "2026-09-20T03:07:13+08:00",
+    "local_time": "03:07",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 5,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "雨水和湿地反光造成画面亮度变化。",
+    "risk_reason": "没有人员轮廓，也没有接近门窗或后门。",
+    "evidence_points": [
+      "雨水反光",
+      "湿地亮度变化",
+      "无人员轮廓",
+      "无门窗接触"
+    ],
+    "recommended_action": [
+      "忽略为天气噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_033",
+    "occurred_at": "2026-09-20T03:19:36+08:00",
+    "local_time": "03:19",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 9,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "路人从公共区域经过，没有靠近店门或停留。",
+    "risk_reason": "运动轨迹在店外公共区域，未进入敏感区域。",
+    "evidence_points": [
+      "公共区域经过",
+      "未停留",
+      "未接触门窗",
+      "运动轨迹离开画面"
+    ],
+    "recommended_action": [
+      "忽略，不进入今日待办"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_034",
+    "occurred_at": "2026-09-20T03:33:21+08:00",
+    "local_time": "03:33",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "event_type": "tree_shadow",
+    "motion_label": "shadow",
+    "duration_seconds": 13,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "树影随风移动触发画面变化。",
+    "risk_reason": "运动形态是阴影变化，不是人或车辆。",
+    "evidence_points": [
+      "树影移动",
+      "风造成变化",
+      "无实体目标",
+      "无区域进入"
+    ],
+    "recommended_action": [
+      "忽略为环境阴影噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_035",
+    "occurred_at": "2026-09-20T03:47:59+08:00",
+    "local_time": "03:47",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 4,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "车灯扫过画面造成运动提醒。",
+    "risk_reason": "光线变化来自画面边缘，没有人员靠近。",
+    "evidence_points": [
+      "车灯反光",
+      "画面边缘变化",
+      "无停留",
+      "无人员目标"
+    ],
+    "recommended_action": [
+      "忽略为光线噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_036",
+    "occurred_at": "2026-09-20T03:58:18+08:00",
+    "local_time": "03:58",
+    "camera_id": "Aisle-03",
+    "camera_area": "店内走廊",
+    "event_type": "low_light_or_occlusion",
+    "motion_label": "occlusion",
+    "duration_seconds": 11,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.74,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "低光或局部遮挡导致画面变化。",
+    "risk_reason": "没有持续人员目标，事件不构成行动项。",
+    "evidence_points": [
+      "低光噪声",
+      "局部遮挡",
+      "无人员进入",
+      "无敏感区域行为"
+    ],
+    "recommended_action": [
+      "忽略；如重复出现可清洁镜头"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_037",
+    "occurred_at": "2026-09-20T04:02:16+08:00",
+    "local_time": "04:02",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 3,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "昆虫靠近镜头造成局部快速运动。",
+    "risk_reason": "运动贴近镜头，缺少人体轮廓和区域进入行为。",
+    "evidence_points": [
+      "近镜头移动",
+      "持续时间短",
+      "无人体轮廓",
+      "无进入动作"
+    ],
+    "recommended_action": [
+      "忽略为镜头近处误报"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_038",
+    "occurred_at": "2026-09-20T04:18:25+08:00",
+    "local_time": "04:18",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 6,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "雨水和湿地反光造成画面亮度变化。",
+    "risk_reason": "没有人员轮廓，也没有接近门窗或后门。",
+    "evidence_points": [
+      "雨水反光",
+      "湿地亮度变化",
+      "无人员轮廓",
+      "无门窗接触"
+    ],
+    "recommended_action": [
+      "忽略为天气噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_039",
+    "occurred_at": "2026-09-20T04:27:34+08:00",
+    "local_time": "04:27",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 7,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "路人从公共区域经过，没有靠近店门或停留。",
+    "risk_reason": "运动轨迹在店外公共区域，未进入敏感区域。",
+    "evidence_points": [
+      "公共区域经过",
+      "未停留",
+      "未接触门窗",
+      "运动轨迹离开画面"
+    ],
+    "recommended_action": [
+      "忽略，不进入今日待办"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_040",
+    "occurred_at": "2026-09-20T04:36:08+08:00",
+    "local_time": "04:36",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "event_type": "signboard_light_reflection",
+    "motion_label": "light",
+    "duration_seconds": 5,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "招牌或卷帘门反光造成亮度变化。",
+    "risk_reason": "变化来自固定物体表面反射，不是人员运动。",
+    "evidence_points": [
+      "招牌反光",
+      "亮度变化",
+      "无人员轮廓",
+      "无靠近门锁"
+    ],
+    "recommended_action": [
+      "忽略为外立面光线噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_041",
+    "occurred_at": "2026-09-20T04:44:52+08:00",
+    "local_time": "04:44",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 5,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "车灯扫过画面造成运动提醒。",
+    "risk_reason": "光线变化来自画面边缘，没有人员靠近。",
+    "evidence_points": [
+      "车灯反光",
+      "画面边缘变化",
+      "无停留",
+      "无人员目标"
+    ],
+    "recommended_action": [
+      "忽略为光线噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_042",
+    "occurred_at": "2026-09-20T04:51:44+08:00",
+    "local_time": "04:51",
+    "camera_id": "Aisle-03",
+    "camera_area": "店内走廊",
+    "event_type": "low_light_or_occlusion",
+    "motion_label": "low_light",
+    "duration_seconds": 12,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.74,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "低光或局部遮挡导致画面变化。",
+    "risk_reason": "没有持续人员目标，事件不构成行动项。",
+    "evidence_points": [
+      "低光噪声",
+      "局部遮挡",
+      "无人员进入",
+      "无敏感区域行为"
+    ],
+    "recommended_action": [
+      "忽略；如重复出现可清洁镜头"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_043",
+    "occurred_at": "2026-09-20T05:04:12+08:00",
+    "local_time": "05:04",
+    "camera_id": "BackGate-01",
+    "camera_area": "后门",
+    "event_type": "insect_near_lens",
+    "motion_label": "insect",
+    "duration_seconds": 3,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "昆虫靠近镜头造成局部快速运动。",
+    "risk_reason": "运动贴近镜头，缺少人体轮廓和区域进入行为。",
+    "evidence_points": [
+      "近镜头移动",
+      "持续时间短",
+      "无人体轮廓",
+      "无进入动作"
+    ],
+    "recommended_action": [
+      "忽略为镜头近处误报"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_044",
+    "occurred_at": "2026-09-20T05:11:07+08:00",
+    "local_time": "05:11",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "rain_reflection",
+    "motion_label": "rain_light",
+    "duration_seconds": 6,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "雨水和湿地反光造成画面亮度变化。",
+    "risk_reason": "没有人员轮廓，也没有接近门窗或后门。",
+    "evidence_points": [
+      "雨水反光",
+      "湿地亮度变化",
+      "无人员轮廓",
+      "无门窗接触"
+    ],
+    "recommended_action": [
+      "忽略为天气噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_045",
+    "occurred_at": "2026-09-20T05:17:39+08:00",
+    "local_time": "05:17",
+    "camera_id": "FrontDoor-02",
+    "camera_area": "前门",
+    "event_type": "normal_passerby",
+    "motion_label": "person",
+    "duration_seconds": 9,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "medium",
+    "scene_summary": "路人从公共区域经过，没有靠近店门或停留。",
+    "risk_reason": "运动轨迹在店外公共区域，未进入敏感区域。",
+    "evidence_points": [
+      "公共区域经过",
+      "未停留",
+      "未接触门窗",
+      "运动轨迹离开画面"
+    ],
+    "recommended_action": [
+      "忽略，不进入今日待办"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_046",
+    "occurred_at": "2026-09-20T05:28:06+08:00",
+    "local_time": "05:28",
+    "camera_id": "Signboard-04",
+    "camera_area": "招牌外立面",
+    "event_type": "tree_shadow",
+    "motion_label": "shadow",
+    "duration_seconds": 12,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "树影随风移动触发画面变化。",
+    "risk_reason": "运动形态是阴影变化，不是人或车辆。",
+    "evidence_points": [
+      "树影移动",
+      "风造成变化",
+      "无实体目标",
+      "无区域进入"
+    ],
+    "recommended_action": [
+      "忽略为环境阴影噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  },
+  {
+    "handoff_id": "handoff_2026_09_20_store_001",
+    "event_id": "evt_047",
+    "occurred_at": "2026-09-20T05:37:50+08:00",
+    "local_time": "05:37",
+    "camera_id": "Parking-01",
+    "camera_area": "停车区",
+    "event_type": "vehicle_headlight",
+    "motion_label": "light",
+    "duration_seconds": 5,
+    "review_result": "ignored",
+    "risk_level": "low",
+    "confidence": 0.84,
+    "false_positive_likelihood": "high",
+    "scene_summary": "车灯扫过画面造成运动提醒。",
+    "risk_reason": "光线变化来自画面边缘，没有人员靠近。",
+    "evidence_points": [
+      "车灯反光",
+      "画面边缘变化",
+      "无停留",
+      "无人员目标"
+    ],
+    "recommended_action": [
+      "忽略为光线噪声"
+    ],
+    "needs_human_review": false,
+    "handoff_status": "ignored",
+    "handoff_reason": "低价值噪声，不进入今日待办。"
+  }
+]
